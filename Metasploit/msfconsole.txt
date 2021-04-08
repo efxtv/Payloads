@@ -1,0 +1,13 @@
+To install metasploit externally on Ubuntu and others use commands below:
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+  chmod 755 msfinstall && \
+  ./msfinstall
+  
+To install metasploit externally on Termux use commands below:
+pkg update && pkg upgrade -y
+pkg install unstable-repo
+pkg install metasploit
+
+or #for termux you can use another repository, known as Termux Black:
+wget https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/metasploit.sh
+chmod +x metasploit.sh && ./metasploit.sh
