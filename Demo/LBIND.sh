@@ -100,6 +100,16 @@ echo "[❌️] Not-installed"
 fi
 }
 
+javato()
+{
+cmta=$(which java|grep -o java)
+if [ "$javato" == "java" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
 
 meta|sed 's#^#\tMetasploit is \t- #g'
 curlo|sed 's#^#\tCurl is \t- #g'
@@ -110,6 +120,7 @@ unzip|sed 's#^#\tUnzip is \t- #g'
 apktoolo|sed 's#^#\tApktool is \t- #g'
 apksignero|sed 's#^#\tApksigner is \t- #g'
 keytoolo|sed 's#^#\tKeytool is \t- #g'
+javato|sed 's#^#\tjava is \t- #g'
 echo
 echo -e "${IWhite}// ${IGreen}JOIN FOR MORE${clear} ${IYellow}t.me/efxtv${clear} ${IWhite}//${clear}"
 
