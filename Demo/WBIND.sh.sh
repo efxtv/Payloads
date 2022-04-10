@@ -124,7 +124,7 @@ javato|sed 's#^#\tjava is \t- #g'
 echo
 echo -e "${IWhite}// ${IGreen}JOIN FOR MORE${clear} ${IYellow}t.me/efxtv${clear} ${IWhite}//${clear}"
 
-echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Please enter LPORT: ${IYellow}"
+echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Please enter VPORT: ${IYellow}"
 read lport
 
 echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} List of apps   PWD ${IYellow}"
