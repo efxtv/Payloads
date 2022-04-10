@@ -1,12 +1,13 @@
+#!/bin/bash
 clear='\033[0m'
-IBlack='\033[0;90m'       # Black
-IRed='\033[0;91m'         # Red
-IGreen='\033[0;92m'       # Green
-IYellow='\033[0;93m'      # Yellow
-IBlue='\033[0;94m'        # Blue
-IPurple='\033[0;95m'      # Purple
-ICyan='\033[0;96m'        # Cyan
-IWhite='\033[0;97m'       # White
+IBlack='\033[0;90m'
+IRed='\033[0;91m'
+IGreen='\033[0;92m'
+IYellow='\033[0;93m'
+IBlue='\033[0;94m'
+IPurple='\033[0;95m'
+ICyan='\033[0;96m'
+IWhite='\033[0;97m'
 
 echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Please enter LHOST: ${IYellow}"
 read lhost
