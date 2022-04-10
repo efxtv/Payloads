@@ -102,8 +102,8 @@ fi
 
 javato()
 {
-cmta=$(which java|grep -o java)
-if [ "$javato" == "java" ]; then
+javac=$(which java|grep -o java)
+if [ "$javac" == "java" ]; then
 echo "[✅️] Installed"
 else
 echo "[❌️] Not-installed"
