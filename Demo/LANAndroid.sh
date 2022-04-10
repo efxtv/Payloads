@@ -8,6 +8,9 @@ IBlue='\033[0;94m'
 IPurple='\033[0;95m'
 ICyan='\033[0;96m'
 IWhite='\033[0;97m'
+echo
+echo
+echo -e "${IWhite}// ${IYellow}JOIN FOR MORE${clear} ${IBlue}t.me/efxtv${clear} ${IWhite}//${clear}"
 
 echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Please enter LHOST: ${IYellow}"
 read lhost
