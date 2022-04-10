@@ -10,6 +10,107 @@ ICyan='\033[0;96m'
 IWhite='\033[0;97m'
 echo
 echo
+wgeto()
+{
+cmta=$(which wget|grep -o wget)
+if [ "$cmta" == "wget" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+meta()
+{
+met=$(which msfconsole|grep -o msfconsole)
+if [ "$met" == "msfconsole" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+curlo()
+{
+cur=$(which curl|grep -o curl)
+if [ "$cur" == "curl" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+phpto()
+{
+cphp=$(which php|grep -o php)
+if [ "$cphp" == "php" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+zip()
+{
+zipo=$(which zip|grep -o zip)
+if [ "$zipo" == "zip" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+unzip()
+{
+uzip=$(which unzip|grep -o unzip)
+if [ "$uzip" == "unzip" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+apktoolo()
+{
+apktoolc=$(which apktool|grep -o apktool)
+if [ "$apktoolc" == "apktool" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+apksignero()
+{
+apksignec=$(which apksigner|grep -o apksigner)
+if [ "$apksignec" == "apksigner" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+keytoolo()
+{
+keytoolc=$(which keytool|grep -o keytool)
+if [ "$keytoolc" == "keytool" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+
+meta|sed 's#^#\tMetasploit is \t- #g'
+curlo|sed 's#^#\tCurl is \t- #g'
+wgeto|sed 's#^#\tWget is \t- #g'
+phpto|sed 's#^#\tPhp is \t\t- #g'
+zip|sed 's#^#\tZip is \t\t- #g'
+unzip|sed 's#^#\tUnzip is \t- #g'
+apktoolo|sed 's#^#\tApktool is \t- #g'
+apksignero|sed 's#^#\tApksigner is \t- #g'
+keytoolo|sed 's#^#\tKeytool is \t- #g'
+echo
 echo -e "${IWhite}// ${IGreen}JOIN FOR MORE${clear} ${IYellow}t.me/efxtv${clear} ${IWhite}//${clear}"
 
 echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Please enter LHOST: ${IYellow}"
