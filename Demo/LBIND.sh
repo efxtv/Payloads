@@ -134,7 +134,7 @@ echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} List of apps   PWD
 ls $PWD|grep apk|sed 's#^#\t[+] #g'
 
 echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} App U want to bind: ${IYellow}"
-read $app
+read app
 
 echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Enter output app n: ${IYellow}"
 read op
