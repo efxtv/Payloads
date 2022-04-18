@@ -130,7 +130,7 @@ read lhost
 echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Please enter LPORT: ${IYellow}"
 read lport
 
-echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} List of apps   PWD ${IYellow}"
+echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} List of apps   PWD ${IYellow}\c"
 ls $PWD|grep apk|sed 's#^#\t[+] #g'
 
 echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} App U want to bind: ${IYellow}"
