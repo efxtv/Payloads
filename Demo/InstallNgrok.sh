@@ -21,7 +21,7 @@ wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip -q --show-p
 if [[ -e ngrok-stable-linux-arm.zip ]]; then
 unzip ngrok-stable-linux-arm.zip > /dev/null 2>&1
 chmod +x ngrok
-mv ngrok $HOME
+mv ngrok $HOME 2>/dev/null
 rm -rf ngrok-stable-linux-arm.zip
 $HOME/ngrok authtoken 29TVlXDVowQRu4lZUCgz2p3SG3X_NFrecgdGpSkyQUHBmNKx 1>/dev/null
 echo -e "[${Green}✔${clear}] ${IYellow}Download complete. Run the server..${clear}"
@@ -37,7 +37,7 @@ if [[ -e ngrok-stable-linux-386.zip ]]; then
 chmod +x ngrok-stable-linux-386.zip
 unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
 chmod +x ngrok 
-mv ngrok $HOME
+mv ngrok $HOME 2>/dev/null
 rm -rf ngrok-stable-linux-386.zip
 $HOME/ngrok authtoken 29TVlXDVowQRu4lZUCgz2p3SG3X_NFrecgdGpSkyQUHBmNKx 1>/dev/null
 echo -e "[${Green}✔${clear}] ${IYellow}Download complete. Run the server..${clear}"
