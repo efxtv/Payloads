@@ -17,5 +17,5 @@
  <pre></pre>
  <BR>
  <B>Server</B>
- <pre> https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server.sh- </pre>
+ <pre> source <(curl -fsSl https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server.sh) </pre>
  
