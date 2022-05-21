@@ -11,10 +11,6 @@ Cyan='\033[0;36m'
 White='\033[0;37m'
 clear='\033[0m'
 
-delete()
-{
-rm ngrok* 2>/dev/null
-}
 architecturee()
 {
 arch=$(uname -a | grep -o 'arm' | head -n1)
@@ -24,9 +20,10 @@ if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip -q --show-progress
 if [[ -e ngrok-stable-linux-arm.zip ]]; then
 unzip ngrok-stable-linux-arm.zip > /dev/null 2>&1
-chmod +x ngrok 2>/dev/null
-mv ngrok $HOME 2>/dev/null
+chmod +x ngrok
+mv ngrok $HOME
 rm -rf ngrok-stable-linux-arm.zip
+$HOME/ngrok authtoken 29TVlXDVowQRu4lZUCgz2p3SG3X_NFrecgdGpSkyQUHBmNKx 1>/dev/null
 echo -e "[${Green}✔${clear}] ${IYellow}Download complete. Run the server..${clear}"
 
 else
@@ -39,9 +36,10 @@ wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip -q --show-p
 if [[ -e ngrok-stable-linux-386.zip ]]; then
 chmod +x ngrok-stable-linux-386.zip
 unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
-chmod +x ngrok 2>/dev/null
-mv ngrok $HOME 2>/dev/null
+chmod +x ngrok 
+mv ngrok $HOME
 rm -rf ngrok-stable-linux-386.zip
+$HOME/ngrok authtoken 29TVlXDVowQRu4lZUCgz2p3SG3X_NFrecgdGpSkyQUHBmNKx 1>/dev/null
 echo -e "[${Green}✔${clear}] ${IYellow}Download complete. Run the server..${clear}"
 
 
@@ -119,7 +117,7 @@ echo -e "[${Green}✔${clear}] ${Green}Checking /Home/ngrok..${clear}"
 sleep 1
 echo -e "[${Green}✔${clear}] ${Green}Ngrok is already installed run server..${clear}"
 else
-delete
+
 echo -e "[${Green}✔${clear}] ${IYellow}Checking for dependency..${clear}"
 phpo
 sleep 1
