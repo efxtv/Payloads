@@ -19,7 +19,7 @@ $HOME/ngrok authtoken $autho 1>/dev/null
 }
 
 
-delete()
+rmngr()
 {
 rm ngrok* > /dev/null 2>&1
 }
@@ -127,7 +127,7 @@ echo -e "[${Green}✔${clear}] ${Green}Checking /Home/ngrok..${clear}"
 sleep 1
 echo -e "[${Green}✔${clear}] ${Green}Ngrok is already installed run server..${clear}"
 else
-delete
+rmngr
 echo -e "[${Green}✔${clear}] ${IYellow}Checking for dependency..${clear}"
 phpo
 sleep 1
