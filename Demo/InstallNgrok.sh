@@ -21,7 +21,7 @@ $HOME/ngrok authtoken $autho 1>/dev/null
 
 delete()
 {
-rm ngrok* 2>/dev/null
+rm ngrok* > /dev/null 2>&1
 }
 architecturee()
 {
@@ -33,8 +33,8 @@ wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip -q --show-p
 if [[ -e ngrok-stable-linux-arm.zip ]]; then
 unzip ngrok-stable-linux-arm.zip > /dev/null 2>&1
 chmod +x ngrok
-mv ngrok $HOME
-rm -rf ngrok-stable-linux-arm.zip
+mv ngrok $HOME > /dev/null 2>&1
+rm -rf ngrok-stable-linux-arm.zip > /dev/null 2>&1
 echo -e "[${Green}✔${clear}] ${IYellow}Download complete. Run the server..${clear}"
 
 else
@@ -48,8 +48,8 @@ if [[ -e ngrok-stable-linux-386.zip ]]; then
 chmod +x ngrok-stable-linux-386.zip
 unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
 chmod +x ngrok 
-mv ngrok $HOME
-rm -rf ngrok-stable-linux-386.zip
+mv ngrok $HOME > /dev/null 2>&1
+rm -rf ngrok-stable-linux-386.zip > /dev/null 2>&1
 echo -e "[${Green}✔${clear}] ${IYellow}Download complete. Run the server..${clear}"
 
 
