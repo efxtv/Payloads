@@ -64,9 +64,9 @@ phpo()
 {
 cphp=$(which php|grep -o php)
 if [ "$cphp" == "php" ]; then
-echo -e "\t${IGreen}├──${clear} ${Green}PHP is installed $port ${clear}"
+echo -e "\t${IGreen}├──${clear} ${Green}PHP is installed  ${clear}"
 else
-echo -e "\t${IGreen}├──${clear} ${Red}PHP is not installed $port ${clear}"
+echo -e "\t${IGreen}├──${clear} ${Red}PHP is not installed  ${clear}"
 echo -e "\t${IGreen}└──${clear} ${Red}Install and try again${clear}"
 exit
 fi
@@ -76,9 +76,9 @@ wgeto()
 {
 cphp=$(which wget|grep -o wget)
 if [ "$cphp" == "wget" ]; then
-echo -e "\t${IGreen}├──${clear} ${Green}Wget is installed $port ${clear}"
+echo -e "\t${IGreen}├──${clear} ${Green}Wget is installed  ${clear}"
 else
-echo -e "\t${IGreen}├──${clear} ${Red}Wget is not installed $port ${clear}"
+echo -e "\t${IGreen}├──${clear} ${Red}Wget is not installed  ${clear}"
 echo -e "\t${IGreen}└──${clear} ${Red}Install and try again${clear}"
 exit
 fi
@@ -88,9 +88,9 @@ zipo()
 {
 czip=$(which zip|grep -o zip)
 if [ "$czip" == "zip" ]; then
-echo -e "\t${IGreen}├──${clear} ${Green}Zip is installed $port ${clear}"
+echo -e "\t${IGreen}├──${clear} ${Green}Zip is installed  ${clear}"
 else
-echo -e "\t${IGreen}├──${clear} ${Red}Zip is not installed $port ${clear}"
+echo -e "\t${IGreen}├──${clear} ${Red}Zip is not installed  ${clear}"
 echo -e "\t${IGreen}└──${clear} ${Red}Install and try again${clear}"
 exit
 fi
@@ -100,9 +100,9 @@ unzipo()
 {
 cunzip=$(which unzip|grep -o unzip)
 if [ "$cunzip" == "unzip" ]; then
-echo -e "\t${IGreen}├──${clear} ${Green}Unzip is installed $port ${clear}"
+echo -e "\t${IGreen}├──${clear} ${Green}Unzip is installed  ${clear}"
 else
-echo -e "\t${IGreen}├──${clear} ${Red}Unzip is not installed $port ${clear}"
+echo -e "\t${IGreen}├──${clear} ${Red}Unzip is not installed  ${clear}"
 echo -e "\t${IGreen}└──${clear} ${Red}Install and try again${clear}"
 exit
 fi
@@ -112,9 +112,9 @@ curlo()
 {
 ccurl=$(which curl|grep -o curl)
 if [ "$ccurl" == "curl" ]; then
-echo -e "\t${IGreen}└──${clear} ${Green}Curl is installed $port ${clear}"
+echo -e "\t${IGreen}└──${clear} ${Green}Curl is installed  ${clear}"
 else
-echo -e "\t${IGreen}├──${clear} ${Red}Curl is not installed $port ${clear}"
+echo -e "\t${IGreen}├──${clear} ${Red}Curl is not installed  ${clear}"
 echo -e "\t${IGreen}└──${clear} ${Red}Install and try again${clear}"
 exit
 fi
