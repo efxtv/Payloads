@@ -68,7 +68,7 @@ echo -e "
 pkill php > /dev/null 2>/dev/null
 pkill ngrok > /dev/null 2>/dev/null
 
-php -S localhost:5555 > 2>/dev/null
+php -S localhost:5555 2>/dev/null
 #Starting ngrok
 echo
 echo -e "[${Green}✔${clear}] ${IYellow}GENERATING LINK PLEASE WAIT... ${clear}"
