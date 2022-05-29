@@ -30,7 +30,7 @@ then
   echo ""
 else
 echo -e "[${Green}✔${clear}] ${IYellow} Ngrok error. Try again${clear}"
-exit
+exit 1
 fi
 }
 check
