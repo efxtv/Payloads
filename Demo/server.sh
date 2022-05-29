@@ -65,8 +65,8 @@ echo -e "
 \t${IGreen}├──${clear} ${Green}uname | ncat 192.168.1.4 $vport${clear}
 \t${IGreen}└──${clear} ${Green}ncat -lk -p 5576 > savedout${clear}
 "
-pkill php > /dev/null 2>/dev/null
-pkill ngrok > /dev/null 2>/dev/null
+pkill php 2>/dev/null
+pkill ngrok 2>/dev/null
 
 php -S localhost:5555 2>/dev/null
 #Starting ngrok
