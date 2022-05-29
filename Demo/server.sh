@@ -23,19 +23,20 @@ read vpnp
 echo $vpnp >$HOME/.vf 
 fi
 }
-ngno() 
+
+checko() 
 {
 if [[ -e $HOME/ngrok ]]
 then
   echo ""
 else
 echo -e "[${Green}✔${clear}] ${IYellow} Ngrok error. Try again${clear}"
-sleep 10
-exit 1
+exit
 fi
 }
+
 check
-ngno
+checko
 #pending
 # 1 ngrok vpn connect
 # 1 internet connection check
