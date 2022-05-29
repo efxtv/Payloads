@@ -30,8 +30,10 @@ if [[ -e $HOME/ngrok ]]
 then
   echo ""
 else
-echo -e "[${Green}✔${clear}] ${IYellow} Ngrok error. Try again${clear}"
-exit
+echo -e "[${Green}✔${clear}] ${Red} Ngrok error \$HOME/ngrok. Try again${clear}"
+echo -en "[${Green}✔${clear}] ${IYellow} Link may not be generated press [ctrl + c]: ${clear}"
+read
+sleep 20
 fi
 }
 
