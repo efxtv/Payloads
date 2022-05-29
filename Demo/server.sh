@@ -23,7 +23,18 @@ read vpnp
 echo $vpnp >$HOME/.vf 
 fi
 }
+ngno() 
+{
+if [[ -e $HOME/ngrok ]]
+then
+  echo ""
+else
+echo -e "[${Green}✔${clear}] ${IYellow} Ngrok error. Try again${clear}"
+exit
+fi
+}
 check
+ngno
 #pending
 # 1 ngrok vpn connect
 # 1 internet connection check
@@ -65,18 +76,17 @@ echo -e "
 \t${IGreen}├──${clear} ${Green}uname | ncat 192.168.1.4 $vport${clear}
 \t${IGreen}└──${clear} ${Green}ncat -lk -p 5576 > savedout${clear}
 "
-pkill php > /dev/null 2>&1
-pkill ngrok > /dev/null 2>&1
+pkill php
+pkill ngrok 
 
-php -S localhost:5555 > /dev/null 2>&1
+php -S localhost:5555 > /dev/null 2>&1 &
 #Starting ngrok
 echo
 echo -e "[${Green}✔${clear}] ${IYellow}GENERATING LINK PLEASE WAIT... ${clear}"
 
-$HOME/ngrok http 5555 > /dev/null 2>&1
+$HOME/ngrok http 5555 > /dev/null 2>&1 &
 sleep 7
 #below lines can be sued for generating direct link.
 ngrok_link=$(curl -s -N http://127.0.0.1:4040/api/tunnels|sed 's#"# #g'|sed 's#http#\nhttp#g'|sed 's#.io#.io\n#g'|grep https|head -n 1)
-
 echo -e "\t${IGreen}├──${clear} ${Green}$ngrok_link ${clear}"
 echo -e "\t${IGreen}└──${clear} ${Green}http://localhost:5555 ${clear}"
