@@ -17,10 +17,5 @@
  <pre><code>source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/InstallNgrok.sh)</code></pre>
  <BR>
  <B>Server</B>
- <pre><code>source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/server-ngrok-http.sh)</code></pre>
+ <pre><code>source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server.sh)</code></pre>
  
-
-
-
-
-
