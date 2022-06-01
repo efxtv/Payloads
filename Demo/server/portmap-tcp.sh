@@ -35,7 +35,7 @@ echo -e "
 [${Green}✔${clear}] ${Yellow}VPN Reverse Connect server scripts:${clear}
 [${Green}✔${clear}] ${IYellow}ACCESS TERMINAL${clear}
 \t${IGreen}├──${clear} ${Green}ncat -e /bin/bash $ip $vport ${clear}
-\t${IGreen}└──${clear} ${Green}ncat -klvp 5576{clear}
+\t${IGreen}└──${clear} ${Green}ncat -klvp 5576${clear}
 
 [${Green}✔${clear}] ${IYellow}SHARE TERMINAL${clear}
 \t${IGreen}├──${clear} ${Green}ncat -v -n $ip $vport ${clear}
