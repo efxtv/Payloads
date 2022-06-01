@@ -34,7 +34,7 @@ ifcnoio=$(ifconfig|grep 192|awk '{print $2}')
 pkill php
 pkill ngrok 
 echo -e "
-[${Green}✔${clear}] ${Yellow}Local server scripts:${clear}
+${clear}[${Green}✔${clear}] ${Yellow}Local server scripts:${clear}
 \t${IGreen}├──${clear}${Green} python -m SimpleHTTPServer 8000
 \t${IGreen}├──${clear}${Green} python3 -m SimpleHTTPServer 8000
 \t${IGreen}├──${clear}${Green} twistd -n web -p 8000 --path .
