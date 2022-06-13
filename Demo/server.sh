@@ -40,7 +40,7 @@ curl -L -o $PWD/export.rc https://raw.githubusercontent.com/efxtv/Payloads/main/
 
 
 authtoken)
-echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1tebxIB0maaFOCIBo1WmpYo0zGW_3KtM2gXefMR79HBcnGwwM ${clear}"
+echo -e "${clear}[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1tebxIB0maaFOCIBo1WmpYo0zGW_3KtM2gXefMR79HBcnGwwM ${clear}"
 echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1bmvO96MSDn7uOGRtB4GWmwoBTc_27GY17KjXZqMPNLEhAYnp ${clear}"
 echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1dLfazAyroRPboegbwh3M7x9Hc8_7Q8wNUYKAxSt5rqXbUwKD ${clear}"
 echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1u7zpuJX1TvWK1MrDvi0fGDHN2G_61AgB79hTep6E5wqaroNd ${clear}"
