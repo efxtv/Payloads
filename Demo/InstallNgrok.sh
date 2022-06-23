@@ -128,6 +128,31 @@ exit
 fi
 }
 
+
+jqo()
+{
+cjq=$(which jq|grep -o jq)
+if [ "$cjq" == "jq" ]; then
+echo -e "\t${IGreen}└──${clear} ${Green}Jq is installed  ${clear}"
+else
+echo -e "\t${IGreen}├──${clear} ${Red}JQ is not installed  ${clear}"
+echo -e "\t${IGreen}└──${clear} ${Red}Install and try again${clear}"
+exit
+fi
+}
+
+
+nco()
+{
+cnc=$(which ncat|grep -o ncat)
+if [ "$cnc" == "ncat" ]; then
+echo -e "\t${IGreen}└──${clear} ${Green}Ncat is installed  ${clear}"
+else
+echo -e "\t${IGreen}├──${clear} ${Red}Ncat is not installed  ${clear}"
+echo -e "\t${IGreen}└──${clear} ${Red}Ncat and try again${clear}"
+exit
+fi
+}
 if [[ -e $HOME/ngrok ]]; then
 echo -e "[${Green}✔${clear}] ${Green}Checking for Ngrok..${clear}"
 sleep 1
@@ -146,6 +171,10 @@ sleep 1
 unzipo
 sleep 1
 curlo
+sleep 1
+jqo
+sleep 1
+nco
 architecturee
 auth
 fi
