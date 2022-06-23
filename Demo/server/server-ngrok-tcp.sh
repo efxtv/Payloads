@@ -17,8 +17,8 @@ then
   echo ""
   pkill ngrok
 else
-echo -e "[${Green}✔${clear}] ${Red} Ngrok error \$HOME/ngrok. Try again${clear}"
-echo -en "[${Green}✔${clear}] ${IYellow} Link may not be generated press [ctrl + c]: ${clear}"
+echo -e "[${Green}✔${clear}] ${Red}Ngrok error \$HOME/ngrok. Try again${clear}"
+echo -en "[${Green}✔${clear}] ${IYellow}Link may not be generated press [ctrl + c]: ${clear}"
 read
 sleep 20
 fi
@@ -69,11 +69,11 @@ chcnnot()
 checcc=$(host $ipo|grep -o address) 
 if [ "$checcc" == "address" ]; then
 
-echo -e "[${Green}✔${clear}] ${IYellow} Ngrok is online ${clear}"
+echo -e "[${Green}✔${clear}]${IYellow} Ngrok is online ${clear}"
 sleep 1
 else
-echo -e "[${Green}✔${clear}] ${Red} Dependency error ${clear}"
-echo -e "[${Green}✔${clear}] ${Red} Run emsf server check ${clear}"
+echo -e "[${Green}✔${clear}]${Red} Dependency error ${clear}"
+echo -e "[${Green}✔${clear}]${Red} Run emsf server check ${clear}"
 exit
 fi
 }
