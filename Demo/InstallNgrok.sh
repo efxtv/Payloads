@@ -19,11 +19,14 @@ echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1dLfazAyroRPboegbwh
 echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1u7zpuJX1TvWK1MrDvi0fGDHN2G_61AgB79hTep6E5wqaroNd ${clear}"
 echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 22iuoOY8cY5FuBizcSD8kPsmOus_5CbuRfr6zyrEZZxkTC4nX ${clear}"
 
-echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow}  ${clear}"
-
 echo -en "[${Green}✔${clear}] ${Green}Please enter your authtoken : ${clear}"
 read autho
 $HOME/ngrok authtoken $autho 1>/dev/null
+echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} Installed... ${clear}"
+echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} Note: For devices
+[${Green}✔${clear}]${Green} Up to Android 10: ${clear}${IGreen} Enable mobile data + Hotspot${clear}
+[${Green}✔${clear}]${Green} Android 11, 12 +: ${clear}${IGreen} Enable wifi/mobiledata + Hotspot${clear}
+
 }
 
 
