@@ -126,7 +126,7 @@ if [ "$ccurl" == "curl" ]; then
 echo -e "\t${IGreen}├──${clear} ${Green}Curl is installed  ${clear}"
 else
 echo -e "\t${IGreen}├──${clear} ${Red}Curl is not installed  ${clear}"
-echo -e "\t${IGreen}└──${clear} ${Red}Install and try again${clear}"
+echo -e "\t${IGreen}└──${clear} ${Red}Install and try again ${clear}"
 exit
 fi
 }
@@ -139,7 +139,7 @@ if [ "$cjq" == "jq" ]; then
 echo -e "\t${IGreen}├──${clear} ${Green}Jq is installed  ${clear}"
 else
 echo -e "\t${IGreen}├──${clear} ${Red}JQ is not installed  ${clear}"
-echo -e "\t${IGreen}└──${clear} ${Red}Install and try again${clear}"
+echo -e "\t${IGreen}└──${clear} ${Red}Install and try again ${clear}"
 exit
 fi
 }
@@ -152,19 +152,19 @@ if [ "$cnc" == "ncat" ]; then
 echo -e "\t${IGreen}└──${clear} ${Green}Ncat is installed  ${clear}"
 else
 echo -e "\t${IGreen}├──${clear} ${Red}Ncat is not installed  ${clear}"
-echo -e "\t${IGreen}└──${clear} ${Red}Ncat and try again${clear}"
+echo -e "\t${IGreen}└──${clear} ${Red}Ncat and try again ${clear}"
 exit
 fi
 }
 if [[ -e $HOME/ngrok ]]; then
-echo -e "[${Green}✔${clear}] ${Green}Checking Ngrok..${clear}"
+echo -e "[${Green}✔${clear}] ${Green}Checking Ngrok.. ${clear}"
 sleep 1
-echo -e "[${Green}✔${clear}] ${Green}Checking /Home/ngrok..${clear}"
+echo -e "[${Green}✔${clear}] ${Green}Checking /Home/ngrok.. ${clear}"
 sleep 1
-echo -e "[${Green}✔${clear}] ${Green}Ngrok is already installed run server..${clear}"
+echo -e "[${Green}✔${clear}] ${Green}Ngrok is already installed run server.. ${clear}"
 else
 rmngr
-echo -e "[${Green}✔${clear}] ${IYellow}Checking dependency..${clear}"
+echo -e "[${Green}✔${clear}] ${IYellow}Checking dependency.. ${clear}"
 phpo
 sleep 1
 wgeto
@@ -180,5 +180,4 @@ sleep 1
 nco
 architecturee
 auth
-fi
 fi
