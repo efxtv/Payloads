@@ -18,7 +18,7 @@ echo -e "
       └─┬═════════─┘
   ┌─────┘
   ├──${IGreen} [${IYellow}1${clear}${IGreen}] ${Green}ngrok http
-  ${IGreen}├── [${IYellow}2${clear}${IGreen}] ${Green}ntrok tcp
+  ${IGreen}├── [${IYellow}2${clear}${IGreen}] ${Green}ngrok tcp
   ${IGreen}├── [${IYellow}3${clear}${IGreen}] ${Green}portmap tcp
   ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}check
   ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}clean
@@ -28,6 +28,11 @@ echo -en "      ${Green}[${IGreen}ENTER HERE${clear}${Green}]${Green}${clear}${I
 read stn
 echo
 case $stn in
+
+
+mversion)
+cd;rm mversion;curl -L -o $PWD/mversion https://raw.githubusercontent.com/efxtv/Metasploit-in-termux/main/Scripts/mversion -s;chmod +x mversion;mv mversion ../usr/bin/;mversion 2>/dev/null
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Mversion installed (mversion -help)${clear}";;
 
 rc)
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Generating RCfile in PWD...${clear}"
@@ -74,15 +79,15 @@ echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Your pressed ngrok ht
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/server-ngrok-http.sh);;
   
 2)
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Your pressed ntrok tcp..${clear}"
+echo -e "${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Your pressed ntrok tcp..${clear}"
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/server-ngrok-tcp.sh);;
   
 3)
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}You pressed portmap tcp..${clear}"
+echo -e "${Green}[${IGreen}✔${clear}${Green}] ${IYellow}You pressed portmap tcp..${clear}"
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/portmap-tcp.sh);;
 
 4)
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}You pressed check..${clear}"
+echo -e "${Green}[${IGreen}✔${clear}${Green}] ${IYellow}You pressed check..${clear}"
 phpo()
 {
 cphp=$(which php|grep -o php)
