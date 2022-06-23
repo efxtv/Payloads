@@ -150,10 +150,22 @@ nco()
 {
 cnc=$(which ncat|grep -o ncat)
 if [ "$cnc" == "ncat" ]; then
-echo -e "\t${IGreen}└──${clear} ${Green}Ncat is installed  ${clear}"
+echo -e "\t${IGreen}├──${clear} ${Green}Ncat is installed  ${clear}"
 else
 echo -e "\t${IGreen}├──${clear} ${Red}Ncat is not installed  ${clear}"
 echo -e "\t${IGreen}└──${clear} ${Red}Ncat and try again ${clear}"
+exit
+fi
+}
+
+dnso()
+{
+cdnso=$(which host|grep -o host)
+if [ "$cdnso" == "host" ]; then
+echo -e "\t${IGreen}└──${clear} ${Green}DNSutils is installed  ${clear}"
+else
+echo -e "\t${IGreen}├──${clear} ${Red}DNSutils is not installed  ${clear}"
+echo -e "\t${IGreen}└──${clear} ${Red}pkg install dnsutils ${clear}"
 exit
 fi
 }
@@ -167,18 +179,22 @@ else
 rmngr
 echo -e "[${Green}✔${clear}] ${IYellow}Checking dependency.. ${clear}"
 phpo
-sleep 1
+
 wgeto
-sleep 1
+
 zipo
-sleep 1
+
 unzipo
-sleep 1
+
 curlo
-sleep 1
+
 jqo
-sleep 1
+
 nco
+
+dnso
+
 architecturee
+
 auth
 fi
