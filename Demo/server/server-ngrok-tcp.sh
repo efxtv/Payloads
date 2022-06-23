@@ -51,6 +51,22 @@ ipo=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's#t
 ip=$(host $ipo|awk '{print $NF}')
 vport=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's#tcp://##g'|sed 's#:# #g'|awk '{print $2}')
 
+chcnnot()
+{
+checcc=$(host $ip|grep -o address)
+if [ "$checcc" == "address" ]; then
+
+echo -e "[${Green}✔${clear}] ${IYellow} Ngrok is online ${clear}"
+sleep 1
+else
+echo -e "[${Green}✔${clear}] ${Red} Dependency error ${clear}"
+echo -e "[${Green}✔${clear}] ${Red} Run emsf server check ${clear}"
+exit
+fi
+}
+chcnnot
+
+
 echo -e "
 [${Green}✔${clear}] ${Yellow}VPN Reverse Connect server scripts: ${clear}
 [${Green}✔${clear}] ${IYellow}ACCESS TERMINAL${clear}
