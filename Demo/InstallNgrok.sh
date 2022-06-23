@@ -85,8 +85,8 @@ fi
 
 wgeto()
 {
-cphp=$(which wget|grep -o wget)
-if [ "$cphp" == "wget" ]; then
+cwget=$(which wget|grep -o wget)
+if [ "$cwget" == "wget" ]; then
 echo -e "\t${IGreen}├──${clear} ${Green}Wget is installed  ${clear}"
 else
 echo -e "\t${IGreen}├──${clear} ${Red}Wget is not installed  ${clear}"
