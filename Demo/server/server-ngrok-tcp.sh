@@ -14,7 +14,6 @@ checko()
 {
 if [[ -e $HOME/ngrok ]]
 then
-  echo ""
   pkill ngrok
 else
 echo -e "[${Green}✔${clear}] ${Red}Ngrok error \$HOME/ngrok. Try again${clear}"
@@ -70,7 +69,6 @@ checcc=$(host $ipo|grep -o address)
 if [ "$checcc" == "address" ]; then
 
 echo -e "[${Green}✔${clear}]${IYellow} Ngrok is online ${clear}"
-sleep 1
 else
 echo -e "[${Green}✔${clear}]${Red} Dependency error ${clear}"
 echo -e "[${Green}✔${clear}]${Red} Run emsf server check ${clear}"
