@@ -28,11 +28,11 @@ hotscheck()
 hotscho=$(curl -s localhost:4040/api/tunnels|grep -o name)
 if [ "$hotscho" == "name" ]; then
 
-echo -e "[${Green}✔${clear}] ${IYellow} Waiting for link... ${clear}"
+echo -e "[${Green}✔${clear}] ${IYellow}Waiting for link... ${clear}"
 sleep 3
 else
-echo -e "[${Green}✔${clear}] ${Red} Please turn on hotspot/internet ${clear}"
-echo -e "[${Green}✔${clear}] ${Red} Try again... ${clear}"
+echo -e "[${Green}✔${clear}] ${Red}Please turn on hotspot/internet ${clear}"
+echo -e "[${Green}✔${clear}] ${Red}Try again... ${clear}"
 exit
 fi
 }
