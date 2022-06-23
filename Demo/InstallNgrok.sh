@@ -18,6 +18,7 @@ echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1bmvO96MSDn7uOGRtB4
 echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1dLfazAyroRPboegbwh3M7x9Hc8_7Q8wNUYKAxSt5rqXbUwKD ${clear}"
 echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1u7zpuJX1TvWK1MrDvi0fGDHN2G_61AgB79hTep6E5wqaroNd ${clear}"
 echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 22iuoOY8cY5FuBizcSD8kPsmOus_5CbuRfr6zyrEZZxkTC4nX ${clear}"
+echo -e "[${Green}✔${clear}] ${Green}Copy paste:${IYellow} 1lNm1F0ELHXjToHhMOPlbNqLEWe_6RM7XzPnj4yec6AWHXCKL ${clear}"
 
 echo -en "[${Green}✔${clear}] ${Green}Please enter your authtoken : ${clear}"
 read autho
