@@ -23,7 +23,18 @@ read
 sleep 20
 fi
 }
+hotscheck()
+{
+hotscho=$(curl -s localhost:4040/api/tunnels|grep -o name)
+if [ "$hotscho" == "name" ]; then
 
+echo -e "[${Green}✔${clear}] ${Red} Waiting for link... ${clear}"
+else
+echo -e "[${Green}✔${clear}] ${Red} Please turn on hotspot/internet ${clear}"
+echo -e "[${Green}✔${clear}] ${Red} Try again... ${clear}"
+exit
+fi
+}
 checko
 #pending
 # 1 ngrok vpn connect
@@ -33,6 +44,8 @@ echo -e "[${Green}✔${clear}] ${IYellow} Please wait... ${clear}"
 echo -e "[${Green}✔${clear}] ${IYellow} Copy paste utility loading... ${clear}"
 $HOME/ngrok tcp 5576 > /dev/null &
 sleep 7
+hotscheck
+echo
 ipo=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's#tcp://##g'|sed 's#:# #g'|awk '{print $1}')
 ip=$(host $ipo|awk '{print $NF}')
 vport=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's#tcp://##g'|sed 's#:# #g'|awk '{print $2}')
