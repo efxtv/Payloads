@@ -52,8 +52,8 @@ checko
 # 1 ngrok vpn connect
 # 1 internet connection check
 # setup to github
-echo -e "[${Green}✔${clear}] ${IYellow} Please wait... ${clear}"
-echo -e "[${Green}✔${clear}] ${IYellow} Copy paste utility loading... ${clear}"
+echo -e "[${Green}✔${clear}]${IYellow} Please wait... ${clear}"
+echo -e "[${Green}✔${clear}]${IYellow} Copy paste utility loading... ${clear}"
 $HOME/ngrok tcp 5576 > /dev/null &
 sleep 7
 hotscheck
