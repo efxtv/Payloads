@@ -120,7 +120,7 @@ curlo()
 {
 ccurl=$(which curl|grep -o curl)
 if [ "$ccurl" == "curl" ]; then
-echo -e "\t${IGreen}└──${clear} ${Green}Curl is installed  ${clear}"
+echo -e "\t${IGreen}├──${clear} ${Green}Curl is installed  ${clear}"
 else
 echo -e "\t${IGreen}├──${clear} ${Red}Curl is not installed  ${clear}"
 echo -e "\t${IGreen}└──${clear} ${Red}Install and try again${clear}"
@@ -133,7 +133,7 @@ jqo()
 {
 cjq=$(which jq|grep -o jq)
 if [ "$cjq" == "jq" ]; then
-echo -e "\t${IGreen}└──${clear} ${Green}Jq is installed  ${clear}"
+echo -e "\t${IGreen}├──${clear} ${Green}Jq is installed  ${clear}"
 else
 echo -e "\t${IGreen}├──${clear} ${Red}JQ is not installed  ${clear}"
 echo -e "\t${IGreen}└──${clear} ${Red}Install and try again${clear}"
