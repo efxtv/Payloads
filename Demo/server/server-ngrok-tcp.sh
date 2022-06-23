@@ -51,6 +51,19 @@ ipo=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's#t
 ip=$(host $ipo|awk '{print $NF}') 1>/dev/null
 vport=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's#tcp://##g'|sed 's#:# #g'|awk '{print $2}')
 
+dnnso()
+{
+cdnso=$(which host|grep -o host)
+if [ "$cdnso" == "host" ]; then
+echo -e "[${Green}✔${clear}]${IYellow} DNSutils found  ${clear}"
+else
+echo -e "[${Green}✔${clear}]${Red} DNSutils is not installed  ${clear}"
+echo -e "[${Green}✔${clear}]${Red} pkg install dnsutils ${clear}"
+exit
+fi
+}
+dnnso
+
 chcnnot()
 {
 checcc=$(host $ip|grep -o address) 1>/dev/null
