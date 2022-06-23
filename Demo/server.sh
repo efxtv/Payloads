@@ -146,24 +146,38 @@ jqo()
 {
 cjq=$(which jq|grep -o jq)
 if [ "$cjq" == "jq" ]; then
-echo -e "\t${IGreen}└──${clear} ${Green}Jq is installed  ${clear}"
+echo -e "\t${IGreen}├──${clear} ${Green}Jq is installed  ${clear}"
 else
 echo -e "\t${IGreen}├──${clear} ${Red}Jq is not installed  ${clear}"
 echo -e "\t${IGreen}└──${clear} ${Red}Install and try again${clear}"
 exit
 fi
 }
+
+dnso()
+{
+cdnso=$(which host|grep -o host)
+if [ "$cdnso" == "host" ]; then
+echo -e "\t${IGreen}└──${clear} ${Green}DNSutils is installed  ${clear}"
+else
+echo -e "\t${IGreen}├──${clear} ${Red}DNSutils is not installed  ${clear}"
+echo -e "\t${IGreen}└──${clear} ${Red}pkg install dnsutils ${clear}"
+exit
+fi
+}
 phpo
-sleep 1
+
 wgeto
-sleep 1
+
 zipo
-sleep 1
+
 unzipo
-sleep 1
+
 curlo
-sleep 1
-jqo;;
+
+jqo
+
+dnso;;
 #4 ends here
 5)
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}You pressed clean..${clear}"
