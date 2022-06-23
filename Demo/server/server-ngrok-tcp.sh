@@ -66,6 +66,8 @@ vport=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's
 
 chcnnot()
 {
+ipo=$(curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url|sed 's#tcp://##g'|sed 's#:# #g'|awk '{print $1}')
+ip=$(host $ipo|awk '{print $NF}') 
 checcc=$(host $ip|grep -o address) 
 if [ "$checcc" == "address" ]; then
 
