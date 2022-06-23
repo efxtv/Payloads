@@ -157,14 +157,14 @@ exit
 fi
 }
 if [[ -e $HOME/ngrok ]]; then
-echo -e "[${Green}✔${clear}] ${Green}Checking for Ngrok..${clear}"
+echo -e "[${Green}✔${clear}] ${Green}Checking Ngrok..${clear}"
 sleep 1
 echo -e "[${Green}✔${clear}] ${Green}Checking /Home/ngrok..${clear}"
 sleep 1
 echo -e "[${Green}✔${clear}] ${Green}Ngrok is already installed run server..${clear}"
 else
 rmngr
-echo -e "[${Green}✔${clear}] ${IYellow}Checking for dependency..${clear}"
+echo -e "[${Green}✔${clear}] ${IYellow}Checking dependency..${clear}"
 phpo
 sleep 1
 wgeto
@@ -180,4 +180,5 @@ sleep 1
 nco
 architecturee
 auth
+fi
 fi
