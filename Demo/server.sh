@@ -38,7 +38,7 @@ if [ "$ctermuxorlinux" == "termux" ]; then
 echo -e "\t${IGreen} ${clear} ${Green}Installing mversion in termux...${clear}"
 sleep 3
 curl -L -o $PWD/mversion https://raw.githubusercontent.com/efxtv/Metasploit-in-termux/main/Scripts/mversion -s;chmod +x mversion;mv mversion $PREFIX/bin/
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Mversion installed (mversion -help)${clear}
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Mversion installed (mversion -help)${clear}"
 else
 echo -e "\t${IGreen}├──${clear} ${Green}Installing mversion in Linux  ${clear}"
 echo -e "\t${IGreen}└──${clear} ${Green}Please wait...${clear}"
@@ -47,7 +47,7 @@ curl -L -o $PWD/mversion https://raw.githubusercontent.com/efxtv/Metasploit-in-t
 sudo chmod +x mversion
 sudo mv mversion /usr/bin/
 fi
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Mversion installed (mversion -help)${clear} ;;
+;;
 
 rc)
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Generating RCfile in PWD...${clear}"
