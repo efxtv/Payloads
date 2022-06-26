@@ -46,10 +46,7 @@ sleep 3
 curl -L -o $PWD/mversion https://raw.githubusercontent.com/efxtv/Metasploit-in-termux/main/Scripts/mversion -s
 sudo chmod +x mversion
 sudo mv mversion /usr/bin/
-fi
-
-
-";;
+fi;;
 
 rc)
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Generating RCfile in PWD...${clear}"
