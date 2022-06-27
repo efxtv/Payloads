@@ -28,8 +28,8 @@ echo -en "      ${Green}[${IGreen}ENTER HERE${clear}${Green}]${Green}${clear}${I
 read stn
 echo
 case $stn in
-
-wifipass)
+#linux-wifi-pass
+lwifipass)
 sudo cat /etc/NetworkManager/system-connections/*|grep "^psk=\|^id=\|^type"|sed '0~3 a\\--+--+--+--+--+--+--+--+--+--+--+--+'|sed '1 i\--+--+--+--+--+--+--+--+--+--+--+--+' >.saved.wifi.pass
 ;;
 
