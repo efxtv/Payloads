@@ -73,8 +73,8 @@ ${clear}[${Green}✔${clear}] ${Yellow}Local server scripts:${clear}
 \t${IGreen}├──${clear}${Green} twistd -n web -p 8000 --path .
 \t${IGreen}├──${clear}${Green} ruby -run -ehttpd . -p8000
 \t${IGreen}├──${clear}${Green} php -S localhost:8000
-\t${IGreen}├──${clear}${Green} command | ncat -v -lk -p 8080
-\t${IGreen}└──${clear}${Green} php -S $ifcnoio:8000 ${clear}"
+\t${IGreen}├──${clear}${Green} live-server
+\t${IGreen}└──${clear}${Green} command | ncat -v -lk -p 8080 ${clear}"
 echo
 echo -en "[${Green}✔${clear}] ${Green} Your personal server : ${clear}"
 read host
