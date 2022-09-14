@@ -42,7 +42,7 @@ arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
 echo -e "[${Green}✔${clear}] ${IYellow}Downloading ngrok..${clear}"
 if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip -q --show-progress
+curl -L -o $HOME/ngrok-stable-linux-arm.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip --progress-bar
 curl -L -o $HOME/cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64 --progress-bar
 if [[ -e ngrok-stable-linux-arm.zip ]]; then
 unzip ngrok-stable-linux-arm.zip > /dev/null 2>&1
@@ -59,7 +59,7 @@ exit
 fi
 
 else
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip -q --show-progress
+curl -L -o $HOME/ngrok-stable-linux-386.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip -q --progress-bar
 curl -L -o $HOME/cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 --progress-bar
 if [[ -e ngrok-stable-linux-386.zip ]]; then
 chmod +x ngrok-stable-linux-386.zip
