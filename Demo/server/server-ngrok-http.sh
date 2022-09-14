@@ -34,13 +34,13 @@ pkill php
 pkill ngrok 
 echo -e "
 ${clear}[${Green}✔${clear}] ${Yellow}Local server scripts:${clear}
-${IGreen}├──${clear}${Green} python -m SimpleHTTPServer 8000
-${IGreen}├──${clear}${Green} python3 -m SimpleHTTPServer 8000
-${IGreen}├──${clear}${Green} twistd -n web -p 8000 --path .
-${IGreen}├──${clear}${Green} ruby -run -ehttpd . -p8000
-${IGreen}├──${clear}${Green} php -S 0.0.0.0:8000
-${IGreen}├──${clear}${Green} command | ncat -v -lk -p 8080
-${IGreen}└──${clear}${Green} live-server ${clear}"
+   ${IGreen}├──${clear}${Green} python -m SimpleHTTPServer 8000
+   ${IGreen}├──${clear}${Green} python3 -m SimpleHTTPServer 8000
+   ${IGreen}├──${clear}${Green} twistd -n web -p 8000 --path .
+   ${IGreen}├──${clear}${Green} ruby -run -ehttpd . -p8000
+   ${IGreen}├──${clear}${Green} php -S 0.0.0.0:8000
+   ${IGreen}├──${clear}${Green} command | ncat -v -lk -p 8080
+   ${IGreen}└──${clear}${Green} live-server ${clear}"
 
 php -S localhost:5555 > /dev/null 2>&1 &
 #Starting ngrok
