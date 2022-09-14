@@ -59,7 +59,6 @@ exit
 fi
 
 else
-echo else
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip -q --show-progress
 curl -L -o $HOME/cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 --progress-bar
 if [[ -e ngrok-stable-linux-386.zip ]]; then
