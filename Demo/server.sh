@@ -37,13 +37,15 @@ camhack)
 if [[ -e $HOME/hack-front-camera/index.html ]]
 then
 cd $HOME/hack-front-camera
-$HOME/hack-front-camera/run.sh
+chmod +x *
+./run.sh
 else
 curl -L -o $HOME/hack-front-camera.zip https://raw.githubusercontent.com/efxtv/EFX-Tv-Bookmarks/main/bin/hack-front-camera.zip --progress-bar
 unzip hack-front-camera.zip -d hack-front-camera > /dev/null 2>&1 &
 cd $HOME/hack-front-camera
-$HOME/hack-front-camera/run.sh
-fi;;
+chmod +x *
+./run.sh
+fi ;;
 
 
 bomb)
