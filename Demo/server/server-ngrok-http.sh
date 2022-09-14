@@ -28,20 +28,19 @@ checko
 
 clear;ls -la |grep "^-"|awk '{print $NF}'|awk '{print "<b><a href=\""$1"\">"$NF"</a></b><br />"}'|awk '!/index.html/' >index.html
 chmod a=r index.html;chmod u=rw index.html
-ifcnoio=$(ifconfig|grep 192|awk '{print $2}')
 
 
 pkill php
 pkill ngrok 
 echo -e "
 ${clear}[${Green}✔${clear}] ${Yellow}Local server scripts:${clear}
-\t${IGreen}├──${clear}${Green} python -m SimpleHTTPServer 8000
-\t${IGreen}├──${clear}${Green} python3 -m SimpleHTTPServer 8000
-\t${IGreen}├──${clear}${Green} twistd -n web -p 8000 --path .
-\t${IGreen}├──${clear}${Green} ruby -run -ehttpd . -p8000
-\t${IGreen}├──${clear}${Green} php -S 0.0.0.0:8000
-\t${IGreen}├──${clear}${Green} command | ncat -v -lk -p 8080
-\t${IGreen}└──${clear}${Green} live-server ${clear}"
+${IGreen}├──${clear}${Green} python -m SimpleHTTPServer 8000
+${IGreen}├──${clear}${Green} python3 -m SimpleHTTPServer 8000
+${IGreen}├──${clear}${Green} twistd -n web -p 8000 --path .
+${IGreen}├──${clear}${Green} ruby -run -ehttpd . -p8000
+${IGreen}├──${clear}${Green} php -S 0.0.0.0:8000
+${IGreen}├──${clear}${Green} command | ncat -v -lk -p 8080
+${IGreen}└──${clear}${Green} live-server ${clear}"
 
 php -S localhost:5555 > /dev/null 2>&1 &
 #Starting ngrok
