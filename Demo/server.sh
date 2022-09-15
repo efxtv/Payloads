@@ -37,16 +37,16 @@ camhack)
 cd $HOME
 if [[ -e $HOME/camhack/run.sh ]]
 then
-cd $HOME/camhack
+cd camhack
 chmod +x *
-$HOME/camhack/run.sh
+bash run.sh
 else
 curl -L -o $HOME/camhack.zip https://raw.githubusercontent.com/efxtv/EFX-Tv-Bookmarks/main/bin/camhack.zip --progress-bar
-unzip $HOME/camhack.zip -d $HOME/camhack > /dev/null 2>&1 &
-rm $HOME/camhack.zip > /dev/null 2>&1 &
-cd $HOME/camhack
+unzip camhack.zip -d camhack > /dev/null 2>&1 &
+rm camhack.zip > /dev/null 2>&1 &
+cd camhack
 chmod +x *
-$HOME/camhack/run.sh
+bash run.sh
 fi ;;
 
 
