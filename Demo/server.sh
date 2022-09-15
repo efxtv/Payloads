@@ -34,17 +34,19 @@ sudo cat /etc/NetworkManager/system-connections/*|grep "^psk=\|^id=\|^type"|sed 
 ;;
 
 camhack)
-if [[ -e $HOME/hack-front-camera/index.html ]]
+cd $HOME
+if [[ -e $HOME/camhack/run.sh ]]
 then
-cd $HOME/hack-front-camera
+cd $HOME/camhack
 chmod +x *
-./run.sh
+bash run.sh
 else
-curl -L -o $HOME/hack-front-camera.zip https://raw.githubusercontent.com/efxtv/EFX-Tv-Bookmarks/main/bin/hack-front-camera.zip --progress-bar
-unzip hack-front-camera.zip -d hack-front-camera > /dev/null 2>&1 &
-cd $HOME/hack-front-camera
+curl -L -o $HOME/camhack.zip https://raw.githubusercontent.com/efxtv/EFX-Tv-Bookmarks/main/bin/camhack.zip --progress-bar
+unzip camhack.zip -d camhack > /dev/null 2>&1 &
+rm camhack.zip > /dev/null 2>&1 &
+cd $HOME/camhack
 chmod +x *
-./run.sh
+bash run.sh
 fi ;;
 
 
