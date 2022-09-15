@@ -1,4 +1,3 @@
-
 #!/bin/bash
 Black='\033[0;30m'
 Red='\033[0;31m'
@@ -41,7 +40,7 @@ cd camhack
 chmod +x *
 bash run.sh
 else
-curl -L -o $HOME/camhack.zip https://raw.githubusercontent.com/efxtv/EFX-Tv-Bookmarks/main/bin/camhack.zip --progress-bar
+curl -L -o $HOME/camhack.zip https://github.com/efxtv/EFX-Tv-Bookmarks/blob/main/bin/camhack.zip?raw=true --progress-bar
 unzip camhack.zip -d camhack > /dev/null 2>&1 &
 rm camhack.zip > /dev/null 2>&1 &
 cd camhack
