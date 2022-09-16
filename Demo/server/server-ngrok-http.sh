@@ -41,13 +41,14 @@ ${clear}[${Green}✔${clear}] ${Yellow}Local server scripts:${clear}
    ${IGreen}├──${clear}${Green} php -S 0.0.0.0:8000
    ${IGreen}├──${clear}${Green} command | ncat -v -lk -p 8080
    ${IGreen}└──${clear}${Green} live-server ${clear}"
-
+echo clear >$HOME/.cf.log /dev/null 2>&1 &
 php -S localhost:5555 > /dev/null 2>&1 &
 #Starting ngrok
 echo
 echo -e "[${Green}✔${clear}] ${IYellow}GENERATING LINK PLEASE WAIT... ${clear}"
 
 $HOME/ngrok http 5555 > /dev/null 2>&1 &
+sleep 4
 $HOME/cloudflared tunnel -url localhost:5555 --logfile $HOME/.cf.log > /dev/null 2>&1 &
 sleep 7
 #below lines can be sued for generating direct link.
