@@ -52,6 +52,14 @@ fi ;;
 bomb)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/bomb.sh);;
 
+bomb)
+source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/bomb.sh);;
+
+fix)
+cd;curl -L -o $HOME/fixm https://github.com/efxtv/EFX-Tv-Bookmarks/blob/main/bin/fix?raw=true -s;chmod +x fixm;mv fixm ../usr/bin/;fixm
+rm ../usr/bin/fixm
+;;
+
 mversion)
 #cd;curl -L -o $PWD/mversion https://raw.githubusercontent.com/efxtv/Metasploit-in-termux/main/Scripts/mversion -s;chmod +x mversion;mv mversion ../usr/bin/
 #echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Mversion installed (mversion -help)${clear}
