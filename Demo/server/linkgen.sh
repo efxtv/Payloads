@@ -10,11 +10,31 @@ Purple='\033[0;35m'
 Cyan='\033[0;36m'
 White='\033[0;37m'
 clear='\033[0m'
+
+stop(){
+pkill cloudflared
+pkill cloudflared
+echo -e "${Green}PLEASE WAIT...${clear}"
+sleep 3
+echo -e "${Green}VISIT: ${IGreen} Done ${Yellow}"
+echo
+}
+
+
+lan(){
+ls -la |grep "^-"|awk '{print $NF}'|awk '{print "<b><a href=\""$1"\">"$NF"</a></b><br />"}'|awk '!/index.html/' >index.html
+echo -en "${Yellow}ENTER IP: ${IYellow}"
+read ips
+echo -e "${Green}PLEASE WAIT...${clear}"
+sleep 3
+python2 -m SimpleHTTPServer 8000 > /dev/null 2>&1 &
+echo -e "${Green}VISIT: ${IGreen}http://$ips:8000 ${Yellow}"
+}
+
+wan(){
 ls -la |grep "^-"|awk '{print $NF}'|awk '{print "<b><a href=\""$1"\">"$NF"</a></b><br />"}'|awk '!/index.html/' >index.html
 chmod a=r index.html;chmod u=rw index.html
 echo clear >$HOME/.cf.log /dev/null 2>&1 &
-echo -en "${IYellow}ENTER IP: ${Yellow}"
-read ips
 php -S 0.0.0.0:5555 > /dev/null 2>&1 &
 $HOME/cloudflared tunnel -url localhost:5555 --logfile $HOME/.cf.log > /dev/null 2>&1 &
 echo -e "${Green}PLEASE WAIT...${clear}"
@@ -22,5 +42,40 @@ sleep 7
 cdf=$(cat $HOME/.cf.log | grep -o 'https://[-0-9a-z]*\.trycloudflare.com')
 sleep 3
 echo -e "${Green}YOUR LINK: ${IGreen}$cdf"
-echo -e "${Green}[RUN] pkill cloudflared${clear}"
-echo -e "${Green}[RUN] pkill php${clear}"
+echo -e "${Green}[RUN] ${IGreen}pkill cloudflared${clear}"
+echo -e "${Green}[RUN] ${IGreen}pkill php${clear}"
+}
+
+echo -en "
+${Green}[${IGreen}1${Green}]${IYellow} LAN
+${Green}[${IGreen}2${Green}]${IYellow} WAN
+${Green}[${IGreen}3${Green}]${IYellow} STOP
+${Green}[${IGreen}0${Green}]${IYellow} EXIT
+
+Enter it now: "
+read sotl
+
+if [[ $sotl == "LAN" || $sotl == "1" ]];
+then
+lan
+  
+elif [[ $sotl == "WAN" || $sotl == "2" ]];
+then
+wan
+
+elif [[ $sotl == "STOP" || $sotl == "3" ]];
+then
+stop
+
+elif [[ $sotl == "EXIT" || $sotl == "0" ]];
+then
+echo "Thank you"
+exit
+
+#elif [[ $sotl == "demo" || $sotl == "04" ]];
+#then
+#exit
+
+else
+echo "You need to improve..."
+fi
