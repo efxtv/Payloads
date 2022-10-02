@@ -58,7 +58,6 @@ echo -e "${Green}PLEASE WAIT...${clear}"
 sleep 3
 chmod a=r index.html;chmod u=rw index.html
 echo clear >$HOME/.cf.log /dev/null 2>&1 &
-php -S $ips:$pos > /dev/null 2>&1 &
 $HOME/cloudflared tunnel -url $ips:$pos --logfile $HOME/.cf.log > /dev/null 2>&1 &
 echo -e "${Green}PLEASE WAIT...${clear}"
 sleep 7
