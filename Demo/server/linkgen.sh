@@ -46,10 +46,35 @@ echo -e "${Green}[RUN] ${IGreen}pkill cloudflared${clear}"
 echo -e "${Green}[RUN] ${IGreen}pkill php${clear}"
 }
 
+
+
+cus(){
+ls -la |grep "^-"|awk '{print $NF}'|awk '{print "<b><a href=\""$1"\">"$NF"</a></b><br />"}'|awk '!/index.html/' >index.html
+echo -en "${Yellow}ENTER IP: ${IYellow}"
+read ips
+echo -en "${Yellow}ENTER port: ${IYellow}"
+read pos
+echo -e "${Green}PLEASE WAIT...${clear}"
+sleep 3
+chmod a=r index.html;chmod u=rw index.html
+echo clear >$HOME/.cf.log /dev/null 2>&1 &
+php -S $ips:$pos > /dev/null 2>&1 &
+$HOME/cloudflared tunnel -url $ips:$pos --logfile $HOME/.cf.log > /dev/null 2>&1 &
+echo -e "${Green}PLEASE WAIT...${clear}"
+sleep 7
+cdf=$(cat $HOME/.cf.log | grep -o 'https://[-0-9a-z]*\.trycloudflare.com')
+sleep 3
+echo -e "${Green}YOUR LINK: ${IGreen}$cdf"
+echo -e "${Green}[RUN] ${IGreen}pkill cloudflared${clear}"
+echo -e "${Green}[RUN] ${IGreen}pkill php${clear}"
+}
+
+
 echo -en "
 ${Green}[${IGreen}1${Green}]${IYellow} LAN
 ${Green}[${IGreen}2${Green}]${IYellow} WAN
 ${Green}[${IGreen}3${Green}]${IYellow} STOP
+${Green}[${IGreen}4${Green}]${IYellow} CUSTOM
 ${Green}[${IGreen}0${Green}]${IYellow} EXIT
 
 Enter it now: "
@@ -66,6 +91,10 @@ wan
 elif [[ $sotl == "STOP" || $sotl == "3" ]];
 then
 stop
+
+elif [[ $sotl == "CUSTOM" || $sotl == "4" ]];
+then
+cus
 
 elif [[ $sotl == "EXIT" || $sotl == "0" ]];
 then
