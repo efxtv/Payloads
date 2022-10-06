@@ -70,13 +70,18 @@ echo -e "${Green}[RUN] ${IGreen}pkill php${clear}"
 
 nomod(){
 #ls -la |grep "^-"|awk '{print $NF}'|awk '{print "<b><a href=\""$1"\">"$NF"</a></b><br />"}'|awk '!/index.html/' >index.html
-ls -la |grep "^-"|awk '{print $NF}'|awk '{print "<b><a href=\""$1"\">"$NF"</a></b><br />"}'|awk '!/index.html/' >index.html
-echo -en "${Yellow}ENTER IP: ${IYellow}"
-read ips
+#chmod a=r index.html;chmod u=rw index.html
+echo clear >$HOME/.cf.log /dev/null 2>&1 &
+php -S 0.0.0.0:5555 > /dev/null 2>&1 &
+$HOME/cloudflared tunnel -url localhost:5555 --logfile $HOME/.cf.log > /dev/null 2>&1 &
 echo -e "${Green}PLEASE WAIT...${clear}"
+sleep 7
+cdf=$(cat $HOME/.cf.log | grep -o 'https://[-0-9a-z]*\.trycloudflare.com')
 sleep 3
-python2 -m SimpleHTTPServer 8000 > /dev/null 2>&1 &
-echo -e "${Green}VISIT: ${IGreen}http://$ips:8000 ${Yellow}"
+echo -e "${Green}YOUR LINK: ${IGreen}$cdf"
+echo "http://0.0.0.0:5555"
+echo -e "${Green}[RUN] ${IGreen}pkill cloudflared${clear}"
+echo -e "${Green}[RUN] ${IGreen}pkill php${clear}"
 }
 
 
