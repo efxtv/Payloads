@@ -23,7 +23,7 @@ echo -e "
   ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}clean
   ${IGreen}└─▶ [${IYellow}0${clear}${IGreen}] ${Green}exit"
 echo  
-echo -en "      ${Green}[${IGreen}ENTER HERE${clear}${Green}]${Green}${clear}${IGreen} ▶ ${IYellow} "
+echo -en "      ${Green}[${IGreen}ENTER HERE${clear}${Green}]${Green}${clear}${IGreen} ▶ ${clear} "
 read stn
 echo
 case $stn in
