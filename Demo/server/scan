@@ -14,11 +14,11 @@ checks()
 {
 if [[ -e $HOME/.sca.txt ]]
 then
-echo -e "[${Green}✔${clear}] ${IGreen}Checking...${clear}"
+echo -e "${clear}[${Green}✔${clear}] ${IGreen}Checking...${clear}"
 echo -e "[${Green}✔${clear}] ${IGreen}Router address found..${clear}"
 else
-echo -e "[${Green}✔${clear}] ${IGreen}Router address not found...${clear}"
-echo -en "[${Green}✔${clear}] ${IGreen}Enter your router address: ${clear}"
+echo -e "${clear}[${Green}✔${clear}] ${IGreen}Router address not found...${clear}"
+echo -en "${clear}[${Green}✔${clear}] ${IGreen}Enter your router address: ${clear}"
 read rou
 saved=$(echo -e "$rou")
 echo -e "$saved" >$HOME/.sca.txt
