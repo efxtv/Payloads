@@ -74,7 +74,7 @@ rm ../usr/bin/fixm;;
 
 mversion)
 #cd;curl -L -o $PWD/mversion https://raw.githubusercontent.com/efxtv/Metasploit-in-termux/main/Scripts/mversion -s;chmod +x mversion;mv mversion ../usr/bin/
-#echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Mversion installed (mversion -help)${clear}
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Mversion installed (mversion -help)${clear}"
 ctermuxorlinux=$(which bash|grep -o termux)
 if [ "$ctermuxorlinux" == "termux" ]; then
 echo -e "\t${IGreen} ${clear} ${Green}Installing mversion in termux...${clear}"
