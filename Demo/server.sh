@@ -45,7 +45,7 @@ echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Make the changes? [${
 curl -L -o $PREFIX/etc/bash.bashrc https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh --progress-bar
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Done...${clear}"
 else
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}You are not the termux user${clear}
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}You are not the termux user${clear}"
 fi ;;
 
 camhack)
