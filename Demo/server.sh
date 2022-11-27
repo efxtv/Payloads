@@ -42,6 +42,7 @@ bashrc)
 if [[ -e $PREFIX/etc/bash.bashrc ]]
 then
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Make the changes? [${Red}ctrl c to cancel${clear}${IYellow}]${clear}"
+read 
 curl -L -o $PREFIX/etc/bash.bashrc https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/rc/bash.bashrc --progress-bar
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Done...${clear}"
 else
