@@ -22,13 +22,7 @@ PROMPT_DIRTRIM=2
 PS1='\[\e[0;31m\]\[\e[0;31m\]┌──(\[\e[0;91m\]EFX$(RANDOM_EMOJI)Tv\[\e[0;31m\])\[\e[0;31m\]-\[\e[0;31m\]\[\e[0;31m\][\e[0m\]\[\e[0;33m\]\w\[\e[0m\]\[\e[0;31m\]]\[\e[0m\]\[\[\e[0m\]\n\[\e[0;31m\]└\[\e[0;31m\]●\[\e[0;37m\]●\[\e[0;32m\]● \[\e[0m\]'
 }
 
-#mms ps1 starts
 
-fro=$(free -h|grep Mem|awk '{print $4}')
-mmo=$(ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -10|grep -v PID|awk '{print $NF" "$1}'|sort -rk3|sed 's#^#MMS #g'|head -1)
-
-PS1='\[\e[0;31m\]\[\e[0;31m\]┌──▶(\[\e[0;91m\]EFX Tv\[\e[0;31m\])\[\e[0;31m\]──\[\e[0;31m\]\[\e[0;31m\][\e[0m\]\[\e[0;33m\]\W\[\e[0m\]\[\e[0;31m\]]\[\e[0m\]\[\[\e[0m\]\[\e[0;31m\]──\[\e[0;31m\]\[\e[0;31m\][\e[0m\]\[\e[0;33m$mmo $fro\[\e[0m\]\[\e[0;31m\]]\[\e[0m\]\[\[\e[0m\]\n\[\e[0;31m\]└\[\e[0;31m\]●\[\e[0;37m\]●\[\e[0;32m\]● \[\e[0m\]'
-#mms ps1 ends
 # Handles nonexistent commands.
 # If user has entered command which invokes non-available
 # utility, command-not-found will give a package suggestions.
@@ -66,6 +60,13 @@ PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]┌[✔]"; else echo "\[\033[01;3
 }
 ip(){
 ifconfig|grep inet|sed 's#inet 127.0.0.1#LOCAL 127.0.0.1#g;s#inet 192#BEIDG 192#g;s#inet#OTHER#g'|awk '{print "\033[0;32m"$1":\033[0m","\t"$2,"\t"$4}'
+}
+mms(){
+fro=$(free -h|grep Mem|awk '{print $4}')
+mmo=$(ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -10|grep -v PID|awk '{print $NF" "$1}'|sort -rk3|sed 's#^#MMS #g'|head -1)
+
+PS1='\[\e[0;31m\]\[\e[0;31m\]┌──▶(\[\e[0;91m\]EFX Tv\[\e[0;31m\])\[\e[0;31m\]──\[\e[0;31m\]\[\e[0;31m\][\e[0m\]\[\e[0;33m\]\W\[\e[0m\]\[\e[0;31m\]]\[\e[0m\]\[\[\e[0m\]\[\e[0;31m\]──\[\e[0;31m\]\[\e[0;31m\][\e[0m\]\[\e[0;33m$mmo $fro\[\e[0m\]\[\e[0;31m\]]\[\e[0m\]\[\[\e[0m\]\n\[\e[0;31m\]└\[\e[0;31m\]●\[\e[0;37m\]●\[\e[0;32m\]● \[\e[0m\]'
+#mms ps1 ends
 }
 
 alias delete='rm -rf'
