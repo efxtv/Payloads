@@ -42,7 +42,8 @@ bashrc)
 if [[ -e $PREFIX/etc/bash.bashrc ]]
 then
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Make the changes? [${Red}ctrl c to cancel${clear}${IYellow}]${clear}"
-read 
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Hit enter key to start.${clear}"
+read null
 curl -L -o $PREFIX/etc/bash.bashrc https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/rc/bash.bashrc --progress-bar
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Adding extra keys...${clear}"
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Please wait...${clear}"
