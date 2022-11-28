@@ -48,6 +48,8 @@ curl -L -o $PREFIX/etc/bash.bashrc https://raw.githubusercontent.com/efxtv/Paylo
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Adding extra keys...${clear}"
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Please wait...${clear}"
 sleep 3
+curl -L -o $HOME/.termux/colors.properties https://raw.githubusercontent.com/efxtv/Kali-LInux-Terminal-In-Termux/main/colors.properties --progress-bar
+sleeo 3
 curl -L -o $HOME/.termux/termux.properties https://raw.githubusercontent.com/efxtv/Kali-LInux-Terminal-In-Termux/main/termux.properties --progress-bar
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Done...${clear}"
 else
