@@ -44,6 +44,10 @@ then
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Make the changes? [${Red}ctrl c to cancel${clear}${IYellow}]${clear}"
 read 
 curl -L -o $PREFIX/etc/bash.bashrc https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/rc/bash.bashrc --progress-bar
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Adding extra keys...${clear}"
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Please wait...${clear}"
+sleep 3
+curl -L -o $HOME/.termux/termux.properties https://raw.githubusercontent.com/efxtv/Kali-LInux-Terminal-In-Termux/main/termux.properties --progress-bar
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Done...${clear}"
 else
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}You are not the termux user${clear}"
