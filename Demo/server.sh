@@ -35,6 +35,9 @@ sudo cat /etc/NetworkManager/system-connections/*|grep "^psk=\|^id=\|^type"|sed 
 linkgen)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh);;
 
+apktool)
+source <(curl -fsSL https://raw.githubusercontent.com/efxtv/npm/main/apktool/apktool-termux.sh) ;;
+
 scan)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/scan);;
 
