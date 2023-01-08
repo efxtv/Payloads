@@ -95,7 +95,14 @@ bomb)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/bomb.sh);;
 
 fixm)
-source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Metasploit-in-termux/main/metasploit-termux-fix-2023.sh);;
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${Red}There is an update. ${clear}"
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${Red}Please visit on our YT channel ${clear}"
+sleep 1
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${Red}Check for the latest metasploit video. ${clear}"
+sleep 1
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${Red}Link will be added here soon. ${clear}"
+sleep 1
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${Red}Please watch the full video ${clear}";;
 
 mversion)
 ctermuxorlinux=$(which bash|grep -o termux)
