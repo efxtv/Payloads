@@ -33,9 +33,6 @@ if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ]; then
 fi
 alias del='rm -rf'
 alias update='pkg update && pkg upgrade --yes'
-alias sdcard='cd /sdcard'
-alias telegram='cd /sdcard/Download/Telegram'
-alias downloads='cd /sdcard/Download'
 alias ifconfig='ifconfig 2>/dev/null'
 alias ubuntu='/data/data/com.termux/files/home/start-ubuntu20.sh'
 alias cd1="cd .."
@@ -45,8 +42,11 @@ alias cd4="cd ../../../.."
 alias cd5="cd ../../../../.."
 alias usr='cd /data/data/com.termux/files/usr'
 alias opt="cd $PREFIX/opt"
-alias etc="cd $PWD/etc"
-alias tmp="cd $PWD/tmp"
+alias etc="cd $PREFIX/etc"
+alias tmp="cd $PREFIX/tmp"
+alias sdcard='cd /sdcard'
+alias telegram='cd /sdcard/Download/Telegram'
+alias download='cd /sdcard/Download'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -59,8 +59,8 @@ alias start='nh kex &'
 alias stop='nh kex stop'
 
 playgraound(){
-mkdir -p $PREFIX/tmp/efx 2>/dev/null
-cd $PREFIX/opt/efx
+mkdir $PREFIX/tmp/efx 2>/dev/null
+cd $PREFIX/tmp/efx
 }
 
 custom(){
