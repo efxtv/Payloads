@@ -59,6 +59,7 @@ echo -e "
   ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}mversion
   ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}clean
   ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}check
+  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}color
   ${IGreen}└─▶ [${IYellow}0${clear}${IGreen}] ${Green}authtoken"
 echo;;
 
@@ -155,6 +156,24 @@ sleep 3
 curl -L -o $PWD/mversion https://raw.githubusercontent.com/efxtv/Metasploit-in-termux/main/Scripts/mversion -s
 sudo chmod +x mversion
 sudo mv mversion /usr/bin/
+fi ;;
+
+
+color)
+ctermuxorlinux=$(which bash|grep -o termux)
+if [ "$ctermuxorlinux" == "termux" ]; then
+echo -e "\t${IGreen} ${clear} ${Green}Installing color in termux...${clear}"
+sleep 3
+curl -L -o $PREFIX/bin/color https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/color -s;chmod +x $PREFIX/bin/color
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Color installed (color -h)${clear}"
+else
+echo -e "\t${IGreen}├──${clear} ${Green}Installing Color in Linux  ${clear}"
+echo -e "\t${IGreen}└──${clear} ${Green}Please wait...${clear}"
+sleep 3
+echo -e "\t${IGreen}└──${clear} ${Green}Executing sudo chmod +x color${clear}"
+curl -L -o $PWD/color https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/color -s
+sudo chmod +x color
+sudo mv color /usr/bin/
 fi ;;
 
 rc)
