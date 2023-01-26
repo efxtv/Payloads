@@ -108,6 +108,10 @@ server(){
 python2 -m SimpleHTTPServer 8000 2>/dev/null
 }
 
+open(){
+termux-open-url https://$1
+}
+
 server2(){
 ls -la |grep "^-"|awk '{print $NF}'|awk '{print "<b><a href=\""$1"\">"$NF"</a></b><br />"}'|awk '!/index.html/' >index.html
 ip
