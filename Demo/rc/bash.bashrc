@@ -31,16 +31,22 @@ if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ]; then
 		/data/data/com.termux/files/usr/libexec/termux/command-not-found "$1"
 	}
 fi
+alias del='rm -rf'
+alias update='pkg update && pkg upgrade --yes'
 alias sdcard='cd /sdcard'
 alias telegram='cd /sdcard/Download/Telegram'
 alias downloads='cd /sdcard/Download'
 alias ifconfig='ifconfig 2>/dev/null'
-alias usr='cd /data/data/com.termux/files/usr'
+alias ubuntu='/data/data/com.termux/files/home/start-ubuntu20.sh'
 alias cd1="cd .."
 alias cd2="cd ../.."
 alias cd3="cd ../../.."
 alias cd4="cd ../../../.."
 alias cd5="cd ../../../../.."
+alias usr='cd /data/data/com.termux/files/usr'
+alias opt="cd $PREFIX/opt"
+alias etc="cd $PWD/etc"
+alias tmp="cd $PWD/tmp"
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -49,18 +55,35 @@ alias tab='column -t'
 alias reload='termux-reload-settings'
 alias remove='pkg remove'
 alias i='pkg install'
+alias start='nh kex &'
+alias stop='nh kex stop'
+
+playgraound(){
+mkdir -p $PREFIX/tmp/efx 2>/dev/null
+cd $PREFIX/opt/efx
+}
+
+custom(){
+#YOU CAN CHANGE THIS ACCORDING TO YOUR NEED
+PS1='\[\e[0;31m\]\[\e[0;32m\]┌──(\[\e[0;36m\]ROOT💀️EFX\[\e[0;31m\]\[\e[0;32m\])\[\e[0;31m\]-\[\e[0;31m\]\[\e[0;32m\][\e[0m\]\[\e[0;37m\]\w\[\e[0m\]\[\e[0;32m\]]\[\e[0m\]\[\[\e[0m\]\n\[\e[0;32m\]└─$\[\e[0m\]'
+}
+
 kali(){
 PS1='\[\e[0;31m\]\[\e[0;32m\]┌──(\[\e[0;36m\]Kali💀️Linux\[\e[0;31m\]\[\e[0;32m\])\[\e[0;31m\]-\[\e[0;31m\]\[\e[0;32m\][\e[0m\]\[\e[0;37m\]\w\[\e[0m\]\[\e[0;32m\]]\[\e[0m\]\[\[\e[0m\]\n\[\e[0;32m\]└─$\[\e[0m\]'
 }
+
 su(){
 PS1='\[\e[1;32m\](\[\e[1;31m\]root@127.0.0.1\[\e[33;0m\]\[\e[1;32m\])─────┐\n ┌───────────────────┘ \n ├[\[\e[1;33m\]\w\[\e[1;32m\]]\n \[\e[1;32m\]└─▶\[\e[0m\] '
 }
+
 su2(){
 PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]┌[✔]"; else echo "\[\033[01;32m\]┌[\[\033[01;31m\]✘\[\033[01;32m\]]"; fi`\[\033[01;32m\]─(\[\033[01;31m\]root\[\033[01;32m\])┐\[\033[01;32m\] \n└──────────┘\[\033[35m\]$(__git_ps1 " %s") \[\033[01;32m\]\n  ┌[\w]\n  \[\033[01;32m\]└───────$\[\033[00m\]'
 }
+
 ip(){
 ifconfig|grep inet|sed 's#inet 127.0.0.1#LOCAL 127.0.0.1#g;s#inet 192#BEIDG 192#g;s#inet#OTHER#g'|awk '{print "\033[0;32m"$1":\033[0m","\t"$2,"\t"$4}'
 }
+
 mms(){
 fro=$(free -h|grep Mem|awk '{print $4}')
 mmo=$(ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -10|grep -v PID|awk '{print $NF" "$1}'|sort -rk3|sed 's#^#MMS #g'|head -1)
@@ -68,10 +91,6 @@ mmo=$(ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -10|grep -v PID|awk '{pr
 PS1='\[\e[0;31m\]\[\e[0;31m\]┌──▶(\[\e[0;91m\]EFX Tv\[\e[0;31m\])\[\e[0;31m\]──\[\e[0;31m\]\[\e[0;31m\][\e[0m\]\[\e[0;33m\]\W\[\e[0m\]\[\e[0;31m\]]\[\e[0m\]\[\[\e[0m\]\[\e[0;31m\]──\[\e[0;31m\]\[\e[0;31m\][\e[0m\]\[\e[0;33m$mmo $fro\[\e[0m\]\[\e[0;31m\]]\[\e[0m\]\[\[\e[0m\]\n\[\e[0;31m\]└\[\e[0;31m\]●\[\e[0;37m\]●\[\e[0;32m\]● \[\e[0m\]'
 #mms ps1 ends
 }
-
-alias delete='rm -rf'
-alias update='pkg update && pkg upgrade --yes'
-
 
 lt(){
 ls -lth|awk '{print "\033[0;32m"$1"\033[0m"" "$7"-"$6"-("$8")",$5,$NF}'|sed -e "1d"|sed "1i $(tput setaf 8)PERMISSIONS MODIFIED K/M FILE-NAME$(tput sgr0)"|column -t
@@ -82,7 +101,7 @@ ls -lath|awk '{print "\033[0;32m"$1"\033[0m"" "$7"-"$6"-("$8")",$5,$NF}'|sed -e 
 }
 
 absolute(){
-echo -e "$PWD/$1"
+readlink -f $1
 }
 
 alias code='pv -qL 6'
@@ -95,15 +114,8 @@ center()
 echo -e "$1"|sed  -e :a -e "s/^.\{1,$(tput cols)\}$/ & /;ta"
 }
 
-alias start='nh kex &'
-alias stop='nh kex stop'
 
-pcurl (){
-curl --socks5 127.0.0.1:9050 https://check.torproject.org |& grep -Po "(?<=strong>)[\d\.]+(?=</strong)"|sed 's/^/IP Changed with────────────────────█──<><><>───[ /g'|sed 's/$/ ]/g'
-curl --socks5 127.0.0.1:9050 $1 --output $2
-}
 
-alias ubuntu='/data/data/com.termux/files/home/start-ubuntu20.sh'
 server(){
 python2 -m SimpleHTTPServer 8000 2>/dev/null
 }
