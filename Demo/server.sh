@@ -19,10 +19,10 @@ echo -e "
   ├──${IGreen} [${IYellow}1${clear}${IGreen}] ${Green}ngrok http
   ${IGreen}├── [${IYellow}2${clear}${IGreen}] ${Green}ngrok tcp
   ${IGreen}├── [${IYellow}3${clear}${IGreen}] ${Green}portmap tcp
-  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}mversion
+  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}mversion
   ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}clean
-  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}check
-  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}more
+  ${IGreen}├── [${IYellow}6${clear}${IGreen}] ${Green}check
+  ${IGreen}├── [${IYellow}7${clear}${IGreen}] ${Green}more
   ${IGreen}└─▶ [${IYellow}0${clear}${IGreen}] ${Green}exit"
 echo  
 echo -en "      ${Green}[${IGreen}ENTER HERE${clear}${Green}]${Green}${clear}${IGreen} ▶ ${clear} "
@@ -41,26 +41,26 @@ echo -e "
       │▶${clear}${IYellow} SERVER FX${clear}${IGreen} │
       └─┬═════════─┘
   ┌─────┘
-  ├──${IGreen} [${IYellow}1${clear}${IGreen}] ${Green}lwifipass
-  ${IGreen}├── [${IYellow}2${clear}${IGreen}] ${Green}linkgen
-  ${IGreen}├── [${IYellow}3${clear}${IGreen}] ${Green}htmllink
-  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}apktool
-  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}scan
-  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}bashrc
-  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}remote
-  ${IGreen}├── [${IYellow}2${clear}${IGreen}] ${Green}camhack
-  ${IGreen}├── [${IYellow}3${clear}${IGreen}] ${Green}bomb
-  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}fixm
-  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}mversion
-  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}rc
-  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}html
-  ${IGreen}├── [${IYellow}2${clear}${IGreen}] ${Green}ngrok tcp
-  ${IGreen}├── [${IYellow}3${clear}${IGreen}] ${Green}portmap tcp
-  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}mversion
-  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}clean
-  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}check
-  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}color
-  ${IGreen}└─▶ [${IYellow}0${clear}${IGreen}] ${Green}authtoken"
+  ├──${IGreen} [${IYellow}01${clear}${IGreen}] ${Green}lwifipass
+  ${IGreen}├── [${IYellow}02${clear}${IGreen}] ${Green}linkgen
+  ${IGreen}├── [${IYellow}03${clear}${IGreen}] ${Green}htmllink
+  ${IGreen}├── [${IYellow}04${clear}${IGreen}] ${Green}apktool
+  ${IGreen}├── [${IYellow}05${clear}${IGreen}] ${Green}scan
+  ${IGreen}├── [${IYellow}06${clear}${IGreen}] ${Green}bashrc
+  ${IGreen}├── [${IYellow}07${clear}${IGreen}] ${Green}remote
+  ${IGreen}├── [${IYellow}08${clear}${IGreen}] ${Green}camhack
+  ${IGreen}├── [${IYellow}09${clear}${IGreen}] ${Green}bomb
+  ${IGreen}├── [${IYellow}10${clear}${IGreen}] ${Green}fixm
+  ${IGreen}├── [${IYellow}11${clear}${IGreen}] ${Green}mversion
+  ${IGreen}├── [${IYellow}12${clear}${IGreen}] ${Green}rc
+  ${IGreen}├── [${IYellow}13${clear}${IGreen}] ${Green}html
+  ${IGreen}├── [${IYellow}14${clear}${IGreen}] ${Green}ngrok tcp
+  ${IGreen}├── [${IYellow}15${clear}${IGreen}] ${Green}portmap tcp
+  ${IGreen}├── [${IYellow}16${clear}${IGreen}] ${Green}mversion
+  ${IGreen}├── [${IYellow}17${clear}${IGreen}] ${Green}clean
+  ${IGreen}├── [${IYellow}18${clear}${IGreen}] ${Green}check
+  ${IGreen}├── [${IYellow}19${clear}${IGreen}] ${Green}color
+  ${IGreen}└─▶ [${IYellow}20${clear}${IGreen}] ${Green}authtoken"
 echo;;
 
 linkgen)
