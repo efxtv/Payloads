@@ -58,7 +58,7 @@ alias i='pkg install'
 alias start='nh kex &'
 alias stop='nh kex stop'
 
-playgraound(){
+playground(){
 mkdir $PREFIX/tmp/efx 2>/dev/null
 cd $PREFIX/tmp/efx
 }
