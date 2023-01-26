@@ -1,0 +1,750 @@
+Pink='#FFC0CB'
+LightPink='#FFB6C1'
+HotPink='#FF69B4'
+DeepPink='#FF1493'
+PaleVioletRed='#DB7093'
+MediumVioletRed='#C71585'
+Lavender='#E6E6FA'
+Thistle='#D8BFD8'
+Plum='#DDA0DD'
+Orchid='#DA70D6'
+Violet='#EE82EE'
+Fuchsia='#FF00FF'
+Magenta='#FF00FF'
+MediumOrchid='#BA55D3'
+DarkOrchid='#9932CC'
+DarkViolet='#9400D3'
+BlueViolet='#8A2BE2'
+DarkMagenta='#8B008B'
+Purple='#800080'
+MediumPurple='#9370DB'
+MediumSlateBlue='#7B68EE'
+SlateBlue='#6A5ACD'
+DarkSlateBlue='#483D8B'
+RebeccaPurple='#663399'
+Indigo='#4B0082'
+LightSalmon='#FFA07A'
+Salmon='#FA8072'
+DarkSalmon='#E9967A'
+LightCoral='#F08080'
+IndianRed='#CD5C5C'
+Crimson='#DC143C'
+Red='#FF0000'
+FireBrick='#B22222'
+DarkRed='#8B0000'
+Orange='#FFA500'
+DarkOrange='#FF8C00'
+Coral='#FF7F50'
+Tomato='#FF6347'
+OrangeRed='#FF4500'
+Gold='#FFD700'
+Yellow='#FFFF00'
+LightYellow='#FFFFE0'
+LemonChiffon='#FFFACD'
+LightGoldenRodYellow='#FAFAD2'
+PapayaWhip='#FFEFD5'
+Moccasin='#FFE4B5'
+PeachPuff='#FFDAB9'
+PaleGoldenRod='#EEE8AA'
+Khaki='#F0E68C'
+DarkKhaki='#BDB76B'
+GreenYellow='#ADFF2F'
+Chartreuse='#7FFF00'
+LawnGreen='#7CFC00'
+Lime='#00FF00'
+LimeGreen='#32CD32'
+PaleGreen='#98FB98'
+LightGreen='#90EE90'
+MediumSpringGreen='#00FA9A'
+SpringGreen='#00FF7F'
+MediumSeaGreen='#3CB371'
+SeaGreen='#2E8B57'
+ForestGreen='#228B22'
+Green='#008000'
+DarkGreen='#006400'
+YellowGreen='#9ACD32'
+OliveDrab='#6B8E23'
+DarkOliveGreen='#556B2F'
+MediumAquaMarine='#66CDAA'
+DarkSeaGreen='#8FBC8F'
+LightSeaGreen='#20B2AA'
+DarkCyan='#008B8B'
+Teal='#008080'
+Aqua='#00FFFF'
+Cyan='#00FFFF'
+LightCyan='#E0FFFF'
+PaleTurquoise='#AFEEEE'
+Aquamarine='#7FFFD4'
+Turquoise='#40E0D0'
+MediumTurquoise='#48D1CC'
+DarkTurquoise='#00CED1'
+CadetBlue='#5F9EA0'
+SteelBlue='#4682B4'
+LightSteelBlue='#B0C4DE'
+LightBlue='#ADD8E6'
+PowderBlue='#B0E0E6'
+LightSkyBlue='#87CEFA'
+SkyBlue='#87CEEB'
+CornflowerBlue='#6495ED'
+DeepSkyBlue='#00BFFF'
+DodgerBlue='#1E90FF'
+RoyalBlue='#4169E1'
+Blue='#0000FF'
+MediumBlue='#0000CD'
+DarkBlue='#00008B'
+Navy='#000080'
+MidnightBlue='#191970'
+Cornsilk='#FFF8DC'
+BlanchedAlmond='#FFEBCD'
+Bisque='#FFE4C4'
+NavajoWhite='#FFDEAD'
+Wheat='#F5DEB3'
+BurlyWood='#DEB887'
+Tan='#D2B48C'
+RosyBrown='#BC8F8F'
+SandyBrown='#F4A460'
+GoldenRod='#DAA520'
+DarkGoldenRod='#B8860B'
+Peru='#CD853F'
+Chocolate='#D2691E'
+Olive='#808000'
+SaddleBrown='#8B4513'
+Sienna='#A0522D'
+Brown='#A52A2A'
+Maroon='#800000'
+White='#FFFFFF'
+Snow='#FFFAFA'
+HoneyDew='#F0FFF0'
+MintCream='#F5FFFA'
+Azure='#F0FFFF'
+AliceBlue='#F0F8FF'
+GhostWhite='#F8F8FF'
+WhiteSmoke='#F5F5F5'
+SeaShell='#FFF5EE'
+Beige='#F5F5DC'
+OldLace='#FDF5E6'
+FloralWhite='#FFFAF0'
+Ivory='#FFFFF0'
+AntiqueWhite='#FAEBD7'
+Linen='#FAF0E6'
+LavenderBlush='#FFF0F5'
+MistyRose='#FFE4E1'
+Gainsboro='#DCDCDC'
+LightGray='#D3D3D3'
+Silver='#C0C0C0'
+DarkGray='#A9A9A9'
+DimGray='#696969'
+Gray='#808080'
+LightSlateGray='#778899'
+SlateGray='#708090'
+DarkSlateGray='#2F4F4F'
+Black='#000000'
+
+
+if [[ $1 == "-h" || $1 == "--h" ]];
+then
+echo "Pink             LightPink          HotPink          DeepPink
+PaleVioletRed    MediumVioletRed    Lavender         Thistle
+Plum             Orchid             Violet           Fuchsia
+Magenta          MediumOrchid       DarkOrchid       DarkViolet
+BlueViolet       DarkMagenta        Purple           MediumPurple
+MediumSlateBlue  SlateBlue          DarkSlateBlue    RebeccaPurple
+Indigo           LightSalmon        Salmon           DarkSalmon
+LightCoral       IndianRed          Crimson          Red
+FireBrick        DarkRed            Orange           DarkOrange
+Coral            Tomato             OrangeRed        Gold
+Yellow           LightYellow        LemonChiffon     LightGoldenRodYellow
+PapayaWhip       Moccasin           PeachPuff        PaleGoldenRod
+Khaki            DarkKhaki          GreenYellow      Chartreuse
+LawnGreen        Lime               LimeGreen        PaleGreen
+LightGreen       MediumSpringGreen  SpringGreen      MediumSeaGreen
+SeaGreen         ForestGreen        Green            DarkGreen
+YellowGreen      OliveDrab          DarkOliveGreen   MediumAquaMarine
+DarkSeaGreen     LightSeaGreen      DarkCyan         Teal
+Aqua             Cyan               LightCyan        PaleTurquoise
+Aquamarine       Turquoise          MediumTurquoise  DarkTurquoise
+CadetBlue        SteelBlue          LightSteelBlue   LightBlue
+PowderBlue       LightSkyBlue       SkyBlue          CornflowerBlue
+DeepSkyBlue      DodgerBlue         RoyalBlue        Blue
+MediumBlue       DarkBlue           Navy             MidnightBlue
+Cornsilk         BlanchedAlmond     Bisque           NavajoWhite
+Wheat            BurlyWood          Tan              RosyBrown
+SandyBrown       GoldenRod          DarkGoldenRod    Peru
+Chocolate        Olive              SaddleBrown      Sienna
+Brown            Maroon             White            Snow
+HoneyDew         MintCream          Azure            AliceBlue
+GhostWhite       WhiteSmoke         SeaShell         Beige
+OldLace          FloralWhite        Ivory            AntiqueWhite
+Linen            LavenderBlush      MistyRose        Gainsboro
+LightGray        Silver             DarkGray         DimGray
+Gray             LightSlateGray     SlateGray        DarkSlateGray
+Black"
+
+
+elif [[ $1 == "Pink" || $1 == "Pink" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Pink/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LightPink" || $1 == "LightPink" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LightPink/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "HotPink" || $1 == "HotPink" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$HotPink/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DeepPink" || $1 == "DeepPink" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DeepPink/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "PaleVioletRed" || $1 == "PaleVioletRed" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$PaleVioletRed/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "MediumVioletRed" || $1 == "MediumVioletRed" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$MediumVioletRed/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Lavender" || $1 == "Lavender" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Lavender/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Thistle" || $1 == "Thistle" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Thistle/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Plum" || $1 == "Plum" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Plum/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Orchid" || $1 == "Orchid" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Orchid/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Violet" || $1 == "Violet" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Violet/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Fuchsia" || $1 == "Fuchsia" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Fuchsia/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Magenta" || $1 == "Magenta" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Magenta/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "MediumOrchid" || $1 == "MediumOrchid" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$MediumOrchid/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkOrchid" || $1 == "DarkOrchid" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkOrchid/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkViolet" || $1 == "DarkViolet" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkViolet/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "BlueViolet" || $1 == "BlueViolet" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$BlueViolet/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkMagenta" || $1 == "DarkMagenta" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkMagenta/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Purple" || $1 == "Purple" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Purple/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "MediumPurple" || $1 == "MediumPurple" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$MediumPurple/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "MediumSlateBlue" || $1 == "MediumSlateBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$MediumSlateBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "SlateBlue" || $1 == "SlateBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$SlateBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkSlateBlue" || $1 == "DarkSlateBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkSlateBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "RebeccaPurple" || $1 == "RebeccaPurple" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$RebeccaPurple/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Indigo" || $1 == "Indigo" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Indigo/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LightSalmon" || $1 == "LightSalmon" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LightSalmon/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Salmon" || $1 == "Salmon" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Salmon/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkSalmon" || $1 == "DarkSalmon" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkSalmon/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LightCoral" || $1 == "LightCoral" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LightCoral/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "IndianRed" || $1 == "IndianRed" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$IndianRed/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Crimson" || $1 == "Crimson" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Crimson/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Red" || $1 == "Red" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Red/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "FireBrick" || $1 == "FireBrick" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$FireBrick/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkRed" || $1 == "DarkRed" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkRed/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Orange" || $1 == "Orange" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Orange/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkOrange" || $1 == "DarkOrange" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkOrange/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Coral" || $1 == "Coral" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Coral/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Tomato" || $1 == "Tomato" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Tomato/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "OrangeRed" || $1 == "OrangeRed" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$OrangeRed/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Gold" || $1 == "Gold" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Gold/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Yellow" || $1 == "Yellow" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Yellow/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LightYellow" || $1 == "LightYellow" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LightYellow/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LemonChiffon" || $1 == "LemonChiffon" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LemonChiffon/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LightGoldenRodYellow" || $1 == "LightGoldenRodYellow" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LightGoldenRodYellow/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "PapayaWhip" || $1 == "PapayaWhip" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$PapayaWhip/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Moccasin" || $1 == "Moccasin" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Moccasin/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "PeachPuff" || $1 == "PeachPuff" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$PeachPuff/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "PaleGoldenRod" || $1 == "PaleGoldenRod" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$PaleGoldenRod/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Khaki" || $1 == "Khaki" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Khaki/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkKhaki" || $1 == "DarkKhaki" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkKhaki/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "GreenYellow" || $1 == "GreenYellow" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$GreenYellow/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Chartreuse" || $1 == "Chartreuse" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Chartreuse/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LawnGreen" || $1 == "LawnGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LawnGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Lime" || $1 == "Lime" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Lime/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LimeGreen" || $1 == "LimeGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LimeGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "PaleGreen" || $1 == "PaleGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$PaleGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LightGreen" || $1 == "LightGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LightGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "MediumSpringGreen" || $1 == "MediumSpringGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$MediumSpringGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "SpringGreen" || $1 == "SpringGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$SpringGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "MediumSeaGreen" || $1 == "MediumSeaGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$MediumSeaGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "SeaGreen" || $1 == "SeaGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$SeaGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "ForestGreen" || $1 == "ForestGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$ForestGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Green" || $1 == "Green" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Green/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkGreen" || $1 == "DarkGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "YellowGreen" || $1 == "YellowGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$YellowGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "OliveDrab" || $1 == "OliveDrab" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$OliveDrab/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkOliveGreen" || $1 == "DarkOliveGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkOliveGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "MediumAquaMarine" || $1 == "MediumAquaMarine" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$MediumAquaMarine/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkSeaGreen" || $1 == "DarkSeaGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkSeaGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LightSeaGreen" || $1 == "LightSeaGreen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LightSeaGreen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkCyan" || $1 == "DarkCyan" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkCyan/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Teal" || $1 == "Teal" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Teal/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Aqua" || $1 == "Aqua" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Aqua/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Cyan" || $1 == "Cyan" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Cyan/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LightCyan" || $1 == "LightCyan" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LightCyan/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "PaleTurquoise" || $1 == "PaleTurquoise" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$PaleTurquoise/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Aquamarine" || $1 == "Aquamarine" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Aquamarine/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Turquoise" || $1 == "Turquoise" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Turquoise/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "MediumTurquoise" || $1 == "MediumTurquoise" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$MediumTurquoise/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkTurquoise" || $1 == "DarkTurquoise" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkTurquoise/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "CadetBlue" || $1 == "CadetBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$CadetBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "SteelBlue" || $1 == "SteelBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$SteelBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LightSteelBlue" || $1 == "LightSteelBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LightSteelBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LightBlue" || $1 == "LightBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LightBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "PowderBlue" || $1 == "PowderBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$PowderBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LightSkyBlue" || $1 == "LightSkyBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LightSkyBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "SkyBlue" || $1 == "SkyBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$SkyBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "CornflowerBlue" || $1 == "CornflowerBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$CornflowerBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DeepSkyBlue" || $1 == "DeepSkyBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DeepSkyBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DodgerBlue" || $1 == "DodgerBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DodgerBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "RoyalBlue" || $1 == "RoyalBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$RoyalBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Blue" || $1 == "Blue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Blue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "MediumBlue" || $1 == "MediumBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$MediumBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkBlue" || $1 == "DarkBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Navy" || $1 == "Navy" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Navy/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "MidnightBlue" || $1 == "MidnightBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$MidnightBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Cornsilk" || $1 == "Cornsilk" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Cornsilk/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "BlanchedAlmond" || $1 == "BlanchedAlmond" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$BlanchedAlmond/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Bisque" || $1 == "Bisque" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Bisque/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "NavajoWhite" || $1 == "NavajoWhite" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$NavajoWhite/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Wheat" || $1 == "Wheat" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Wheat/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "BurlyWood" || $1 == "BurlyWood" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$BurlyWood/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Tan" || $1 == "Tan" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Tan/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "RosyBrown" || $1 == "RosyBrown" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$RosyBrown/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "SandyBrown" || $1 == "SandyBrown" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$SandyBrown/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "GoldenRod" || $1 == "GoldenRod" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$GoldenRod/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkGoldenRod" || $1 == "DarkGoldenRod" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkGoldenRod/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Peru" || $1 == "Peru" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Peru/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Chocolate" || $1 == "Chocolate" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Chocolate/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Olive" || $1 == "Olive" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Olive/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "SaddleBrown" || $1 == "SaddleBrown" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$SaddleBrown/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Sienna" || $1 == "Sienna" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Sienna/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Brown" || $1 == "Brown" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Brown/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Maroon" || $1 == "Maroon" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Maroon/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "White" || $1 == "White" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$White/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Snow" || $1 == "Snow" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Snow/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "HoneyDew" || $1 == "HoneyDew" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$HoneyDew/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "MintCream" || $1 == "MintCream" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$MintCream/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Azure" || $1 == "Azure" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Azure/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "AliceBlue" || $1 == "AliceBlue" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$AliceBlue/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "GhostWhite" || $1 == "GhostWhite" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$GhostWhite/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "WhiteSmoke" || $1 == "WhiteSmoke" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$WhiteSmoke/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "SeaShell" || $1 == "SeaShell" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$SeaShell/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Beige" || $1 == "Beige" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Beige/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "OldLace" || $1 == "OldLace" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$OldLace/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "FloralWhite" || $1 == "FloralWhite" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$FloralWhite/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Ivory" || $1 == "Ivory" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Ivory/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "AntiqueWhite" || $1 == "AntiqueWhite" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$AntiqueWhite/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Linen" || $1 == "Linen" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Linen/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LavenderBlush" || $1 == "LavenderBlush" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LavenderBlush/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "MistyRose" || $1 == "MistyRose" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$MistyRose/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Gainsboro" || $1 == "Gainsboro" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Gainsboro/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LightGray" || $1 == "LightGray" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LightGray/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Silver" || $1 == "Silver" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Silver/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkGray" || $1 == "DarkGray" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkGray/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DimGray" || $1 == "DimGray" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DimGray/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Gray" || $1 == "Gray" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Gray/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "LightSlateGray" || $1 == "LightSlateGray" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$LightSlateGray/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "SlateGray" || $1 == "SlateGray" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$SlateGray/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "DarkSlateGray" || $1 == "DarkSlateGray" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$DarkSlateGray/g" $HOME/.termux/colors.properties
+
+elif [[ $1 == "Black" || $1 == "Black" ]]; 
+then
+sed -i "s/foreground=.*/foreground=$Black/g" $HOME/.termux/colors.properties
+sed -i "s/foreground=.*/foreground=#FF0000/g" $HOME/.termux/colors.properties
+else
+echo "[ XX ] ARE YOU KIDDING ME? PLEASE TRY AGAIN"
+fi 
