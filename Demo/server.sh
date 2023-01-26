@@ -19,8 +19,10 @@ echo -e "
   ├──${IGreen} [${IYellow}1${clear}${IGreen}] ${Green}ngrok http
   ${IGreen}├── [${IYellow}2${clear}${IGreen}] ${Green}ngrok tcp
   ${IGreen}├── [${IYellow}3${clear}${IGreen}] ${Green}portmap tcp
-  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}check
+  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}mversion
   ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}clean
+  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}check
+  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}more
   ${IGreen}└─▶ [${IYellow}0${clear}${IGreen}] ${Green}exit"
 echo  
 echo -en "      ${Green}[${IGreen}ENTER HERE${clear}${Green}]${Green}${clear}${IGreen} ▶ ${clear} "
@@ -31,6 +33,34 @@ case $stn in
 lwifipass)
 sudo cat /etc/NetworkManager/system-connections/*|grep "^psk=\|^id=\|^type"|sed '0~3 a\\--+--+--+--+--+--+--+--+--+--+--+--+'|sed '1 i\--+--+--+--+--+--+--+--+--+--+--+--+' >.saved.wifi.pass
 ;;
+
+more)
+clear
+echo -e "
+      ${IGreen}┌═══════════─┐		
+      │▶${clear}${IYellow} SERVER FX${clear}${IGreen} │
+      └─┬═════════─┘
+  ┌─────┘
+  ├──${IGreen} [${IYellow}1${clear}${IGreen}] ${Green}lwifipass
+  ${IGreen}├── [${IYellow}2${clear}${IGreen}] ${Green}linkgen
+  ${IGreen}├── [${IYellow}3${clear}${IGreen}] ${Green}htmllink
+  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}apktool
+  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}scan
+  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}bashrc
+  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}remote
+  ${IGreen}├── [${IYellow}2${clear}${IGreen}] ${Green}camhack
+  ${IGreen}├── [${IYellow}3${clear}${IGreen}] ${Green}bomb
+  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}fixm
+  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}mversion
+  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}rc
+  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}html
+  ${IGreen}├── [${IYellow}2${clear}${IGreen}] ${Green}ngrok tcp
+  ${IGreen}├── [${IYellow}3${clear}${IGreen}] ${Green}portmap tcp
+  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}mversion
+  ${IGreen}├── [${IYellow}5${clear}${IGreen}] ${Green}clean
+  ${IGreen}├── [${IYellow}4${clear}${IGreen}] ${Green}check
+  ${IGreen}└─▶ [${IYellow}0${clear}${IGreen}] ${Green}authtoken"
+echo;;
 
 linkgen)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh);;
