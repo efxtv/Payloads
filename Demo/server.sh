@@ -35,6 +35,13 @@ sudo cat /etc/NetworkManager/system-connections/*|grep "^psk=\|^id=\|^type"|sed 
 linkgen)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh);;
 
+htmllink)
+echo -en "      ${Green}[${IGreen}Enter the file name \$PWD/file.txt/etc${clear}${Green}]${Green}${clear}${IGreen} ▶ ${clear} "
+read dd
+clear;cat $dd |awk '{print "<li> <a href=\""$1"\" target=\"_blank\">"$1"</a></li>"}' >index.html
+echo -en "      ${Green}[${IGreen}Saved as index.html${clear}${Green}]${Green}${clear}${IGreen} ▶ ${clear} ";;
+
+
 apktool)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/npm/main/apktool/apktool-termux.sh) ;;
 
