@@ -87,11 +87,11 @@ echo -e "${Green}[RUN] ${IGreen}pkill php${clear}"
 
 
 echo -en "
-${Green}[${IGreen}1${Green}]${IYellow} LAN
-${Green}[${IGreen}2${Green}]${IYellow} WAN
-${Green}[${IGreen}3${Green}]${IYellow} STOP
-${Green}[${IGreen}4${Green}]${IYellow} CUSTOM
-${Green}[${IGreen}5${Green}]${IYellow} NOMOD
+${Green}[${IGreen}1${Green}]${IYellow} LAN [no link]
+${Green}[${IGreen}2${Green}]${IYellow} WAN [share pwd]
+${Green}[${IGreen}3${Green}]${IYellow} STOP [stop service]
+${Green}[${IGreen}4${Green}]${IYellow} CUSTOM [set as your need]
+${Green}[${IGreen}5${Green}]${IYellow} NOMOD [no modification]
 ${Green}[${IGreen}0${Green}]${IYellow} EXIT
 
 Enter it now: "
