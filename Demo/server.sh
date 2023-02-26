@@ -11,6 +11,45 @@ Cyan='\033[0;36m'
 White='\033[0;37m'
 clear='\033[0m'
 
+bashon(){
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Add extra keys? ${clear}${IYellow}[${clear}y/n${IYellow}]${clear}"
+read kikkise
+if [[ "$kikkise" == "y" ]]
+then
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Calling extra keys... ${clear}"
+echo -e "${Green}[${IGreen}START${clear}${Green}] \c"
+curl -L -o $HOME/.termux/termux.properties https://raw.githubusercontent.com/efxtv/Kali-LInux-Terminal-In-Termux/main/termux.properties --progress-bar
+
+else
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Okay ${clear}"
+echo
+fi
+
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Add color properties? ${clear}${IYellow}[${clear}y/n${IYellow}]${clear}"
+read kikkisc
+if [[ "$kikkisc" == "y" ]]
+then
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Calling color properties... ${clear}"
+echo -e "${Green}[${IGreen}START${clear}${Green}] \c"
+curl -L -o $HOME/.termux/colors.properties https://raw.githubusercontent.com/efxtv/Kali-LInux-Terminal-In-Termux/main/colors.properties --progress-bar
+else
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Okay ${clear}"
+echo
+fi
+
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Add bash.bashrc scripts? ${clear}${IYellow}[${clear}y/n${IYellow}]${clear}"
+read kikkisb
+if [[ "$kikkisb" == "y" ]]
+then
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Calling bash.bashrc properties... ${clear}"
+echo -e "${Green}[${IGreen}START${clear}${Green}] \c"
+curl -L -o $PREFIX/etc/bash.bashrc https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/rc/bash.bashrc --progress-bar
+else
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Okay ${clear}"
+echo
+fi
+}
+
 echo -e "
       ${IGreen}┌═══════════─┐		
       │▶${clear}${IYellow} SERVER FX${clear}${IGreen} │
@@ -82,17 +121,7 @@ source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/s
 bashrc)
 if [[ -e $PREFIX/etc/bash.bashrc ]]
 then
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Make the changes? [${Red}ctrl c to cancel${clear}${IYellow}]${clear}"
-echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Hit enter key to start: ${clear}"
-read null
-curl -L -o $PREFIX/etc/bash.bashrc https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/rc/bash.bashrc --progress-bar
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Adding extra keys...${clear}"
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Please wait...${clear}"
-sleep 3
-curl -L -o $HOME/.termux/colors.properties https://raw.githubusercontent.com/efxtv/Kali-LInux-Terminal-In-Termux/main/colors.properties --progress-bar
-sleep 3
-curl -L -o $HOME/.termux/termux.properties https://raw.githubusercontent.com/efxtv/Kali-LInux-Terminal-In-Termux/main/termux.properties --progress-bar
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IGreen}Done...${clear}"
+bashon
 else
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}You are not the termux user${clear}"
 fi ;;
