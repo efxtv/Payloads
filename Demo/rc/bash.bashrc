@@ -80,6 +80,10 @@ su2(){
 PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]┌[✔]"; else echo "\[\033[01;32m\]┌[\[\033[01;31m\]✘\[\033[01;32m\]]"; fi`\[\033[01;32m\]─(\[\033[01;31m\]root\[\033[01;32m\])┐\[\033[01;32m\] \n└──────────┘\[\033[35m\]$(__git_ps1 " %s") \[\033[01;32m\]\n  ┌[\w]\n  \[\033[01;32m\]└───────$\[\033[00m\]'
 }
 
+su3(){
+PS1='\[\e[1;33m\] \n EFX$PWD\n\[\e[1;32m\] ▶ \[\e[0m\]'
+}
+
 ip(){
 ifconfig|grep inet|sed 's#inet 127.0.0.1#LOCAL 127.0.0.1#g;s#inet 192#BEIDG 192#g;s#inet#OTHER#g'|awk '{print "\033[0;32m"$1":\033[0m","\t"$2,"\t"$4}'
 }
@@ -121,7 +125,7 @@ python2 -m SimpleHTTPServer 8000 2>/dev/null
 }
 
 open(){
-termux-open-url https://$1
+termux-open-url $1
 }
 
 server2(){
