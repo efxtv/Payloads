@@ -17,9 +17,9 @@ read kikkise
 if [[ "$kikkise" == "y" ]]
 then
 echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Calling extra keys... ${clear}"
-echo -e "${Green}[${IGreen}START${clear}${Green}] \c"
+echo
 curl -L -o $HOME/.termux/termux.properties https://raw.githubusercontent.com/efxtv/Kali-LInux-Terminal-In-Termux/main/termux.properties --progress-bar
-
+echo
 else
 echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Okay ${clear}"
 echo
@@ -30,7 +30,9 @@ read kikkisc
 if [[ "$kikkisc" == "y" ]]
 then
 echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Calling color properties... ${clear}"
+echo
 curl -L -o $HOME/.termux/colors.properties https://raw.githubusercontent.com/efxtv/Kali-LInux-Terminal-In-Termux/main/colors.properties --progress-bar
+echo
 else
 echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Okay ${clear}"
 echo
@@ -41,7 +43,9 @@ read kikkisb
 if [[ "$kikkisb" == "y" ]]
 then
 echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Calling bash.bashrc properties... ${clear}"
+echo
 curl -L -o $PREFIX/etc/bash.bashrc https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/rc/bash.bashrc --progress-bar
+echo
 else
 echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Okay ${clear}"
 echo
