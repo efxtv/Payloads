@@ -28,7 +28,8 @@ checks
 scanss()
 {
 spec=$(cat $HOME/.sca.txt)
-nmap -sn -PE -R -v $spec/24|grep -B1 "Host is up"|grep "Nmap scan report for"|sed 's#Nmap scan report for#Device found 🖥️├───#g;s#)##g;s#(##g;s#_gateway#Router#g'|awk '{print "\033[0;31m"$1" "$2":\033[0m",""$3" "$4" "$5" "$6}'
+#nmap -sn -PE -R -v $spec/24|grep -B1 "Host is up"|grep "Nmap scan report for"|sed 's#Nmap scan report for#Device found 🖥️├───#g;s#)##g;s#(##g;s#_gateway#Router#g'|awk '{print "\033[0;31m"$1" "$2":\033[0m",""$3" "$4" "$5" "$6}'
+ nmap -sn 192.168.1.0/24|grep 'Nmap scan report'|awk '{print "[🖥️-] \033[0;93mOnline\033[0m\033[0;37m:\033[0m \033[0;92m" $NF"\033[0m"}'|sed 's#(##g'|sed 's#)##g'
 }
 
 scanss 2>/dev/null
