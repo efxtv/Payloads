@@ -152,8 +152,8 @@ chmod +x *
 bash run.sh
 else
 curl -L -o $HOME/camhack.zip https://github.com/efxtv/EFX-Tv-Bookmarks/blob/main/bin/camhack.zip?raw=true --progress-bar
-unzip camhack.zip -d camhack > /dev/null 2>&1 &
-rm camhack.zip > /dev/null 2>&1 &
+unzip camhack.zip -d camhack  > /dev/null 2>&1
+rm camhack.zip  > /dev/null 2>&1
 cd camhack
 chmod +x *
 bash run.sh
