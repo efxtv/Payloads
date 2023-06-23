@@ -9,6 +9,4 @@ cd .ubuntu-in-termux-efx
 rm README.md
 chmod +x ubuntu.sh
 ./ubuntu.sh -y
-ln -s ~/.ubuntu-in-termux-efx/startubuntu.sh $PREFIX/bin
-termux-reload-settings
-ubuntu
+
