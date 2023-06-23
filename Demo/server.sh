@@ -107,6 +107,9 @@ echo;;
 linkgen)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh);;
 
+ubuntu)
+source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/ubuntu-in-termux.sh);;
+
 htmllink)
 echo -en "      ${Green}[${IGreen}Enter the file name \$PWD/file.txt/etc${clear}${Green}]${Green}${clear}${IGreen} ▶ ${clear} "
 read dd
