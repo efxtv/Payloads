@@ -192,6 +192,21 @@ sudo chmod +x mversion
 sudo mv mversion /usr/bin/
 fi ;;
 
+quicktcp)
+ctermuxorlinux=$(which bash|grep -o termux)
+if [ "$ctermuxorlinux" == "termux" ]; then
+echo -e "\t${IGreen} ${clear} ${Green}Installing QuickTCP in termux...${clear}"
+sleep 3
+curl -L -o $PWD/quicktcp https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/quicktcp -s;chmod +x quicktcp;mv quicktcp $PREFIX/bin/
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}QuickTCP installed (quicktcp -help)${clear}"
+else
+echo -e "\t${IGreen}├──${clear} ${Green}Installing QuickTCP in Linux  ${clear}"
+echo -e "\t${IGreen}└──${clear} ${Green}Please wait...${clear}"
+sleep 3
+curl -L -o $PWD/quicktcp https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/quicktcp -s
+sudo chmod +x quicktcp
+sudo mv quicktcp /usr/bin/
+fi ;;
 
 color)
 ctermuxorlinux=$(which bash|grep -o termux)
