@@ -1,0 +1,42 @@
+#!/bin/bash
+Black='\033[0;30m'
+Red='\033[0;31m'
+Green='\033[0;32m'
+IGreen='\033[0;92m'
+Yellow='\033[0;33m'
+IYellow='\033[0;93m'
+Blue='\033[0;34m'
+Purple='\033[0;35m'
+Cyan='\033[0;36m'
+White='\033[0;37m'
+clear='\033[0m'
+
+if [[ -e /data/data/com.termux/files/usr/bin/ls ]]
+then
+  #termux
+ifconfig|grep inet|sed 's#inet 127.0.0.1#LOCAL 127.0.0.1#g;s#inet 192#BEIDG 192#g;s#inet#OTHER#g'|awk '{print "\033[0;32m"$1":\033[0m","\t"$2,"\t"$4}'
+echo -e "
+${IGreen}[🖥-] ➤${clear}${Green} python -m SimpleHTTPServer 8000
+${IGreen}[🖥-] ➤${clear}${Green} python3 -m SimpleHTTPServer 8000
+${IGreen}[🖥-] ➤${clear}${Green} twistd -n web -p 8000 --path .
+${IGreen}[🖥-] ➤${clear}${Green} ruby -run -ehttpd . -p8000
+${IGreen}[🖥-] ➤${clear}${Green} php -S localhost:8000
+${IGreen}[🖥-] ➤${clear}${Green} live-server
+${IGreen}[🖥-] ➤${clear}${Green} command | ncat -v -lk -p 8080 ${clear}"
+echo
+nmap -sn 192.168.1.0/24 10.0.0.*|grep 'Nmap scan report'|awk '{print "[🖥-] \033[0;93mOnline\033[0m\033[0;37m:\033[0m \033[0;92m" $NF"\033[0m"}'|sed 's#(##g'|sed 's#)##g'
+else
+#Other's
+ip -o addr | awk '!/^[0-9]*: ?lo|link\/ether/ {print "\033[0;34m[\033[0;33m"$2"\033[0;34m] ➤\033[0m","""\033[0;36m"$4}'
+echo -e "
+${IGreen}[🖥-] ➤${clear}${Green} python -m SimpleHTTPServer 8000
+${IGreen}[🖥-] ➤${clear}${Green} python3 -m SimpleHTTPServer 8000
+${IGreen}[🖥-] ➤${clear}${Green} twistd -n web -p 8000 --path .
+${IGreen}[🖥-] ➤${clear}${Green} ruby -run -ehttpd . -p8000
+${IGreen}[🖥-] ➤${clear}${Green} php -S localhost:8000
+${IGreen}[🖥-] ➤${clear}${Green} live-server
+${IGreen}[🖥-] ➤${clear}${Green} command | ncat -v -lk -p 8080 ${clear}"
+echo
+nmap -sn 192.168.1.0/24 10.0.0.*|grep 'Nmap scan report'|awk '{print "[🖥-] \033[0;93mOnline\033[0m\033[0;37m:\033[0m \033[0;92m" $NF"\033[0m"}'|sed 's#(##g'|sed 's#)##g'
+echo
+fi
