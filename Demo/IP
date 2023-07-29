@@ -14,7 +14,7 @@ clear='\033[0m'
 if [[ -e /data/data/com.termux/files/usr/bin/ls ]]
 then
   #termux
-ifconfig|grep inet|sed 's#inet 127.0.0.1#LOCAL 127.0.0.1#g;s#inet 192#BEIDG 192#g;s#inet#OTHER#g'|awk '{print "\033[0;32m"$1":\033[0m","\t"$2,"\t"$4}'
+ifconfig|grep inet|sed 's#inet 127.0.0.1#LOCAL 127.0.0.1#g;s#inet 192#BEIDG 192#g;s#inet#OTHER#g'|awk '{print "\033[0;32m"$1":\033[0m","\t"$2,"\t"$4}' 2>/dev/null
 echo -e "
 ${IGreen}[🖥-] ➤${clear}${Green} python -m SimpleHTTPServer 8000
 ${IGreen}[🖥-] ➤${clear}${Green} python3 -m SimpleHTTPServer 8000
