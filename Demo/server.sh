@@ -116,6 +116,15 @@ read dd
 clear;cat $dd |awk '{print "<li> <a href=\""$1"\" target=\"_blank\">"$1"</a></li>"}' >index.html
 echo -en "      ${Green}[${IGreen}Saved as index.html${clear}${Green}]${Green}${clear}${IGreen} ▶ ${clear} ";;
 
+IP)
+if [[ -e /data/data/com.termux/files/usr/bin/ls ]]
+then
+#TERMUX
+curl -L -o /data/data/com.termux/files/usr/bin/IP https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/IP -s;chmod +x /data/data/com.termux/files/usr/bin/IP;echo done;echo 'Type IP to check the utility'
+else
+#LINUX
+sudo curl -L -o /usr/bin/IP https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/IP -s;chmod +x /usr/bin/IP;echo done;echo 'Type IP to check the utility'
+fi;;
 
 apktool)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/npm/main/apktool/apktool-termux.sh) ;;
