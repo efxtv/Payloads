@@ -120,10 +120,11 @@ IP)
 if [[ -e /data/data/com.termux/files/usr/bin/ls ]]
 then
 #TERMUX
-curl -L -o /data/data/com.termux/files/usr/bin/IP https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/IP -s;chmod +x /data/data/com.termux/files/usr/bin/IP;echo done;echo 'Type IP to check the utility'
+curl -L -o /data/data/com.termux/files/usr/bin/IP https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/IP -s;chmod +x /data/data/com.termux/files/usr/bin/IP;echo done
+echo 'alias IP="IP 2>/dev/null\"' >>/data/data/com.termux/files/usr/etc/bash.bashrc
 else
 #LINUX
-sudo curl -L -o /usr/bin/IP https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/IP -s;chmod +x /usr/bin/IP;echo done;echo 'Type IP to check the utility'
+sudo curl -L -o /usr/bin/IP https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/IP -s;sudo chmod +x /usr/bin/IP;echo done;echo 'Type IP to check the utility'
 fi;;
 
 apktool)
