@@ -13,7 +13,7 @@ clear='\033[0m'
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Please wait... ${clear}"
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Getting L3MON links... ${clear}${IGreen}"
 $HOME/ngrok start --all > /dev/null &
-sleep 7
+sleep 36
 echo -e "┌────────────────────────────────────┐"
 #curl -s localhost:4040/api/tunnels |jq -r .tunnels[].public_url
 curl -s localhost:4040/api/tunnels |jq -r .tunnels[].public_url|sed 's#https#Link 1: https #g;s#tcp:#Link 2: tcp:#g'|sed "s#^#  ▷  #g"
