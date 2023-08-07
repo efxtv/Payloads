@@ -1,0 +1,21 @@
+#!/bin/bash
+Black='\033[0;30m'
+Red='\033[0;31m'
+Green='\033[0;32m'
+IGreen='\033[0;92m'
+Yellow='\033[0;33m'
+IYellow='\033[0;93m'
+Blue='\033[0;34m'
+Purple='\033[0;35m'
+Cyan='\033[0;36m'
+White='\033[0;37m'
+clear='\033[0m'
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Please wait... ${clear}"
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Getting L3MON links... ${clear}${IGreen}"
+$HOME/ngrok start --all > /dev/null &
+sleep 7
+echo -e "┌────────────────────────────────────┐"
+#curl -s localhost:4040/api/tunnels |jq -r .tunnels[].public_url
+curl -s localhost:4040/api/tunnels |jq -r .tunnels[].public_url|sed 's#https#Link 1: https #g;s#tcp:#Link 2: tcp:#g'|sed "s#^#  ▷  #g"
+echo -e "└────────────────────────────────────┘"
+echo -e "${clear}"
