@@ -101,7 +101,8 @@ echo -e "
   ${IGreen}├── [${IYellow}17${clear}${IGreen}] ${Green}clean
   ${IGreen}├── [${IYellow}18${clear}${IGreen}] ${Green}check
   ${IGreen}├── [${IYellow}19${clear}${IGreen}] ${Green}color
-  ${IGreen}└─▶ [${IYellow}20${clear}${IGreen}] ${Green}authtoken"
+  ${IGreen}├── [${IYellow}20${clear}${IGreen}] ${Green}sslsign
+  ${IGreen}└─▶ [${IYellow}21${clear}${IGreen}] ${Green}authtoken"
 echo;;
 
 linkgen)
@@ -129,6 +130,9 @@ fi;;
 
 apktool)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/npm/main/apktool/apktool-termux.sh) ;;
+
+sslsign)
+source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/sslsign);;
 
 scan)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/scan);;
