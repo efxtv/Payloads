@@ -21,7 +21,6 @@ NC='\033[0m'
 #signssl
 echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}App name with path${clear} ${White}[${clear}${Red}y${White}/${Green}n${White}]${clear}: "
 read apsa
-echo -e "$apsa"
 
 mkdir $HOME/.efxkeys/ >/dev/null 2>&1
 
@@ -36,11 +35,11 @@ openssl req -x509 -days 9125 -newkey rsa:1024 -nodes -keyout key.pem -out $HOME/
 openssl pkcs8 -topk8 -outform DER -in key.pem -inform PEM -out $HOME/.efxkeys/key.pk8 -nocrypt
 apksigner sign --key $HOME/.efxkeys/key.pk8 --cert $HOME/.efxkeys/certificate_xEFX.pem $apsa >/dev/null 2>&1
 echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Done...${clear} ${White}${clear} "
-
+echo
 else
 #openssl req -x509 -days 9125 -newkey rsa:1024 -nodes -keyout key.pem -out certificate_xEFX.pem
 #openssl pkcs8 -topk8 -outform DER -in key.pem -inform PEM -out key.pk8 -nocrypt
 apksigner sign --key $HOME/.efxkeys/key.pk8 --cert $HOME/.efxkeys/certificate_xEFX.pem $apsa >/dev/null 2>&1
 echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Done...${clear} ${White}${clear} "
-
+echo
 fi
