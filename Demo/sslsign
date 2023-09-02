@@ -1,0 +1,46 @@
+#!/bin/bash
+Black='\033[0;30m'
+Red='\033[0;31m'
+Green='\033[0;32m'
+IGreen='\033[0;92m'
+Yellow='\033[0;33m'
+IYellow='\033[0;93m'
+Blue='\033[0;34m'
+Purple='\033[0;35m'
+Cyan='\033[0;36m'
+White='\033[0;37m'
+clear='\033[0m'
+lg='\033[1;32m'
+NC='\033[0m'
+
+#openssl req -x509 -days 9125 -newkey rsa:1024 -nodes -keyout key.pem -out certificate_x509.pem
+#openssl pkcs8 -topk8 -outform DER -in key.pem -inform PEM -out key.pk8 -nocrypt
+#apksigner sign --key key.pk8 --cert certificate_x509.pem app.apk
+
+
+#signssl
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}App name with path${clear} ${White}[${clear}${Red}y${White}/${Green}n${White}]${clear}: "
+read apsa
+echo -e "$apsa"
+
+mkdir $HOME/.efxkeys/ >/dev/null 2>&1
+
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Create new Certificate?${clear} ${White}[${clear}${Red}y${White}/${Green}n${White}]${clear}: "
+read nw
+
+if [[ $nw == "y" ]]
+then
+rm $HOME/.efxkeys/*.* >/dev/null 2>&1
+#rm $HOME/.efxkeys/key.keystore >/dev/null 2>&1
+openssl req -x509 -days 9125 -newkey rsa:1024 -nodes -keyout key.pem -out $HOME/.efxkeys/certificate_xEFX.pem
+openssl pkcs8 -topk8 -outform DER -in key.pem -inform PEM -out $HOME/.efxkeys/key.pk8 -nocrypt
+apksigner sign --key $HOME/.efxkeys/key.pk8 --cert $HOME/.efxkeys/certificate_xEFX.pem $apsa >/dev/null 2>&1
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Done...${clear} ${White}${clear} "
+
+else
+#openssl req -x509 -days 9125 -newkey rsa:1024 -nodes -keyout key.pem -out certificate_xEFX.pem
+#openssl pkcs8 -topk8 -outform DER -in key.pem -inform PEM -out key.pk8 -nocrypt
+apksigner sign --key $HOME/.efxkeys/key.pk8 --cert $HOME/.efxkeys/certificate_xEFX.pem $apsa >/dev/null 2>&1
+echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Done...${clear} ${White}${clear} "
+
+fi
