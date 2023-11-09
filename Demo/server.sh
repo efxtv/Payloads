@@ -44,7 +44,7 @@ if [[ "$kikkisb" == "y" ]]
 then
 echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Calling bash.bashrc properties... ${clear}"
 echo
-curl -L -o $PREFIX/etc/bash.bashrc https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/rc/bash.bashrc --progress-bar
+curl -L -o $HOME/.profile https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/rc/bash.bashrc --progress-bar
 echo
 else
 echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Okay ${clear}"
