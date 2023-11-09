@@ -1,36 +1,15 @@
-# Command history tweaks:
-# - Append history instead of overwriting
-#   when shell exits.
-# - When using history substitution, do not
-#   exec command immediately.
-# - Do not save to history commands starting
-#   with space.
-# - Do not save duplicated commands.
-shopt -s histappend
-shopt -s histverify
-export HISTCONTROL=ignoreboth
+# Custom alias for Emef Users
+# join for more t.me/efxtv
 
-su3(){
-#animation start
-EMOJIS=(🥱 😏 😎 👊  👍 💀️ 😉️ 🤔️ 🙄️ 😣️ 😳️ 💥 🔥 😵‍ ㉿)
-RANDOM_EMOJI() {
-  SELECTED_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]};
-  echo $SELECTED_EMOJI;
-} 
-#anomation end
-PROMPT_DIRTRIM=2
-PS1='\[\e[0;31m\]\[\e[0;31m\]┌──(\[\e[0;91m\]EFX$(RANDOM_EMOJI)Tv\[\e[0;31m\])\[\e[0;31m\]-\[\e[0;31m\]\[\e[0;31m\][\e[0m\]\[\e[0;33m\]\w\[\e[0m\]\[\e[0;31m\]]\[\e[0m\]\[\[\e[0m\]\n\[\e[0;31m\]└\[\e[0;31m\]●\[\e[0;37m\]●\[\e[0;32m\]● \[\e[0m\]'
+# Proot distro alias
+export UBUNTU='/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu'
+
+ubuntu(){
+proot-distro login --user $1 ubuntu
 }
+# Alias start's
 
-
-# Handles nonexistent commands.
-# If user has entered command which invokes non-available
-# utility, command-not-found will give a package suggestions.
-if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ]; then
-	command_not_found_handle() {
-		/data/data/com.termux/files/usr/libexec/termux/command-not-found "$1"
-	}
-fi
+alias clip='termux-clipboard-set'
 alias del='rm -rf'
 alias update='pkg update && pkg upgrade --yes'
 alias ifconfig='ifconfig 2>/dev/null'
@@ -57,10 +36,21 @@ alias remove='pkg remove'
 alias i='pkg install'
 alias start='nh kex &'
 alias stop='nh kex stop'
+alias code='pv -qL 6'
+alias code2='pv -qL $[10+(-2 + RANDOM%5)]'
+alias code3='pv -qL $[10+(-2 + RANDOM%5)]'
+# Alias ends
 
-playground(){
-mkdir $PREFIX/tmp/efx 2>/dev/null
-cd $PREFIX/tmp/efx
+su3(){
+#animation start
+EMOJIS=(🥱 😏 😎 👊  👍 💀️ 😉️ 🤔️ 🙄️ 😣️ 😳️ 💥 🔥 😵‍ ㉿)
+RANDOM_EMOJI() {
+  SELECTED_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]};
+  echo $SELECTED_EMOJI;
+} 
+#anomation end
+PROMPT_DIRTRIM=2
+PS1='\[\e[0;31m\]\[\e[0;31m\]┌──(\[\e[0;91m\]EFX$(RANDOM_EMOJI)Tv\[\e[0;31m\])\[\e[0;31m\]-\[\e[0;31m\]\[\e[0;31m\][\e[0m\]\[\e[0;33m\]\w\[\e[0m\]\[\e[0;31m\]]\[\e[0m\]\[\[\e[0m\]\n\[\e[0;31m\]└\[\e[0;31m\]●\[\e[0;37m\]●\[\e[0;32m\]● \[\e[0m\]'
 }
 
 custom(){
@@ -84,10 +74,6 @@ su3(){
 PS1='\[\e[1;33m\] \n EFX$PWD\n\[\e[1;32m\] ▶ \[\e[0m\]'
 }
 
-ip(){
-ifconfig|grep inet|sed 's#inet 127.0.0.1#LOCAL 127.0.0.1#g;s#inet 192#BEIDG 192#g;s#inet#OTHER#g'|awk '{print "\033[0;32m"$1":\033[0m","\t"$2,"\t"$4}'
-}
-
 mms(){
 fro=$(free -h|grep Mem|awk '{print $4}')
 mmo=$(ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -10|grep -v PID|awk '{print $NF" "$1}'|sort -rk3|sed 's#^#MMS #g'|head -1)
@@ -108,16 +94,23 @@ absolute(){
 readlink -f $1
 }
 
-alias code='pv -qL 6'
-alias code2='pv -qL $[10+(-2 + RANDOM%5)]'
-alias code3='pv -qL $[10+(-2 + RANDOM%5)]'
-#code three can skip the characters \b\b\b\ will skip 4 characters
-#example: echo -e "You are a goog\b\b\b\lovely person" | pv -qL $[10+(-2 + RANDOM%5)]
+ip(){
+ifconfig|grep inet|sed 's#inet 127.0.0.1#LOCAL 127.0.0.1#g;s#inet 192#BEIDG 192#g;s#inet#OTHER#g'|awk '{print "\033[0;32m"$1":\033[0m","\t"$2,"\t"$4}'
+}
+
+playground(){
+mkdir $PREFIX/tmp/efx 2>/dev/null
+cd $PREFIX/tmp/efx
+}
+
 center()
 {
 echo -e "$1"|sed  -e :a -e "s/^.\{1,$(tput cols)\}$/ & /;ta"
 }
 
+efxtv(){
+echo -e "Please Subscribe\b\b\b\b\b\b\b\b\b\b Join and Subscribe to EFX Tv" | pv -qL $[10+(-2 + RANDOM%5)]
+}
 
 
 server(){
@@ -128,20 +121,4 @@ open(){
 termux-open-url $1
 }
 
-server2(){
-ls -la |grep "^-"|awk '{print $NF}'|awk '{print "<b><a href=\""$1"\">"$NF"</a></b><br />"}'|awk '!/index.html/' >index.html
-ip
-chmod a=r index.html;chmod u=rw index.html
-echo >$HOME/.cf.log > /dev/null 2>&1 &
-echo -n "ENTER IP: "
-read ips
-pkill php > /dev/null 2>&1 &
-php -S 0.0.0.0:5555 > /dev/null 2>&1 &
-$HOME/cloudflared tunnel -url localhost:5555 --logfile $HOME/.cf.log > /dev/null 2>&1 &
-echo "PLEASE WAIT..."
-sleep 6
-cdf=$(cat $HOME/.cf.log | grep -o 'https://[-0-9a-z]*\.trycloudflare.com')
-sleep 3
-echo -e "YOUR LINK: $cdf"
-}
 su
