@@ -11,7 +11,6 @@ alias clip='termux-clipboard-set'
 alias del='rm -rf'
 alias update='pkg update && pkg upgrade --yes'
 alias ifconfig='ifconfig 2>/dev/null'
-alias ubuntu='~/.ubuntu-in-termux-efx/startubuntu.sh'
 alias cd1="cd .."
 alias cd2="cd ../.."
 alias cd3="cd ../../.."
