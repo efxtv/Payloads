@@ -1,6 +1,8 @@
 # Custom alias for Emef Users
 # join for more t.me/efxtv
 
+export P='/data/data/com.termux/files/usr'
+
 # Proot distro alias
 ubuntu(){
 proot-distro login --user $1 ubuntu
@@ -89,6 +91,26 @@ ls -lth|awk '{print "\033[0;32m"$1"\033[0m"" "$7"-"$6"-("$8")",$5,$NF}'|sed -e "
 
 la(){
 ls -lath|awk '{print "\033[0;32m"$1"\033[0m"" "$7"-"$6"-("$8")",$5,$NF}'|sed -e "1d"|sed "1i $(tput setaf 8)PERMISSIONS MODIFIED K/M FILE-NAME$(tput sgr0)"|column -t
+}
+
+# HUE PS one 
+hueps(){
+reset="\[\e[0m\]"
+
+# Magic Bash Prompt Version 1.0.1
+next_hue()
+{
+    color=$((31 + (++color % 7)))   # set 31 to 30 for dark on light
+    PS1="\[\e[1;${color}m\]\\$ $reset"  # set 1 to 0 for dark on light
+}
+
+random_hue()
+{
+    color=$(($RANDOM % 7 + 31)) # set 31 to 30 for dark on light
+    PS1="\[\e[1;${color}m\]\\$ $reset"  # set 1 to 0 for dark on light
+}
+
+PROMPT_COMMAND="random_hue"
 }
 
 absolute(){
