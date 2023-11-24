@@ -26,11 +26,18 @@ sleep 3
 #echo >/data/data/com.termux/files/usr/etc/motd;echo >/data/data/com.termux/files/usr/etc/motd-playstore;echo >/data/data/com.termux/files/usr/etc/motd.sh;echo >/data/data/com.termux/files/usr/etc/motd-playstore.dpkg-old
 }
 
-
+change(){
+echo -e "${Green}[${IGreen}Please wait...${Green}]${IYellow} "
+cng=$(ls ~/.oh-my-zsh/themes|shuf|sed -n "1p"|sed "s/\.zsh-theme//g")
+sleep 2
+sed -i "s/ZSH_THEME=\".*/ZSH_THEME=\"$cng\"/g" ~/.zshrc
+echo -e "${Green}[${IGreen}THEME CHANGED WITH${Green}]${IYellow} $cng"
+}
 
 echo -en "
 ${Green}[${IGreen}1${Green}]${IYellow} [IZ] Install ZSH
 ${Green}[${IGreen}2${Green}]${IYellow} [IP] Install Plugins
+${Green}[${IGreen}3${Green}]${IYellow} [CT] Change Theme
 ${Green}[${IGreen}0${Green}]${IYellow} [EX] EXIT
 
 Enter it now: "
@@ -43,6 +50,10 @@ zshinstall
 elif [[ $sotl == "IP" || $sotl == "2" ]];
 then
 plugins
+
+elif [[ $sotl == "CT" || $sotl == "3" ]];
+then
+change
 
 elif [[ $sotl == "EX" || $sotl == "0" ]];
 then
