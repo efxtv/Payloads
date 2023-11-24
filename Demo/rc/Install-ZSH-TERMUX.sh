@@ -17,7 +17,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 }
 
 plugins(){
-export ZSH_CUSTOM='/data/data/com.termux/files/home/.oh-my-zsh/custom'
+export ZSH_CUSTOM='~/.oh-my-zsh/custom'
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions;git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 sleep 3
 # plugins=(git)
