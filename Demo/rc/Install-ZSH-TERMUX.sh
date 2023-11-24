@@ -21,9 +21,9 @@ export ZSH_CUSTOM='~/.oh-my-zsh/custom'
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions;git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 sleep 3
 # plugins=(git)
-sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/g' /data/data/com.termux/files/home/.zshrc
+sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/g' ~/.zshrc
 sleep 3
-echo >/data/data/com.termux/files/usr/etc/motd;echo >/data/data/com.termux/files/usr/etc/motd-playstore;echo >/data/data/com.termux/files/usr/etc/motd.sh;echo >/data/data/com.termux/files/usr/etc/motd-playstore.dpkg-old
+#echo >/data/data/com.termux/files/usr/etc/motd;echo >/data/data/com.termux/files/usr/etc/motd-playstore;echo >/data/data/com.termux/files/usr/etc/motd.sh;echo >/data/data/com.termux/files/usr/etc/motd-playstore.dpkg-old
 }
 
 
