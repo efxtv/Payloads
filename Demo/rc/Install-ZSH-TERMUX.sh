@@ -56,3 +56,4 @@ exit
 else
 echo "Numbers and upper case only..."
 fi
+#exec zsh
