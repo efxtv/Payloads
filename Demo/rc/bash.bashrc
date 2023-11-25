@@ -1,17 +1,22 @@
+# Extras added by EFX Tv
+export P='/data/data/com.termux/files/usr/'
+export ETC="/data/data/com.termux/files/usr/etc/"
+export OPT="/data/data/com.termux/files/usr/opt/"
+export TMP="/data/data/com.termux/files/usr/tmp"
+export SHA="/data/data/com.termux/files/usr/share/"
+
 # Custom alias for Emef Users
 # join for more t.me/efxtv
-
-export P='/data/data/com.termux/files/usr'
-
 # Proot distro alias
 ubuntu(){
+#USE: ubuntu username
 proot-distro login --user $1 ubuntu
 }
-# Alias start's
 
+# Must install termux-api and provide all the permissions
 alias clip='termux-clipboard-set'
 alias del='rm -rf'
-alias update='pkg update && pkg upgrade --yes'
+alias update='pkg update && pkg upgrade --yes && apt update && apt upgrade'
 alias ifconfig='ifconfig 2>/dev/null'
 alias cd1="cd .."
 alias cd2="cd ../.."
@@ -89,9 +94,6 @@ lt(){
 ls -lth|awk '{print "\033[0;32m"$1"\033[0m"" "$7"-"$6"-("$8")",$5,$NF}'|sed -e "1d"|sed "1i $(tput setaf 8)PERMISSIONS MODIFIED K/M FILE-NAME$(tput sgr0)"|column -t
 }
 
-la(){
-ls -lath|awk '{print "\033[0;32m"$1"\033[0m"" "$7"-"$6"-("$8")",$5,$NF}'|sed -e "1d"|sed "1i $(tput setaf 8)PERMISSIONS MODIFIED K/M FILE-NAME$(tput sgr0)"|column -t
-}
 
 # HUE PS one 
 hueps(){
@@ -115,6 +117,7 @@ PROMPT_COMMAND="random_hue"
 
 absolute(){
 readlink -f $1
+# find $PWD/$1
 }
 
 ip(){
@@ -143,5 +146,3 @@ python2 -m SimpleHTTPServer 8000 2>/dev/null
 open(){
 termux-open-url $1
 }
-
-su
