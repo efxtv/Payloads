@@ -4,6 +4,7 @@ export ETC="/data/data/com.termux/files/usr/etc/"
 export OPT="/data/data/com.termux/files/usr/opt/"
 export TMP="/data/data/com.termux/files/usr/tmp"
 export SHA="/data/data/com.termux/files/usr/share/"
+export UBT="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs"
 
 # Custom alias for Emef Users
 # join for more t.me/efxtv
