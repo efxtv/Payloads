@@ -129,7 +129,7 @@ sudo curl -L -o /usr/bin/IP https://raw.githubusercontent.com/efxtv/Payloads/mai
 fi;;
 
 apktool)
-source <(curl -fsSL https://raw.githubusercontent.com/efxtv/npm/main/apktool/apktool-termux.sh) ;;
+source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Apktool-Latest-Ubuntu-Termux-Kali-Linux-/main/apktool/auto-apktool.sh) ;;
 
 sslsign)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/sslsign);;
