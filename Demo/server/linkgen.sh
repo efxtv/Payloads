@@ -28,7 +28,8 @@ rm id_rsa*
 sleep 1
 echo -e "${Green}RUN THE COMMAND IN NEW TERMINAL AND HIT ENTER...${clear}"
 echo -e "${Green}Hit enter and enter your password for the key.${clear}"
-echo -e "${Blue}\$ ssh-keygen ${clear}"
+echo -en "${Blue}\$ ssh-keygen ${clear} [hit enter]"
+read s
 ssh -R 80:localhost:8080 localhost.run
 echo -e "${Green}VISIT: ${IGreen} Done ${Yellow}"
 echo
