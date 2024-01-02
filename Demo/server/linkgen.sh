@@ -110,7 +110,7 @@ ${Green}[${IGreen}3${Green}]${IYellow} STOP [stop service]
 ${Green}[${IGreen}4${Green}]${IYellow} CUSTOM [set as your need]
 ${Green}[${IGreen}5${Green}]${IYellow} NOMOD [no modification]
 ${Green}[${IGreen}6${Green}]${IYellow} LEMONGEN
-${Green}[${IGreen}6${Green}]${IYellow} LOCALHOST_RUN
+${Green}[${IGreen}7${Green}]${IYellow} LOCALHOST_RUN
 ${Green}[${IGreen}0${Green}]${IYellow} EXIT
 
 Enter it now: "
