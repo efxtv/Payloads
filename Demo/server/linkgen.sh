@@ -111,7 +111,6 @@ ${Green}[${IGreen}4${Green}]${IYellow} CUSTOM [set as your need]
 ${Green}[${IGreen}5${Green}]${IYellow} NOMOD [no modification]
 ${Green}[${IGreen}6${Green}]${IYellow} LEMONGEN
 ${Green}[${IGreen}6${Green}]${IYellow} LOCALHOST_RUN
-#localhost
 ${Green}[${IGreen}0${Green}]${IYellow} EXIT
 
 Enter it now: "
