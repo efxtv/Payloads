@@ -24,14 +24,14 @@ echo
 localhost(){
 echo -e "${Green}PLEASE WAIT...${clear}"
 sleep 0.5
-rm id_rsa*
-sleep 1
-echo -e "${Green}RUN THE COMMAND IN NEW TERMINAL AND HIT ENTER...${clear}"
-echo -e "${Green}Hit enter and enter your password for the key.${clear}"
-echo -en "${Blue}\$ ssh-keygen ${clear} [hit enter]"
-read s
-ssh -R 80:localhost:8080 localhost.run
-echo -e "${Green}VISIT: ${IGreen} Done ${Yellow}"
+echo -en "${Green}RUN: ${Blue}\$ ssh-keygen ${clear}"
+echo -e "${Green}RUN: ${Blue}\$ https://qrcodescan.in/ ${clear}"
+echo -e "${Green}RUN: ${Blue}\$ localhost:8080 ${clear}"
+echo -e "${Green}RUN: ${white}\$ USE ANY ONE: ${clear}"
+echo -e "${Green}RUN: ${Blue}\$ ssh -R 80:localhost:3000 serveo.net ${clear}"
+echo -e "${Green}RUN: ${Blue}\$ ssh -R 80:localhost:8080 localhost.run ${clear}"
+echo -e "${Green}RUN: ${WHITE}\$ https://pastebin.com/raw/hpRfMNQw ${clear}"
+
 echo
 }
 
