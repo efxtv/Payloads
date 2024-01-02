@@ -21,6 +21,19 @@ echo -e "${Green}VISIT: ${IGreen} Done ${Yellow}"
 echo
 }
 
+localhost(){
+echo -e "${Green}PLEASE WAIT...${clear}"
+sleep 0.5
+rm id_rsa*
+sleep 1
+echo -e "${Green}RUN THE COMMAND IN NEW TERMINAL AND HIT ENTER...${clear}"
+echo -e "${Green}Hit enter and enter your password for the key.${clear}"
+echo -e "${Blue}\$ ssh-keygen ${clear}"
+ssh -R 80:localhost:8080 localhost.run
+echo -e "${Green}VISIT: ${IGreen} Done ${Yellow}"
+echo
+}
+
 
 lan(){
 ls -la |grep "^-"|awk '{print $NF}'|awk '{print "<b><a href=\""$1"\">"$NF"</a></b><br />"}'|awk '!/index.html/' >index.html
@@ -97,6 +110,8 @@ ${Green}[${IGreen}3${Green}]${IYellow} STOP [stop service]
 ${Green}[${IGreen}4${Green}]${IYellow} CUSTOM [set as your need]
 ${Green}[${IGreen}5${Green}]${IYellow} NOMOD [no modification]
 ${Green}[${IGreen}6${Green}]${IYellow} LEMONGEN
+${Green}[${IGreen}6${Green}]${IYellow} LOCALHOST_RUN
+#localhost
 ${Green}[${IGreen}0${Green}]${IYellow} EXIT
 
 Enter it now: "
@@ -125,6 +140,10 @@ nomod
 elif [[ $sotl == "LEMONGEN" || $sotl == "6" ]];
 then
 lemongen
+
+elif [[ $sotl == "LOCALHOST_RUN" || $sotl == "7" ]];
+then
+localhost
 
 elif [[ $sotl == "EXIT" || $sotl == "0" ]];
 then
