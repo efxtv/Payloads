@@ -5,6 +5,7 @@ export OPT="/data/data/com.termux/files/usr/opt/"
 export TMP="/data/data/com.termux/files/usr/tmp"
 export SHA="/data/data/com.termux/files/usr/share/"
 export UBT="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs"
+export APACHE="/data/data/com.termux/files/usr/share/apache2/default-site/htdocs/"
 
 # Custom alias for Emef Users
 # join for more t.me/efxtv
@@ -19,6 +20,9 @@ alias clip='termux-clipboard-set'
 alias del='rm -rf'
 alias update='pkg update && pkg upgrade --yes && apt update && apt upgrade'
 alias ifconfig='ifconfig 2>/dev/null'
+alias apache='apachectl 2>/dev/null;echo [+] Please wait...;sleep 2 ;echo [▶] HOST: http://127.0.0.1:8080;echo [▶] PATH: \$APACHE'
+alias apaches='apachectl -k stop 2>/dev/null'
+alias pyftp="python -m pyftpdlib"
 alias cd1="cd .."
 alias cd2="cd ../.."
 alias cd3="cd ../../.."
@@ -71,7 +75,7 @@ PS1='\[\e[0;31m\]\[\e[0;31m\]┌──(\[\e[0;91m\]EFX$(RANDOM_EMOJI)Tv\[\e[0;31
 }
 
 su4(){
-PS1='\[\e[1;33m\] \n EFX$PWD\n\[\e[1;32m\] ▶ \[\e[0m\]'
+PS1='\[\e[1;33m\] \n EFX_Tv \[\e[1;30m\]\w\n\[\e[1;32m\] ▶ \[\e[0m\]'
 }
 
 custom(){
@@ -141,9 +145,10 @@ echo -e "Please Subscribe\b\b\b\b\b\b\b\b\b\b Join and Subscribe to EFX Tv" | pv
 
 
 server(){
-python2 -m SimpleHTTPServer 8000 2>/dev/null
+php -S 0.0.0.0:8088 > /dev/null 2>&1 &echo [+] Please wait...;sleep 2 ;echo [▶] HOST: http://0.0.0.0:8088;echo [▶] HOST: http://127.0.0.1:8088;echo [▶] STOP: kill PHP;echo [▶] FORW: ssh -R 80:localhost:8088 localhost.run;echo [▶] FORW: ssh -R 80:localhost:8088 serveo.net;
 }
 
 open(){
 termux-open-url $1
 }
+su4
