@@ -1,0 +1,191 @@
+#!/bin/bash
+sshaa()
+{
+ssha=$(which ssh|grep -o ssh)
+if [ "$ssha" == "ssh" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+javaaa()
+{
+javaa=$(which java|grep -o java)
+if [ "$javaa" == "java" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+nmapaa()
+{
+nmapa=$(which nmap|grep -o nmap)
+if [ "$nmapa" == "nmap" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+jqaa()
+{
+jqa=$(which jq|grep -o jq)
+if [ "$jqa" == "jq" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+pvaa()
+{
+pva=$(which pv|grep -o pv)
+if [ "$pva" == "pv" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+vimaa()
+{
+vima=$(which vim|grep -o vim)
+if [ "$vima" == "vim" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+ncataa()
+{
+ncata=$(which ncat|grep -o ncat)
+if [ "$ncata" == "ncat" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+wgeto()
+{
+cmta=$(which wget|grep -o wget)
+if [ "$cmta" == "wget" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+meta()
+{
+met=$(which msfconsole 2>/dev/null|grep -o msfconsole)
+if [ "$met" == "msfconsole" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+curlo()
+{
+cur=$(which curl|grep -o curl)
+if [ "$cur" == "curl" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+phpto()
+{
+cphp=$(which php|grep -o php)
+if [ "$cphp" == "php" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+zip()
+{
+zipo=$(which zip|grep -o zip)
+if [ "$zipo" == "zip" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+unzip()
+{
+uzip=$(which unzip|grep -o unzip)
+if [ "$uzip" == "unzip" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+
+
+apktoolo()
+{
+apktoolc=$(which apktool|grep -o apktool)
+if [ "$apktoolc" == "apktool" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+apksignero()
+{
+apksignec=$(which apksigner|grep -o apksigner)
+if [ "$apksignec" == "apksigner" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+zipppaa()
+{
+zipppa=$(which zipalign|grep -o zipalign)
+if [ "$zipppa" == "zipalign" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+sslaa()
+{
+ssla=$(which openssl|grep -o openssl)
+if [ "$ssla" == "openssl" ]; then
+echo "[✅️] Installed"
+else
+echo "[❌️] Not-installed"
+fi
+}
+
+echo "[ -PLEASE SATISFY THE REQUIREMENTS LISTED BELOW- ]"
+
+meta|sed 's#^#\tMetasploit is \t- #g'
+ncataa|sed 's#^#\tNcat is \t- #g'
+curlo|sed 's#^#\tCurl is \t- #g'
+wgeto|sed 's#^#\tWget is \t- #g'
+phpto|sed 's#^#\tPhp is \t\t- #g'
+zip|sed 's#^#\tZip is \t\t- #g'
+unzip|sed 's#^#\tUnzip is \t- #g'
+apktoolo|sed 's#^#\tApktool is \t- #g'
+apksignero|sed 's#^#\tApksigner is \t- #g'
+javaaa|sed 's#^#\tJava17 is \t- #g'
+pvaa|sed 's#^#\tPv is \t\t- #g'
+vimaa|sed 's#^#\tVim is \t\t- #g'
+sshaa|sed 's#^#\tSSH is \t\t- #g'
+jqaa|sed 's#^#\tJq is \t\t- #g'
+zipppaa|sed 's#^#\tZipalign is \t- #g'
+sslaa|sed 's#^#\tOpenssl is \t- #g'
