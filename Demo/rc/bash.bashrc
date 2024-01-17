@@ -148,6 +148,10 @@ server(){
 php -S 0.0.0.0:8088 > /dev/null 2>&1 &echo [+] Please wait...;sleep 2 ;echo [▶] HOST: http://0.0.0.0:8088;echo [▶] HOST: http://127.0.0.1:8088;echo [▶] STOP: kill PHP;echo [▶] FORW: ssh -R 80:localhost:8088 localhost.run;echo [▶] FORW: ssh -R 80:localhost:8088 serveo.net;
 }
 
+server2(){
+python3 -m http.server
+}
+
 open(){
 termux-open-url $1
 }
