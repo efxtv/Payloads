@@ -1,0 +1,26 @@
+#!/bin/bash
+termux-setup-storage
+pkg update;pkg upgrade
+termux-change-repo
+pkg update;pkg upgrade
+apt update;apt upgrade
+ls $PREFIX/etc/|grep motd|awk '{print "echo > $PREFIX/etc/"$1";"}'|bash
+pkg install openssh
+pkg install wget
+apt install curl
+apt install php
+apt install zip unzip
+apt install openjdk-17
+pkg install apksigner
+apt install nmap-ncat
+pkg install nmap
+apt install netcat-openbsd
+pkg install dnsutils
+apt install jq
+pkg install pv
+pkg install x11-repo
+pkg install vim-gtk
+pkg install proot-distro
+pkg install termux-api
+pkg install openssl-tool
+source <(curl -fsSL https://raw.githubusercontent.com/efxtv/npm/main/apktool/apktool-termux.sh)
