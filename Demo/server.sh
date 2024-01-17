@@ -90,7 +90,6 @@ echo -e "
   ${IGreen}├── [${IYellow}06${clear}${IGreen}] ${Green}bashrc
   ${IGreen}├── [${IYellow}07${clear}${IGreen}] ${Green}remote
   ${IGreen}├── [${IYellow}08${clear}${IGreen}] ${Green}camhack
-  ${IGreen}├── [${IYellow}09${clear}${IGreen}] ${Green}bomb
   ${IGreen}├── [${IYellow}10${clear}${IGreen}] ${Green}fixm
   ${IGreen}├── [${IYellow}11${clear}${IGreen}] ${Green}mversion
   ${IGreen}├── [${IYellow}12${clear}${IGreen}] ${Green}rc
@@ -107,6 +106,9 @@ echo;;
 
 linkgen)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh);;
+
+check)
+source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/checkall);;
 
 ubuntu)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/ubuntu-in-termux.sh);;
@@ -177,8 +179,8 @@ bash run.sh
 fi ;;
 
 
-bomb)
-source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/bomb.sh);;
+#bomb)
+#source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/bomb.sh);;
 
 fixm)
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${Red}There is an update. ${clear}"
