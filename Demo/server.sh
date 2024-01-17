@@ -110,6 +110,9 @@ source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/s
 check)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/checkall);;
 
+installall)
+source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/installall );;
+
 ubuntu)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/ubuntu-in-termux.sh);;
 
