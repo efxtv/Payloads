@@ -122,6 +122,18 @@ read dd
 clear;cat $dd |awk '{print "<li> <a href=\""$1"\" target=\"_blank\">"$1"</a></li>"}' >index.html
 echo -en "      ${Green}[${IGreen}Saved as index.html${clear}${Green}]${Green}${clear}${IGreen} ▶ ${clear} ";;
 
+updogfx)
+if [[ -e $PREFIX/opt/updogfx/bin/updogfx ]]
+then
+echo 'Installed'
+else
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Installing... ${clear}"
+sleep 5
+mkdir $PREFIX/opt/updogfx > /dev/null 2>&1
+git clone https://github.com/efxtv/updogfx.git $PREFIX/opt/;cd $PREFIX/opt/updogfx
+bash install.sh 
+fi ;;
+
 IP)
 if [[ -e /data/data/com.termux/files/usr/bin/ls ]]
 then
