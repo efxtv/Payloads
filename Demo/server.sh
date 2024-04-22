@@ -101,7 +101,8 @@ echo -e "
   ${IGreen}├── [${IYellow}18${clear}${IGreen}] ${Green}check
   ${IGreen}├── [${IYellow}19${clear}${IGreen}] ${Green}color
   ${IGreen}├── [${IYellow}20${clear}${IGreen}] ${Green}sslsign
-  ${IGreen}└─▶ [${IYellow}21${clear}${IGreen}] ${Green}authtoken"
+  ${IGreen}├── [${IYellow}21${clear}${IGreen}] ${Green}updogfx
+  ${IGreen}└─▶ [${IYellow}22${clear}${IGreen}] ${Green}authtoken"
 echo;;
 
 linkgen)
