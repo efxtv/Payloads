@@ -131,7 +131,7 @@ else
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Installing... ${clear}"
 sleep 5
 mkdir $PREFIX/opt/updogfx > /dev/null 2>&1
-git clone https://github.com/efxtv/updogfx.git $PREFIX/opt/;cd $PREFIX/opt/updogfx
+git clone https://github.com/efxtv/updogfx.git $PREFIX/opt/updogfx;cd $PREFIX/opt/updogfx
 bash install.sh 
 fi ;;
 
