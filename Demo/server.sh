@@ -102,6 +102,7 @@ echo -e "
   ${IGreen}├── [${IYellow}19${clear}${IGreen}] ${Green}color
   ${IGreen}├── [${IYellow}20${clear}${IGreen}] ${Green}sslsign
   ${IGreen}├── [${IYellow}21${clear}${IGreen}] ${Green}updogfx
+  sharepyfx
   ${IGreen}└─▶ [${IYellow}22${clear}${IGreen}] ${Green}authtoken"
 echo;;
 
@@ -133,6 +134,27 @@ sleep 5
 mkdir $PREFIX/opt/updogfx > /dev/null 2>&1
 git clone https://github.com/efxtv/updogfx.git $PREFIX/opt/updogfx;cd $PREFIX/opt/updogfx
 bash install.sh 
+fi ;;
+
+sharepyfx)
+if [[ -e $PREFIX/opt/sharepyfx/bin/sharepyfx ]]
+then
+echo 'Installed'
+else
+echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Installing... ${clear}"
+sleep 5
+mkdir $PREFIX/opt/sharepyfx > /dev/null 2>&1
+git clone https://github.com/efxtv/sharepyfx.git $PREFIX/opt/sharepyfx;cd $PREFIX/opt/sharepyfx
+bash install.sh 
+
+echo -en "Enter bot Token:"
+read token
+sed -i "s/BOT_TOKEN =.*/BOT_TOKEN = \"$token\"/g" sharepyfx.py $PREFIX/opt/sharepyfx/sharepyfx.py
+
+echo -en "Enter ID:"
+read ids
+sed -i "s/ATTACKER_ID =.*/BOT_TOKEN = \"$ids\"/g" sharepyfx.py $PREFIX/opt/sharepyfx/sharepyfx.py
+echo 'Installed'
 fi ;;
 
 IP)
