@@ -148,7 +148,6 @@ git clone https://github.com/efxtv/sharepyfx.git $PREFIX/opt/sharepyfx;cd $PREFI
 bash install.sh 
 
 echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Enter bot Token: ${clear}"
-echo -en "Enter bot Token:"
 read token
 sed -i "s/BOT_TOKEN =.*/BOT_TOKEN = \"$token\"/g" sharepyfx.py $PREFIX/opt/sharepyfx/sharepyfx.py
 
