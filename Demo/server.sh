@@ -153,7 +153,7 @@ sed -i "s/BOT_TOKEN =.*/BOT_TOKEN = \"$token\"/g" sharepyfx.py $PREFIX/opt/share
 
 echo -en "Enter ID:"
 read ids
-sed -i "s/ATTACKER_ID =.*/BOT_TOKEN = \"$ids\"/g" sharepyfx.py $PREFIX/opt/sharepyfx/sharepyfx.py
+sed -i "s/ATTACKER_ID =.*/ATTACKER_ID = \"$ids\"/g" sharepyfx.py $PREFIX/opt/sharepyfx/sharepyfx.py
 echo 'Installed'
 fi ;;
 
