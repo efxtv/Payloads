@@ -102,8 +102,8 @@ echo -e "
   ${IGreen}├── [${IYellow}19${clear}${IGreen}] ${Green}color
   ${IGreen}├── [${IYellow}20${clear}${IGreen}] ${Green}sslsign
   ${IGreen}├── [${IYellow}21${clear}${IGreen}] ${Green}updogfx
-  sharepyfx
-  ${IGreen}└─▶ [${IYellow}22${clear}${IGreen}] ${Green}authtoken"
+  ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}sharepyfx
+  ${IGreen}└─▶ [${IYellow}23${clear}${IGreen}] ${Green}authtoken"
 echo;;
 
 linkgen)
