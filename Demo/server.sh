@@ -137,25 +137,8 @@ bash install.sh
 fi ;;
 
 sharepyfx)
-if [[ -e $PREFIX/opt/sharepyfx/bin/sharepyfx ]]
-then
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Installed...${clear}"
-else
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Installing... ${clear}"
-sleep 5
-mkdir $PREFIX/opt/sharepyfx > /dev/null 2>&1
-git clone https://github.com/efxtv/sharepyfx.git $PREFIX/opt/sharepyfx;cd $PREFIX/opt/sharepyfx
-bash install.sh 
-
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Enter bot Token: ${clear}"
-read token
-sed -i "s/BOT_TOKEN =.*/BOT_TOKEN = \"$token\"/g" sharepyfx.py $PREFIX/opt/sharepyfx/sharepyfx.py
-
-echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Enter ID: ${clear}"
-read ids
-sed -i "s/ATTACKER_ID =.*/ATTACKER_ID = \"$ids\"/g" sharepyfx.py $PREFIX/opt/sharepyfx/sharepyfx.py
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Installed... ${clear}"
-fi ;;
+source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/sharepyfx.sh) ;;
+;;
 
 IP)
 if [[ -e /data/data/com.termux/files/usr/bin/ls ]]
