@@ -64,11 +64,11 @@ sharepyfx() {
             return 1
         fi
 
-        echo -e "${GREEN}[${IGREEN}✔${CLEAR}${GREEN}] ${IYELLOW}Enter bot Token:${CLEAR}"
+        echo -en "${GREEN}[${IGREEN}➜${CLEAR}${GREEN}] ${IYELLOW}Enter bot Token:${CLEAR}"
         read -r token
         sed -i "s/BOT_TOKEN =.*/BOT_TOKEN = \"$token\"/g" ~/.sharepyfx/sharepyfx.py
 
-        echo -e "${GREEN}[${IGREEN}✔${CLEAR}${GREEN}] ${IYELLOW}Enter ID:${CLEAR}"
+        echo -en "${GREEN}[${IGREEN}➜${CLEAR}${GREEN}] ${IYELLOW}Enter ID:${CLEAR}"
         read -r ids
         sed -i "s/ATTACKER_ID =.*/ATTACKER_ID = \"$ids\"/g" ~/.sharepyfx/sharepyfx.py
 
