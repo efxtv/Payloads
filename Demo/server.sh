@@ -138,7 +138,6 @@ fi ;;
 
 sharepyfx)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/sharepyfx.sh) ;;
-;;
 
 IP)
 if [[ -e /data/data/com.termux/files/usr/bin/ls ]]
