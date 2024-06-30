@@ -16,6 +16,7 @@ proot-distro login --user $1 ubuntu
 }
 
 # Must install termux-api and provide all the permissions
+alias server
 alias clip='termux-clipboard-set'
 alias del='rm -rf'
 alias update='pkg update && pkg upgrade --yes && apt update && apt upgrade'
@@ -48,15 +49,17 @@ alias stop='nh kex stop'
 alias code='pv -qL 6'
 alias code2='pv -qL $[10+(-2 + RANDOM%5)]'
 alias code3='pv -qL $[10+(-2 + RANDOM%5)]'
+alias code4='pv -qL 40'
+alias sshd='sshd -e -d -d -d'
 # Alias ends
 
-su(){
-export PS1="\[\e[1;32m\]▶(\[\e[1;31m\]root\[\e[33;0m\]\[\e[1;32m\])──────────────┐\n ┌───────────────────┘ \n ├[\[\e[1;33m\]\W\[\e[1;32m\]]\n \[\e[1;32m\]└─▶\[\e[0m\] "
-}
+#su(){
+#export PS1="\[\e[1;32m\]▶(\[\e[1;31m\]root\[\e[33;0m\]\[\e[1;32m\])──────────────┐\n ┌───────────────────┘ \n ├[\[\e[1;33m\]\W\[\e[1;32m\]]\n \[\e[1;32m\]└─▶\[\e[0m\] "
+#}
 
-su1(){
-export PS1="\[\e[1;32m\]▶(\[\e[1;31m\]demo\[\e[33;0m\]\[\e[1;32m\])──────────────┐\n ┌───────────────────┘ \n ├[\[\e[1;33m\]\W\[\e[1;32m\]]\n \[\e[1;32m\]└─▶\[\e[0m\] "
-}
+#su1(){
+#export PS1="\[\e[1;32m\]▶(\[\e[1;31m\]demo\[\e[33;0m\]\[\e[1;32m\])──────────────┐\n ┌───────────────────┘ \n ├[\[\e[1;33m\]\W\[\e[1;32m\]]\n \[\e[1;32m\]└─▶\[\e[0m\] "
+#}
 
 su2(){
 PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]┌[✔]"; else echo "\[\033[01;32m\]┌[\[\033[01;31m\]✘\[\033[01;32m\]]"; fi`\[\033[01;32m\]─(\[\033[01;31m\]root\[\033[01;32m\])┐\[\033[01;32m\] \n└──────────┘\[\033[35m\]$(__git_ps1 " %s") \[\033[01;32m\]\n  ┌[\w]\n  \[\033[01;32m\]└───────$\[\033[00m\]'
@@ -145,14 +148,34 @@ echo -e "Please Subscribe\b\b\b\b\b\b\b\b\b\b Join and Subscribe to EFX Tv" | pv
 
 
 server(){
-php -S 0.0.0.0:8088 > /dev/null 2>&1 &echo [+] Please wait...;sleep 2 ;echo [▶] HOST: http://0.0.0.0:8088;echo [▶] HOST: http://127.0.0.1:8088;echo [▶] STOP: kill PHP;echo [▶] FORW: ssh -R 80:localhost:8088 localhost.run;echo [▶] FORW: ssh -R 80:localhost:8088 serveo.net;
+termux-open-url $1
 }
 
 server2(){
-python3 -m http.server
+python3 -m http.server > /dev/null 2>&1 &echo [+] Please wait...;sleep 2 ;echo [▶] HOST: http://0.0.0.0:8000;echo [▶] HOST: http://127.0.0.1:8000;echo [▶] STOP: pkill python ;echo [▶] FORW: ssh -R 80:localhost:8000 localhost.run;echo [▶] FORW: ssh -R 80:localhost:8000 serveo.net;
+}
+
+server3(){
+#1 Path
+python3 -m http.server -d $1 > /dev/null 2>&1 &echo [+] Please wait...;sleep 2 ;echo [▶] HOST: http://0.0.0.0:8000;echo [▶] HOST: http://127.0.0.1:8000;echo [▶] STOP: pkill python ;echo [▶] FORW: ssh -R 80:localhost:8000 localhost.run;echo [▶] FORW: ssh -R 80:localhost:8000 serveo.net;
+}
+
+server4(){
+#$1 path
+#$2 IP
+#$3 port
+python3 -m http.server -d $1 -b $2 $3 > /dev/null 2>&1 &echo [+] Please wait...;sleep 2 ;echo [▶] HOST: http://0.0.0.0:8000;echo [▶] HOST: http://127.0.0.1:8000;echo [▶] STOP: pkill python ;echo [▶] FORW: ssh -R 80:localhost:8000 localhost.run;echo [▶] FORW: ssh -R 80:localhost:8000 serveo.net;
 }
 
 open(){
 termux-open-url $1
 }
-su4
+#su4
+
+sonali(){
+python /data/data/com.termux/files/home/tools/python/send.py $1
+}
+
+export ANDROID_HOME=$HOME/sdk
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
