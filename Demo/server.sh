@@ -104,13 +104,14 @@ echo -e "
   ${IGreen}├── [${IYellow}21${clear}${IGreen}] ${Green}updogfx
   ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}sharepyfx
   ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}zsh
+  ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}rssh
   ${IGreen}└─▶ [${IYellow}23${clear}${IGreen}] ${Green}authtoken"
 echo;;
 
 linkgen)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh);;
 
-rsh)
+rssh)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh);;
 
 zsh)
