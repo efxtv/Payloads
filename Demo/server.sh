@@ -103,11 +103,15 @@ echo -e "
   ${IGreen}├── [${IYellow}20${clear}${IGreen}] ${Green}sslsign
   ${IGreen}├── [${IYellow}21${clear}${IGreen}] ${Green}updogfx
   ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}sharepyfx
+  ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}zsh
   ${IGreen}└─▶ [${IYellow}23${clear}${IGreen}] ${Green}authtoken"
 echo;;
 
 linkgen)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh);;
+
+zsh)
+source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/rc/Install-ZSH-TERMUX.sh);;
 
 check)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/checkall);;
