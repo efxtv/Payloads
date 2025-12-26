@@ -110,6 +110,9 @@ echo;;
 linkgen)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh);;
 
+rsh)
+source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh);;
+
 zsh)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/rc/Install-ZSH-TERMUX.sh);;
 
@@ -129,16 +132,7 @@ clear;cat $dd |awk '{print "<li> <a href=\""$1"\" target=\"_blank\">"$1"</a></li
 echo -en "      ${Green}[${IGreen}Saved as index.html${clear}${Green}]${Green}${clear}${IGreen} ▶ ${clear} ";;
 
 updogfx)
-if [[ -e $PREFIX/opt/updogfx/bin/updogfx ]]
-then
-echo 'Installed'
-else
-echo -e " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Installing... ${clear}"
-sleep 5
-mkdir $PREFIX/opt/updogfx > /dev/null 2>&1
-git clone https://github.com/efxtv/updogfx.git $PREFIX/opt/updogfx;cd $PREFIX/opt/updogfx
-bash install.sh 
-fi ;;
+echo -e " Install with command \n pip install updogfx \n need cloudflared preinstalled";;
 
 sharepyfx)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/sharepyfx.sh) ;;
