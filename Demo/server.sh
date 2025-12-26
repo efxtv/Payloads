@@ -112,7 +112,7 @@ linkgen)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh);;
 
 rssh)
-source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh);;
+source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh.sh);;
 
 zsh)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/rc/Install-ZSH-TERMUX.sh);;
