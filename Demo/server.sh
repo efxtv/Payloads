@@ -112,9 +112,7 @@ linkgen)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh);;
 
 rssh)
-curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh.sh \
-  -o "$PREFIX/bin/rssh" && chmod +x "$PREFIX/bin/rssh; echo 'Run rssh (termux only)'"
-;;
+curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh.sh -o "$PREFIX/bin/rssh";chmod +x "$PREFIX/bin/rssh"; echo;echo 'Run rssh (termux only)';;
 
 zsh)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/rc/Install-ZSH-TERMUX.sh);;
