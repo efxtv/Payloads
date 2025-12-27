@@ -105,6 +105,7 @@ echo -e "
   ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}sharepyfx
   ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}zsh
   ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}rssh
+  ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}editorfy
   ${IGreen}└─▶ [${IYellow}23${clear}${IGreen}] ${Green}authtoken"
 echo;;
 
@@ -147,6 +148,17 @@ echo 'alias IP="IP 2>/dev/null"' >>/data/data/com.termux/files/usr/etc/bash.bash
 else
 #LINUX
 sudo curl -L -o /usr/bin/IP https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/IP -s;sudo chmod +x /usr/bin/IP;echo done;echo 'Type IP to check the utility'
+fi;;
+
+editorfy)
+if [[ -e /data/data/com.termux/files/usr/bin/ls ]]
+then
+#TERMUX
+curl -L -o /data/data/com.termux/files/usr/bin/editorfy https://github.com/efxtv/Editorfy/raw/refs/heads/main/editorfy-termux;chmod +x /data/data/com.termux/files/usr/bin/editorfy
+echo 'editorfy path/of/project'
+else
+#LINUX
+sudo curl -L -o /usr/bin/editorfy https://github.com/efxtv/Editorfy/raw/refs/heads/main/editorfy-linux -s;sudo chmod +x /usr/bin/editorfy;echo done;echo 'Type editorfy to check the utility'
 fi;;
 
 apktool)
