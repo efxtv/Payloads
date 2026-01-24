@@ -106,6 +106,7 @@ echo -e "
   ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}zsh
   ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}rssh
   ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}editorfy
+  ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}insta
   ${IGreen}└─▶ [${IYellow}23${clear}${IGreen}] ${Green}authtoken"
 echo;;
 
@@ -138,6 +139,17 @@ echo -e " Install with command \n pip install updogfx \n need cloudflared preins
 
 sharepyfx)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/sharepyfx.sh) ;;
+
+insta)
+if [[ -e /data/data/com.termux/files/usr/bin/ls ]]
+then
+#TERMUX
+curl -L -o /data/data/com.termux/files/usr/bin/insta https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/insta -s;chmod +x /data/data/com.termux/files/usr/bin/insta;echo done
+echo 'Type insta to check help options'
+else
+#LINUX
+sudo curl -L -o /usr/bin/insta https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/insta -s;sudo chmod +x /usr/bin/insta;echo done;echo 'Type insta to check help options'
+fi;;
 
 IP)
 if [[ -e /data/data/com.termux/files/usr/bin/ls ]]
