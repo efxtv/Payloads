@@ -144,11 +144,11 @@ insta)
 if [[ -e /data/data/com.termux/files/usr/bin/ls ]]
 then
 #TERMUX
-curl -L -o /data/data/com.termux/files/usr/bin/insta https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/insta -s;chmod +x /data/data/com.termux/files/usr/bin/insta;echo done
-echo 'Type insta to check help options'
+curl -L -o /data/data/com.termux/files/usr/bin/insta https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/insta -s;chmod +x /data/data/com.termux/files/usr/bin/insta;
+echo 'Type insta to check help options';echo
 else
 #LINUX
-sudo curl -L -o /usr/bin/insta https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/insta -s;sudo chmod +x /usr/bin/insta;echo done;echo 'Type insta to check help options'
+sudo curl -L -o /usr/bin/insta https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/insta -s;sudo chmod +x /usr/bin/insta;echo 'Type insta to check help options';echo
 fi;;
 
 IP)
