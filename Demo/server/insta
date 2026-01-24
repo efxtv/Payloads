@@ -1,0 +1,134 @@
+#!/bin/bash
+
+TARGET_DIR="$PWD"
+
+show_help() {
+    echo "==============================================="
+    echo "          AVDownload & Tags V1 EFXTv"
+    echo "==============================================="
+    echo "Usage: insta [option] [URL/File/Path] [Image]"
+    echo ""
+    echo "  -i    Install dependencies"
+    echo "  -u    Update YT-Dlp"
+    echo "  -v    Video (MP4)"
+    echo "  -a    Audio (MP3)"
+    echo "  -pv   YT-Playlist Video"
+    echo "  -pa   YT-Playlist Audio"
+    echo "  -lv   List Videos List.txt"
+    echo "  -la   List Audios List.txt"
+    echo "  -t    URL Thumbnail "
+    echo "  -ta   List Thumbnail List.txt"
+    echo "  -taga [Image]          # Tag ALL mp3 in PWD"
+    echo "  -tagp [MP3] [Image]    # Tag specific file"
+    echo ""
+    echo "Tip: Add -fast at the end of download for speed"
+    echo "==============================================="
+}
+
+installytdlp() {
+    if [ -n "$TERMUX_VERSION" ]; then
+        pkg update -y && pkg upgrade -y
+        pkg install -y python ffmpeg curl aria2 atomicparsley
+        
+        INSTALL_PATH="$PREFIX/bin/yt-dlp"
+        SUDO_CMD=""
+    else
+        sudo apt update -y && sudo apt upgrade -y
+        sudo apt install -y python3 ffmpeg curl aria2 atomicparsley
+        
+        INSTALL_PATH="/usr/local/bin/yt-dlp"
+        SUDO_CMD="sudo"
+    fi
+
+    echo "[OK] Installing / Updating yt-dlp (latest)..."
+    $SUDO_CMD curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp \
+        -o "$INSTALL_PATH"
+
+    $SUDO_CMD chmod +x "$INSTALL_PATH"
+
+    echo "[OK] Installed yt-dlp version:"
+    yt-dlp --version
+    echo
+}
+
+thumbn() {
+    echo "[OK] Downloading thumbnail..."
+    yt-dlp "$1" \
+        --skip-download \
+        --write-thumbnail \
+        --convert-thumbnails jpg \
+        -o "$TARGET_DIR/thumbnails_export/%(title).50s [%(id)s].%(ext)s"
+}
+
+thumbn_batch() {
+    local file="$1"
+    [ ! -f "$file" ] && echo "[X]  File not found" && return 1
+    
+    echo "[+] Downloading batch thumbnails to 'thumbnails_export'..."
+    yt-dlp -a "$file" \
+        --skip-download \
+        --write-thumbnail \
+        --convert-thumbnails jpg \
+        -o "$TARGET_DIR/thumbl/%(title).50s [%(id)s].%(ext)s"
+}
+
+if [ $# -eq 0 ]; then show_help; exit 1; fi
+
+OUT_TMPL="$TARGET_DIR/%(title).40s [%(id)s].%(ext)s"
+ARGS=(--no-cache-dir --restrict-filenames --embed-metadata --windows-filenames)
+
+for arg in "$@"; do
+    if [ "$arg" == "-fast" ]; then
+        ARGS+=(--downloader aria2c --downloader-args "aria2c:-x 16 -s 16 -k 1M")
+        break
+    fi
+done
+
+case "$1" in
+    -t)  thumbn "$2" ;;
+    -ta) thumbn_batch "$2" ;;
+    -i) installytdlp ;;
+    -v) yt-dlp "${ARGS[@]}" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" -o "$OUT_TMPL" "$2" ;;
+    -a) yt-dlp "${ARGS[@]}" -x --audio-format mp3 -o "$OUT_TMPL" "$2" ;;
+    -pv) yt-dlp "${ARGS[@]}" -f "mp4" --yes-playlist -o "$TARGET_DIR/%(playlist_title).30s/%(playlist_index)s-%(title).30s.%(ext)s" "$2" ;;
+    -pa) yt-dlp "${ARGS[@]}" -x --audio-format mp3 --yes-playlist -o "$TARGET_DIR/%(playlist_title).30s/%(playlist_index)s-%(title).30s.%(ext)s" "$2" ;;
+    -lv) [ ! -f "$2" ] && echo "[X]  File not found" && exit 1; yt-dlp "${ARGS[@]}" -a "$2" --ignore-errors -o "$OUT_TMPL" ;;
+    -la) [ ! -f "$2" ] && echo "[X]  File not found" && exit 1; yt-dlp "${ARGS[@]}" -a "$2" -x --audio-format mp3 --ignore-errors -o "$OUT_TMPL" ;;
+    
+    -taga)
+        IMG="$2"
+        [ ! -f "$IMG" ] && echo "[X]  Image '$IMG' not found" && exit 1
+        echo "[OK] Tagging all MP3s in $TARGET_DIR..."
+        for f in "$TARGET_DIR"/*.mp3; do
+            [ -e "$f" ] || continue
+            ffmpeg -hide_banner -loglevel error -i "$f" -i "$IMG" -map 0:0 -map 1:0 -c copy -disposition:v attached_pic -id3v2_version 3 "${f%.mp3}.tmp.mp3" && mv "${f%.mp3}.tmp.mp3" "$f"
+            echo "[OK] Done: $(basename "$f")"
+        done
+        ;;
+
+    -tagp)
+        MP3="$2"
+        IMG="$3"
+        [ ! -f "$MP3" ] && echo "[X]  MP3 '$MP3' not found" && exit 1
+        [ ! -f "$IMG" ] && echo "[X]  Image '$IMG' not found" && exit 1
+        ffmpeg -hide_banner -loglevel error -i "$MP3" -i "$IMG" -map 0:0 -map 1:0 -c copy -disposition:v attached_pic -id3v2_version 3 "${MP3%.mp3}.tmp.mp3" && mv "${MP3%.mp3}.tmp.mp3" "$MP3"
+        echo "[OK] Tagged: $(basename "$MP3")"
+        ;;
+
+    -u) yt-dlp -U ;;
+    -h | *) show_help; exit 1 ;;
+esac
+
+if [[ "$1" != "-taga" && "$1" != "-tagp" ]]; then
+    echo "[OK] Cleaning filenames..."
+    find "$TARGET_DIR" -maxdepth 2 -mmin -2 -type f | while read -r file; do
+        dir=$(dirname "$file")
+        oldname=$(basename "$file")
+        ext="${oldname##*.}"
+        base="${oldname%.*}"
+        clean_base=$(echo "$base" | sed 's/[^A-Za-z0-9]/-/g' | sed 's/-\+/-/g' | sed 's/^-//;s/-$//')
+        newname="$clean_base.$ext"
+        [ "$oldname" != "$newname" ] && mv "$dir/$oldname" "$dir/$newname" && echo " Cleaned: $newname"
+    done
+fi
+echo -e "\n[OK] Finished."
