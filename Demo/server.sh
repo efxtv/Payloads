@@ -107,11 +107,15 @@ echo -e "
   ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}rssh
   ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}editorfy
   ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}insta
+  ${IGreen}├── [${IYellow}22${clear}${IGreen}] ${Green}apktool
   ${IGreen}└─▶ [${IYellow}23${clear}${IGreen}] ${Green}authtoken"
 echo;;
 
 linkgen)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh);;
+
+apktool)
+bash <(curl -fsSL https://raw.githubusercontent.com/efxtv/Apktool-Latest-Ubuntu-Termux-Kali-Linux-/refs/heads/main/apktool/auto-apktool.sh)
 
 rssh)
 curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh.sh -o "$PREFIX/bin/rssh";chmod +x "$PREFIX/bin/rssh"; echo;echo 'Run rssh (termux only)';;
