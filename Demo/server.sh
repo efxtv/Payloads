@@ -118,15 +118,19 @@ apktool)
 bash <(curl -fsSL https://raw.githubusercontent.com/efxtv/Apktool-Latest-Ubuntu-Termux-Kali-Linux-/refs/heads/main/apktool/auto-apktool.sh)
 
 rssh)
-if [[ -e /data/data/com.termux/files/usr/bin/ls ]]
-then
-#TERMUX
-curl -L -o /data/data/com.termux/files/usr/bin/rssh https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh.sh -s;chmod +x /data/data/com.termux/files/usr/bin/rssh;
-echo 'Type rssh to check help options';echo
+if [[ -e /data/data/com.termux/files/usr/bin/ls ]]; then
+# TERMUX
+curl -sL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh.sh -o /data/data/com.termux/files/usr/bin/rssh
+    chmod +x /data/data/com.termux/files/usr/bin/rssh
+    echo "Type rssh to check help options"
 else
-#LINUX
-sudo curl -L -o /usr/bin/rssh https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh.sh -s;sudo chmod +x /usr/bin/rssh;echo 'Type rssh to check help options';echo
-fi;;
+    # LINUX
+sudo curl -sL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh.sh -o /usr/bin/rssh
+    sudo chmod +x /usr/bin/rssh
+    echo "Type rssh to check help options"
+fi
+;;
+
 
 zsh)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/rc/Install-ZSH-TERMUX.sh);;
