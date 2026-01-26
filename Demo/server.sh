@@ -25,20 +25,6 @@ echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Okay ${clear}"
 echo
 fi
 
-rsshd() {
-if [[ -e /data/data/com.termux/files/usr/bin/ls ]]; then
-# TERMUX
-curl -sL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh.sh -o /data/data/com.termux/files/usr/bin/rssh
-    chmod +x /data/data/com.termux/files/usr/bin/rssh
-    echo "Type rssh to check help options"
-else
-    # LINUX
-sudo curl -sL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh.sh -o /usr/bin/rssh
-    sudo chmod +x /usr/bin/rssh
-    echo "Type rssh to check help options"
-fi
-}
-
 echo -en " ${Green}[${IGreen}✔${clear}${Green}] ${IYellow}Add color properties? ${clear}${IYellow}[${clear}y/n${IYellow}]${clear}"
 read kikkisc
 if [[ "$kikkisc" == "y" ]]
@@ -125,15 +111,25 @@ echo -e "
   ${IGreen}└─▶ [${IYellow}23${clear}${IGreen}] ${Green}authtoken"
 echo;;
 
+rssh)
+if [[ -d "/data/data/com.termux" ]]; then
+    # TERMUX detected
+    BIN_DIR="$PREFIX/bin"
+    curl -sL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh.sh -o "$BIN_DIR/rssh"
+    chmod +x "$BIN_DIR/rssh"
+    echo "Type rssh to check help options"
+else
+    # Linux
+    sudo curl -sL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/rssh.sh -o /usr/local/bin/rssh
+    sudo chmod +x /usr/local/bin/rssh
+    echo "Type rssh to check help options"
+fi ;;
+
 linkgen)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/main/Demo/server/linkgen.sh);;
 
 apktool)
-bash <(curl -fsSL https://raw.githubusercontent.com/efxtv/Apktool-Latest-Ubuntu-Termux-Kali-Linux-/refs/heads/main/apktool/auto-apktool.sh)
-
-rssh)
-rsshd;;
-
+bash <(curl -fsSL https://raw.githubusercontent.com/efxtv/Apktool-Latest-Ubuntu-Termux-Kali-Linux-/refs/heads/main/apktool/auto-apktool.sh);;
 
 zsh)
 source <(curl -fsSL https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/rc/Install-ZSH-TERMUX.sh);;
