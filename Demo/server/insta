@@ -16,6 +16,7 @@ show_help() {
     echo "  -pa   YT-Playlist Audio"
     echo "  -lv   List Videos List.txt"
     echo "  -la   List Audios List.txt"
+    echo "  -re   Rename all the files"
     echo "  -t    URL Thumbnail "
     echo "  -ta   List Thumbnail List.txt"
     echo "  -taga [Image]          # Tag ALL mp3 in PWD"
@@ -49,6 +50,38 @@ installytdlp() {
     echo "[OK] Installed yt-dlp version:"
     yt-dlp --version
     echo
+}
+
+renamer() {
+for file in *.*; do
+    # Skip directories
+    [ -f "$file" ] || continue
+
+    # Extract name and extension
+    base="${file%.*}"
+    ext="${file##*.}"
+
+    # Replace spaces with hyphen
+    clean="$(echo "$base" | tr ' ' '-' )"
+
+    # Remove all characters except letters, numbers, hyphens
+    clean="$(echo "$clean" | sed 's/[^A-Za-z0-9-]//g')"
+
+    # Compress multiple hyphens into one
+    clean="$(echo "$clean" | sed 's/-\+/-/g')"
+
+    # Remove trailing hyphen
+    clean="$(echo "$clean" | sed 's/-$//')"
+
+    # Build final filename
+    new="$clean.$ext"
+
+    # Rename if different
+    if [ "$file" != "$new" ]; then
+        echo "Renaming: $file → $new"
+        mv -- "$file" "$new"
+    fi
+done
 }
 
 thumbn() {
@@ -88,6 +121,7 @@ case "$1" in
     -t)  thumbn "$2" ;;
     -ta) thumbn_batch "$2" ;;
     -i) installytdlp ;;
+    -re) renamer ;;
     -v) yt-dlp "${ARGS[@]}" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" -o "$OUT_TMPL" "$2" ;;
     -a) yt-dlp "${ARGS[@]}" -x --audio-format mp3 -o "$OUT_TMPL" "$2" ;;
     -pv) yt-dlp "${ARGS[@]}" -f "mp4" --yes-playlist -o "$TARGET_DIR/%(playlist_title).30s/%(playlist_index)s-%(title).30s.%(ext)s" "$2" ;;
