@@ -12,11 +12,12 @@ show_help() {
     echo "  -u    Update YT-Dlp"
     echo "  -v    Video (MP4)"
     echo "  -a    Audio (MP3)"
+    echo "  -bv   Video safe way (MP4)"
+    echo "  -ba   Audio safe way (MP3)"
     echo "  -pv   YT-Playlist Video"
     echo "  -pa   YT-Playlist Audio"
     echo "  -lv   List Videos List.txt"
     echo "  -la   List Audios List.txt"
-    echo "  -re   Rename all the files"
     echo "  -t    URL Thumbnail "
     echo "  -ta   List Thumbnail List.txt"
     echo "  -taga [Image]          # Tag ALL mp3 in PWD"
@@ -30,6 +31,7 @@ installytdlp() {
     if [ -n "$TERMUX_VERSION" ]; then
         pkg update -y && pkg upgrade -y
         pkg install -y python ffmpeg curl aria2 atomicparsley
+        pip install -U yt-dlp
         
         INSTALL_PATH="$PREFIX/bin/yt-dlp"
         SUDO_CMD=""
@@ -52,36 +54,44 @@ installytdlp() {
     echo
 }
 
-renamer() {
-for file in *.*; do
-    # Skip directories
-    [ -f "$file" ] || continue
+d_safev() {
+    URL="$1"
 
-    # Extract name and extension
-    base="${file%.*}"
-    ext="${file##*.}"
+    # Random browser
+    BROWSER=$(shuf -e chrome firefox -n 1)
+    echo "[INFO] Using browser: $BROWSER"
 
-    # Replace spaces with hyphen
-    clean="$(echo "$base" | tr ' ' '-' )"
+    yt-dlp -v \
+    -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" \
+    --merge-output-format mp4 \
+    --cookies-from-browser "$BROWSER" \
+    --sleep-interval 3 \
+    --concurrent-fragments 1 \
+    --retries 10 \
+    --fragment-retries 10 \
+    --js-runtimes node \
+    "$URL"
+}
 
-    # Remove all characters except letters, numbers, hyphens
-    clean="$(echo "$clean" | sed 's/[^A-Za-z0-9-]//g')"
+d_safea() {
+    URL="$1"
 
-    # Compress multiple hyphens into one
-    clean="$(echo "$clean" | sed 's/-\+/-/g')"
+    # Random browser
+    BROWSER=$(shuf -e chrome firefox -n 1)
+    echo "[INFO] Using browser: $BROWSER"
 
-    # Remove trailing hyphen
-    clean="$(echo "$clean" | sed 's/-$//')"
-
-    # Build final filename
-    new="$clean.$ext"
-
-    # Rename if different
-    if [ "$file" != "$new" ]; then
-        echo "Renaming: $file → $new"
-        mv -- "$file" "$new"
-    fi
-done
+    yt-dlp -v \
+    -f "bestaudio" \
+    --extract-audio \
+    --audio-format mp3 \
+    --audio-quality 0 \
+    --cookies-from-browser "$BROWSER" \
+    --sleep-interval 3 \
+    --concurrent-fragments 1 \
+    --retries 10 \
+    --fragment-retries 10 \
+    --js-runtimes node \
+    "$URL"
 }
 
 thumbn() {
@@ -121,7 +131,8 @@ case "$1" in
     -t)  thumbn "$2" ;;
     -ta) thumbn_batch "$2" ;;
     -i) installytdlp ;;
-    -re) renamer ;;
+    -bv) d_safev "$2" ;;
+    -ba) d_safea "$2" ;;
     -v) yt-dlp "${ARGS[@]}" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" -o "$OUT_TMPL" "$2" ;;
     -a) yt-dlp "${ARGS[@]}" -x --audio-format mp3 -o "$OUT_TMPL" "$2" ;;
     -pv) yt-dlp "${ARGS[@]}" -f "mp4" --yes-playlist -o "$TARGET_DIR/%(playlist_title).30s/%(playlist_index)s-%(title).30s.%(ext)s" "$2" ;;
